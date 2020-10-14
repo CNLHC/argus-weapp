@@ -1,10 +1,11 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { View, Button, Text } from '@tarojs/components'
+import React, { Component, useState } from "react";
+import { connect, useDispatch, useSelector } from "react-redux";
+import { View, Button, Text } from "@tarojs/components";
 
-import { add, minus, asyncAdd } from '../../actions/counter'
+import { add, minus, asyncAdd } from "../../actions/counter";
 
-import './index.scss'
+import "./index.scss";
+import { useTypedSelector } from "../../reducers";
 
 // #region 书写注意
 //
@@ -18,62 +19,39 @@ import './index.scss'
 
 type PageStateProps = {
   counter: {
-    num: number
-  }
-}
+    num: number;
+  };
+};
 
 type PageDispatchProps = {
-  add: () => void
-  dec: () => void
-  asyncAdd: () => any
-}
+  add: () => void;
+  dec: () => void;
+  asyncAdd: () => any;
+};
 
-type PageOwnProps = {}
+type PageOwnProps = {};
 
-type PageState = {}
+type PageState = {};
 
-type IProps = PageStateProps & PageDispatchProps & PageOwnProps
+type IProps = PageStateProps & PageDispatchProps & PageOwnProps;
 
 interface Index {
   props: IProps;
 }
 
-@connect(({ counter }) => ({
-  counter
-}), (dispatch) => ({
-  add () {
-    dispatch(add())
-  },
-  dec () {
-    dispatch(minus())
-  },
-  asyncAdd () {
-    dispatch(asyncAdd())
-  }
-}))
-class Index extends Component {
-  componentWillReceiveProps (nextProps) {
-    console.log(this.props, nextProps)
-  }
+export default function Index() {
+  const [lstate, setLState] = useState(0);
+  const dispatch = useDispatch();
+  const data = useTypedSelector((e) => e.counter.num);
+  console.log(data);
 
-  componentWillUnmount () { }
-
-  componentDidShow () { }
-
-  componentDidHide () { }
-
-  render () {
-    return (
-      <View className='index'>
-        <Button className='add_btn' onClick={this.props.add}>+</Button>
-        <Button className='dec_btn' onClick={this.props.dec}>-</Button>
-        <Button className='dec_btn' onClick={this.props.asyncAdd}>async</Button>
-        <View><Text>{this.props.counter.num}</Text></View>
-        <View><Text>Hello, World</Text></View>
-      </View>
-    )
-  }
+  return (
+    <View>
+      Hello Argus local:{lstate} global:{data}
+      <Button onClick={(e) => setLState((e) => e + 1)}> add </Button>
+      <Button onClick={(e) => setLState((e) => e - 1)}> minus </Button>
+      <Button onClick={(e) => dispatch(add())}> global add </Button>
+      <Button onClick={(e) => dispatch(minus())}> global minus </Button>
+    </View>
+  );
 }
-
-export default Index
-
