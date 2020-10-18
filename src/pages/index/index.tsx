@@ -6,6 +6,8 @@ import { add, minus, asyncAdd } from "../../actions/counter";
 
 import "./index.scss";
 import { useTypedSelector } from "../../reducers";
+import Modal from "../../components/modal";
+import PageUpload from "../upload";
 
 // #region 书写注意
 //
@@ -47,11 +49,12 @@ export default function Index() {
 
   return (
     <View>
-      Hello Argus local:{lstate} global:{data}
+      <PageUpload />
+      {/* Hello Argus local:{lstate} global:{data}
       <Button onClick={(e) => setLState((e) => e + 1)}> add </Button>
       <Button onClick={(e) => setLState((e) => e - 1)}> minus </Button>
       <Button onClick={(e) => dispatch(add())}> global add </Button>
-      <Button onClick={(e) => dispatch(minus())}> global minus </Button>
+      <Button onClick={(e) => dispatch(minus())}> global minus </Button> */}
     </View>
   );
 }

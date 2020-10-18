@@ -1,0 +1,46 @@
+.modal {
+  .mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .content {
+    position: absolute;
+    left: 60rpx;
+    top: 232rpx;
+    width: 538rpx;
+    border-radius: 32px;
+    background-color: white;
+    padding: 70rpx 46rpx;
+    min-height: 200rpx;
+
+    .title {
+      text-align: center;
+      height: 42rpx;
+      margin-bottom: 48rpx;
+      font-family: PingFang SC;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 36rpx;
+      line-height: 27rpx;
+      /* or 75% */
+      text-align: center;
+    }
+
+    .body {
+      margin-bottom:48rpx;
+
+    }
+    .control {
+      margin-top: 48rpx;
+    }
+  }
+
+
+
+
+}

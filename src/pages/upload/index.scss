@@ -1,0 +1,51 @@
+@import "../../palette.scss";
+
+.welcom-modal {
+  .image-area {
+    width: 533rpx;
+    height: 200rpx;
+    margin-bottom: 76rpx;
+
+    image {
+      width: 533rpx;
+      height: 200rpx;
+    }
+  }
+
+  .text-area {
+    font-family: PingFang SC;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 42px;
+    /* or 150% */
+    text-align: center;
+    margin-bottom: 33rpx;
+  }
+
+  .add-coins {
+    margin-top: 33rpx;
+    font-family: PingFang SC;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 42px;
+    color: $argus-orange-dark;
+
+    margin: 0 202rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 134rpx;
+    height: 48rpx;
+
+    image {
+      width: 48rpx;
+      height: 48rpx;
+
+    }
+
+  }
+
+
+}
