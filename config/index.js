@@ -34,10 +34,24 @@ const config = {
         }
       },
       cssModules: {
-        enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
+        enable: true, // 默认为 false，如需使用 css modules 功能，则设为 true
         config: {
           namingPattern: 'module', // 转换模式，取值为 global/module
           generateScopedName: '[name]__[local]___[hash:base64:5]'
+        }
+      }
+    }
+  },
+  weapp: {
+    module: {
+      postcss: {
+        // css modules 功能开关与相关配置
+        cssModules: {
+          enable: true, // 默认为 false，如需使用 css modules 功能，则设为 true
+          config: {
+            namingPattern: 'module', // 转换模式，取值为 global/module，下文详细说明
+            generateScopedName: '[name]-[local]-[hash:base64:2]'
+          }
         }
       }
     }
@@ -55,7 +69,7 @@ const config = {
         enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
         config: {
           namingPattern: 'module', // 转换模式，取值为 global/module
-          generateScopedName: '[name]__[local]___[hash:base64:5]'
+          generateScopedName: '[name]-[local]-[hash:base64:5]'
         }
       }
     }
