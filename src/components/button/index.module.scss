@@ -1,5 +1,17 @@
 @import "../../palette.scss";
 
+.ButtonBase {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  line-height: 42rpx;
+  min-width: 240rpx;
+  height: 72rpx;
+  margin: 0;
+
+}
+
 .argus-button {
   padding: 20rpx 32rpx;
   background-color: $argus-brown;
@@ -7,10 +19,7 @@
   font-style: normal;
   font-weight: normal;
   font-size: 28rpx;
-  line-height: 42rpx;
   color: white;
-  text-align: center;
-  min-width: 240rpx;
 
 }
 
@@ -20,21 +29,31 @@
   font-style: normal;
   font-weight: 500;
   font-size: 36rpx;
-  line-height: 27rpx;
-  text-align: center;
   color: #B0865B;
-  border: 1rpx solid #F3F2F1;
+
+  border: 2rpx solid #F3F2F1;
+
   box-sizing: border-box;
   box-shadow: 0 8rpx 16rpx rgba(143, 88, 31, 0.15);
   border-radius: 36rpx;
-  height: 72rpx;
+
+  image {
+    width: 40rpx;
+    height: 40rpx;
+  }
+}
+
+.textArea {
+  flex-grow: 1;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  text-align: center;
+}
 
-  image {
-    width: 100%;
-  }
+.iconArea {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
 
 }

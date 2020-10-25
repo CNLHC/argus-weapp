@@ -49,7 +49,7 @@ export default function Index() {
 
   return (
     <View>
-      <PageUpload />
+      {/* <PageUpload /> */}
       {/* Hello Argus local:{lstate} global:{data}
       <Button onClick={(e) => setLState((e) => e + 1)}> add </Button>
       <Button onClick={(e) => setLState((e) => e - 1)}> minus </Button>

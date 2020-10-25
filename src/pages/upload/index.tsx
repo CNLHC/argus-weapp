@@ -77,7 +77,7 @@ export default function PageUpload() {
                         <ArgusButton
                             iconSrc={IconLink}
                             theme={'light'}
-                            style={{ width: '72rpx', padding: '10rpx' }}
+                            style={{ width: '72rpx', padding: '10rpx'}}
                         />
                     </view>
                 </view>

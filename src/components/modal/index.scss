@@ -34,11 +34,15 @@
     }
 
     .body {
-      margin-bottom:48rpx;
+      margin-bottom: 48rpx;
 
     }
+
     .control {
       margin-top: 48rpx;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
     }
   }
 
