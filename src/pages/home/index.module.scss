@@ -1,0 +1,143 @@
+.Header {
+  width: 100vw;
+  height: 531rpx;
+  background-color: #FBF9F1;
+  top: 0;
+
+  .slogan {
+    position: absolute;
+    top: 98rpx;
+    right: 43rpx;
+    width: 252rpx;
+    height: 81rpx;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    font-family: PingFang SC;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36rpx;
+    line-height: 27rpx;
+    display: flex;
+    align-items: center;
+    color: #EDB03E;
+  }
+
+  .bg {
+    width: 622.38rpx;
+    height: 360rpx;
+    position: absolute;
+    right: 198.73rpx;
+    top: 82rpx;
+  }
+}
+
+.Container {
+  position: relative;
+  top: -105rpx;
+  background: white;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .Card {
+    width: calc(100vw - 60rpx);
+    margin-bottom: 40rpx;
+    border-radius: 15rpx;
+  }
+
+  .Shader {
+    background: #FFFFFF;
+    box-shadow: 4px 4px 30px rgba(176, 134, 91, 0.1);
+    padding-top: 70rpx;
+    padding-bottom: 70rpx;
+    display: flex;
+    justify-content: space-around;
+
+    .content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .textarea {
+      display: flex;
+      margin-left: 40rpx;
+      justify-content: space-between;
+      flex-direction: column;
+      font-family: PingFang SC;
+      font-style: normal;
+      height: 100rpx;
+
+      .big {
+        font-weight: 500;
+        font-size: 40rpx;
+        line-height: 27rpx;
+        display: flex;
+        align-items: center;
+        color: #B0865B;
+      }
+
+      .small {
+        font-weight: normal;
+        font-size: 26px;
+        line-height: 39px;
+        display: flex;
+        align-items: center;
+        color: #606368;
+
+      }
+
+    }
+
+  }
+
+  .Colored {
+    background: #FBF9F1;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40rpx;
+    padding-bottom: 30rpx;
+    align-items: center;
+    flex-direction: column;
+
+
+
+    .line1 {
+      font-family: PingFang SC;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 28px;
+      line-height: 42px;
+      /* identical to box height, or 150% */
+
+      display: flex;
+      align-items: center;
+      color: #A57646;
+    }
+
+    .line2 {
+      font-family: PingFang SC;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 26px;
+      line-height: 39px;
+      /* identical to box height, or 150% */
+
+      display: flex;
+      align-items: center;
+
+      /* gray - 60% - icon */
+
+      color: #606368;
+
+    }
+
+  }
+}

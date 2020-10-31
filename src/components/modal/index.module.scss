@@ -1,6 +1,7 @@
-.comp-modal {
+.compModal {
+
   .mask {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
@@ -10,6 +11,17 @@
   }
 
   .content {
+    .closeX {
+      position: absolute;
+      top: 30rpx;
+      right: 40rpx;
+
+      image {
+        width: 44rpx;
+        height: 44rpx;
+      }
+    }
+
     position: absolute;
     left: 60rpx;
     top: 232rpx;

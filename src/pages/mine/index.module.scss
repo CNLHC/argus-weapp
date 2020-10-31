@@ -1,0 +1,48 @@
+.banner {
+  display: flex;
+  align-items: center;
+
+  .Avatar {
+    height: 200rpx;
+    width: 200rpx;
+    border-radius: 400rpx;
+    background-color: white;
+  }
+
+  .Textarea {
+    flex-grow: 1;
+    display: flex;
+    padding-left: 36rpx;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  width: 245rpx;
+  justify-content: flex-start;
+
+  margin-top: 100rpx;
+
+
+
+  .menuTitle {
+
+    margin-left: 30rpx;
+    font-family: PingFang SC;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 27px;
+    /* or 75% */
+
+
+    /* gray - 60% - icon */
+
+    color: #606368;
+  }
+}

@@ -5,14 +5,15 @@ import styles from './index.module.scss'
 
 interface IProps {
     text?: string
-    iconSrc?: string
+    iconSrc?: string | JSX.Element
     theme?: 'default' | 'light'
     style?: React.CSSProperties
-    onClick: () => void
+    color?: string
+    onClick?: () => void
 }
 
 export default function ArgusButton(props: Partial<ButtonProps> & IProps) {
-    const { iconSrc, text, style } = props
+    const { iconSrc, text, style, color } = props
     const theme = props.theme
     const calStyle = style ?? {}
     const iconButton = !!iconSrc && !text
@@ -25,6 +26,9 @@ export default function ArgusButton(props: Partial<ButtonProps> & IProps) {
             width: '100%',
             height: '100%',
         }
+    }
+    if (color) {
+        calStyle['backgroundColor'] = color
     }
     return (
         <Button
@@ -39,7 +43,13 @@ export default function ArgusButton(props: Partial<ButtonProps> & IProps) {
             }
         >
             <view className={styles.iconArea} style={iconAreaStyle}>
-                {iconSrc ? <image src={iconSrc} /> : null}
+                {iconSrc ? (
+                    typeof iconSrc == 'string' ? (
+                        <image src={iconSrc} />
+                    ) : (
+                        iconSrc
+                    )
+                ) : null}
             </view>
             <view className={styles.textArea}>{text ?? null}</view>
         </Button>

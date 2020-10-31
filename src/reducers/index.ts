@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux'
 import { useSelector, TypedUseSelectorHook } from 'react-redux'
-import counter from './counter'
+import { GlobalReducers } from './global'
 import { ReducerState } from 'react'
 
 const RootReducers = combineReducers({
-    counter,
+    GlobalReducers,
 })
 
 export const useTypedSelector: TypedUseSelectorHook<ReducerState<

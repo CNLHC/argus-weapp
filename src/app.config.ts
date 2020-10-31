@@ -3,6 +3,7 @@ export default {
         'pages/home/index',
         'pages/mynotes/index',
         'pages/index/index',
+        'pages/mine/index',
         'pages/upload/index',
     ],
     window: {
