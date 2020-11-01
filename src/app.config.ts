@@ -4,6 +4,7 @@ export default {
         'pages/mynotes/index',
         'pages/index/index',
         'pages/mine/index',
+        'pages/mine_manage/index',
         'pages/upload/index',
     ],
     window: {

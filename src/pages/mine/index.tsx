@@ -1,3 +1,4 @@
+import { navigateTo, redirectTo } from '@tarojs/taro'
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import ArgusIcon from '../../components/icon'
@@ -8,7 +9,7 @@ import { ActSetState } from '../../reducers/global'
 import sty from './index.module.scss'
 
 const MenuItem = (props) => (
-    <view className={sty.menuItem}>
+    <view className={sty.menuItem} onClick={props.onClick}>
         <view className={sty.menuIcon}>{props.icon}</view>
         <view className={sty.menuTitle}>{props.title}</view>
     </view>
@@ -19,14 +20,17 @@ const MenuData = [
     {
         icon: <ArgusIcon icon={'account'} style={IconStyles} />,
         title: '账户管理',
+        url: '/pages/mine_manage/index',
     },
     {
         icon: <ArgusIcon icon={'smilepop'} style={IconStyles} />,
         title: '意见反馈',
+        url: '/pages/mine_manage/index',
     },
     {
         icon: <ArgusIcon icon={'share'} style={IconStyles} />,
         title: '分享好友',
+        url: '/pages/mine_manage/index',
     },
 ]
 
@@ -52,7 +56,12 @@ export default function Mine() {
             </view>
             <view className={sty.menu}>
                 {MenuData.map((e) => (
-                    <MenuItem title={e.title} icon={e.icon} />
+                    <MenuItem
+                        key={e.title}
+                        title={e.title}
+                        icon={e.icon}
+                        onClick={() => navigateTo({ url: e.url })}
+                    />
                 ))}
             </view>
         </MainLayout>
