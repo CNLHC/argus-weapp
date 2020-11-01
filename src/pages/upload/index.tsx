@@ -12,6 +12,7 @@ import ImgCoffeMachine from '../../../assets/coffe_machine.svg'
 
 import bg from '../../../assets/welcome_bg.svg'
 import UploadLayout from '../../components/upload-layout'
+import ArgusBeanIndicator from '../../components/bean-indicator'
 
 export default function PageUpload() {
     const [welcomeModal, setWelcomeModalVisible] = useState(true)
@@ -30,9 +31,8 @@ export default function PageUpload() {
             <view className={'text-area'}>
                 为帮助你更好地生成视频笔记，我们提供您Argus咖啡豆来兑换视频识别时长，1个咖啡豆可兑换1分钟。
             </view>
-            <view className={'add-coins'}>
-                <image src={IconBean} />
-                <view> +150</view>
+            <view className={'hbox'}>
+                <ArgusBeanIndicator />
             </view>
         </view>
     )

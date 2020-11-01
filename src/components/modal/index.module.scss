@@ -29,7 +29,7 @@
     border-radius: 32px;
     background-color: white;
     padding: 70rpx 46rpx;
-    min-height: 200rpx;
+    min-height: 100rpx;
     z-index: 100;
 
     .title {
@@ -45,10 +45,6 @@
       text-align: center;
     }
 
-    .body {
-      margin-bottom: 48rpx;
-
-    }
 
     .control {
       margin-top: 48rpx;

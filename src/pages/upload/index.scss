@@ -12,6 +12,13 @@
     }
   }
 
+  .hbox {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+  }
+
   .text-area {
     font-family: PingFang SC;
     font-style: normal;
@@ -23,29 +30,6 @@
     margin-bottom: 33rpx;
   }
 
-  .add-coins {
-    margin-top: 33rpx;
-    font-family: PingFang SC;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 28px;
-    line-height: 42px;
-    color: $argus-orange-dark;
-
-    margin: 0 202rpx;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 134rpx;
-    height: 48rpx;
-
-    image {
-      width: 48rpx;
-      height: 48rpx;
-
-    }
-
-  }
 
 
 }

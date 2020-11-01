@@ -5,6 +5,12 @@ import assetsIconNotePad from '../../../assets/icon_notepad.svg'
 import assetsIconSmilePop from '../../../assets/icon_smilepop.svg'
 import assetsIconShare from '../../../assets/icon_share.svg'
 import assetsIconAccount from '../../../assets/icon_mine.svg'
+import assetsIconUser from '../../../assets/icon_user.svg'
+import assetsIconMail from '../../../assets/icon_mail.svg'
+import assetsIconGlobal from '../../../assets/icon_global.svg'
+import assetsIconMobile from '../../../assets/icon_mobile.svg'
+import assetsIconGender from '../../../assets/icon_gender.svg'
+import assetsIconBeanLine from '../../../assets/icon_bean_line.svg'
 
 interface IProps {
     icon: 'wx' | string
@@ -33,6 +39,24 @@ export default function ArgusIcon(props: IProps) {
             break
         case 'smilepop':
             src = assetsIconSmilePop
+            break
+        case 'user':
+            src = assetsIconUser
+            break
+        case 'mail':
+            src = assetsIconMail
+            break
+        case 'global':
+            src = assetsIconGlobal
+            break
+        case 'mobile':
+            src = assetsIconMobile
+            break
+        case 'gender':
+            src = assetsIconGender
+            break
+        case 'bean-line':
+            src = assetsIconBeanLine
             break
     }
     return <image src={src} className={className} style={props.style} />

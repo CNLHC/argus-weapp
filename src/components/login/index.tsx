@@ -3,7 +3,9 @@ import { Input } from '@tarojs/components'
 import React, { useState } from 'react'
 import ArgusButton from '../button'
 import ArgusIcon from '../icon'
+import ArgusInput from '../Input'
 import Modal from '../modal'
+import ArgusSelector from '../selector'
 import sty from './index.module.scss'
 
 interface IProps {
@@ -41,21 +43,37 @@ export default function LoginModal(props: IProps) {
     )
     const Step1 = (
         <view className={sty.loginForm}>
-            <view>
-                <view>手机号</view>
-                <view>
-                    <Input placeholder={'请输入手机号码'} />
+            <view className={sty.FormItem}>
+                <view className={sty.Label}>手机号</view>
+                <view className={sty.Component}>
+                    <ArgusSelector
+                        items={['+86']}
+                        style={{
+                            flexBasis: '25%',
+                            flexGrow: 1,
+                            height: '88rpx',
+                            marginRight: '12rpx',
+                        }}
+                    />
+                    <ArgusInput
+                        style={{ height: '88rpx' }}
+                        placeholder={'请输入手机号码'}
+                    />
                 </view>
             </view>
 
-            <view>
-                <view>验证码</view>
-                <view>
-                    <Input placeholder={'短信验证码'} />
+            <view className={sty.FormItem}>
+                <view className={sty.Label}>验证码</view>
+                <view className={sty.Component}>
+                    <ArgusInput
+                        style={{ height: '88rpx', marginRight: '12rpx' }}
+                        placeholder={'短信验证码'}
+                    />
                     <ArgusButton text={'发送验证码'} />
                 </view>
             </view>
-            <ArgusButton text={'登陆'} />
+
+            <ArgusButton text={'登陆'} style={{ marginTop: '64rpx' }} />
 
             <view className={sty.footer}>
                 登陆注册即表示同意用户协议和隐私条款
@@ -67,7 +85,17 @@ export default function LoginModal(props: IProps) {
 
     return (
         <Modal
+            contentStyle={{
+                paddingBottom: '36rpx',
+            }}
             showClose
+            title={
+                currentStep == 0
+                    ? '欢迎登陆十行笔记'
+                    : currentStep == 1
+                    ? '登陆'
+                    : undefined
+            }
             visible={show}
             content={steps[currentStep]}
             onClose={onClose}

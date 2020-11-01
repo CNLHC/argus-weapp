@@ -8,10 +8,14 @@ import { useTypedSelector } from '../../reducers'
 import { ActSetState } from '../../reducers/global'
 import sty from './index.module.scss'
 import IndexBg from '../../../assets/index_bg.svg'
+import { redirectTo } from '@tarojs/taro'
 
 export default function PageHome() {
     const showLogin = useTypedSelector((e) => e.GlobalReducers.showLoginModal)
     const dispatch = useDispatch()
+    const onClickUpload = () => {
+        redirectTo({ url: `/pages/upload/index` })
+    }
     return (
         <view className={sty.root}>
             <LoginModal
@@ -32,7 +36,10 @@ export default function PageHome() {
                 </view>
             </view>
             <view className={sty.Container}>
-                <view className={`${sty.Card} ${sty.Shader}`}>
+                <view
+                    className={`${sty.Card} ${sty.Shader}`}
+                    onClick={onClickUpload}
+                >
                     <view className={sty.content}>
                         <ArgusIcon
                             icon={'add'}

@@ -6,6 +6,7 @@
   height: 100vh;
   display: flex;
   justify-content: space-around;
+  position: absolute;
 
 
   .bg1 {
@@ -35,38 +36,17 @@
     width: 670rpx;
     height: 1170rpx;
     z-index: 10;
-    position: static;
+    position: absolute;
 
     .top {
-      display: block;
+      display: flex;
 
       margin-bottom: 24rpx;
       margin-top: 16rpx;
       margin-right: 20rpx;
-      margin-left: 516rpx;
 
-      .badget {
-        font-family: PingFang SC;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 26px;
-        line-height: 39px;
-        color: $argus-orange-dark;
-        border-radius: 30px;
-        width: 98rpx;
-        height: 40rpx;
-        border: 1px solid #E1E3E5;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10rpx 18rpx;
+      justify-content: flex-end;
 
-        image {
-          width: 40rpx;
-          height: 40rpx;
-
-        }
-      }
     }
   }
 

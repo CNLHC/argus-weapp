@@ -27,7 +27,9 @@ export default function Modal(props: IProps) {
                 ) : null}
                 {title ? <view className={sty.title}>{title}</view> : null}
                 <view className={sty.body}>{content}</view>
-                <view className={sty.control}>{button}</view>
+                {button && button.length > 0 ? (
+                    <view className={sty.control}>{button}</view>
+                ) : null}
             </view>
         </view>
     )

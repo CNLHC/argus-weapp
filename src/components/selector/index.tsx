@@ -8,7 +8,7 @@ interface IProps {
     placeHolder?: string
     style?: React.CSSProperties
     value?: string
-    onChange: (value: string) => void
+    onChange?: (value: string) => void
 }
 
 export default function ArgusSelector(props: IProps) {
@@ -18,19 +18,35 @@ export default function ArgusSelector(props: IProps) {
     )
     const placeHolder = props.placeHolder ?? '请选择'
     return (
-        <Picker
-            mode="selector"
-            range={items}
-            onChange={(e) => {
-                const itemName = items[e.detail.value]
-                setSelectedItem(itemName)
-                onChange(itemName)
-            }}
-        >
-            <view style={style} className={'selector'}>
-                {value ? value : selectedItem ? selectedItem : placeHolder}
-                <image src={arrow}></image>
-            </view>
-        </Picker>
+        <view style={style} className={'selector'}>
+            <Picker
+                mode="selector"
+                range={items}
+                onChange={(e) => {
+                    const itemName = items[e.detail.value]
+                    setSelectedItem(itemName)
+                    onChange && onChange(itemName)
+                }}
+            >
+                <view
+                    style={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                    }}
+                >
+                    <view>
+                        {value
+                            ? value
+                            : selectedItem
+                            ? selectedItem
+                            : placeHolder}
+                    </view>
+                    <view>
+                        <image src={arrow} />
+                    </view>
+                </view>
+            </Picker>
+        </view>
     )
 }
