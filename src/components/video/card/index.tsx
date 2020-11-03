@@ -1,7 +1,7 @@
 import { Progress } from '@tarojs/components'
 import React from 'react'
 import styles from './index.module.scss'
-import ImgCoffe from '../../../../assets/coffe_machine.svg'
+import ImgCoffe from '../../../../assets/coffee-machine_processing_en.gif'
 
 interface IProps {
     status: 'processing' | 'done' | string

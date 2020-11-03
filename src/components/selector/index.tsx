@@ -16,7 +16,7 @@ export default function ArgusSelector(props: IProps) {
     const [selectedItem, setSelectedItem] = useState<string | undefined>(
         value ?? undefined
     )
-    const placeHolder = props.placeHolder ?? '请选择'
+    const placeHolder = props.placeHolder ?? '+86'
     return (
         <view style={style} className={'selector'}>
             <Picker

@@ -47,7 +47,7 @@ export default function LoginModal(props: IProps) {
                 <view className={sty.Label}>手机号</view>
                 <view className={sty.Component}>
                     <ArgusSelector
-                        items={['+86']}
+                        items={['+86',"+852"]}
                         style={{
                             flexBasis: '25%',
                             flexGrow: 1,

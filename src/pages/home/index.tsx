@@ -8,13 +8,14 @@ import { useTypedSelector } from '../../reducers'
 import { ActSetState } from '../../reducers/global'
 import sty from './index.module.scss'
 import IndexBg from '../../../assets/index_bg.svg'
-import { redirectTo } from '@tarojs/taro'
+// import { redirectTo } from '@tarojs/taro'
+import { navigateTo} from '@tarojs/taro'
 
 export default function PageHome() {
     const showLogin = useTypedSelector((e) => e.GlobalReducers.showLoginModal)
     const dispatch = useDispatch()
     const onClickUpload = () => {
-        redirectTo({ url: `/pages/upload/index` })
+      navigateTo({ url: `/pages/upload/index` })
     }
     return (
         <view className={sty.root}>

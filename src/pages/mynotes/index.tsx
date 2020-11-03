@@ -4,7 +4,8 @@ import MainLayout from '../../components/main-layout'
 
 import IconAdd from '../../../assets/icon_add.svg'
 import ArgusVideoList from '../../components/video/list'
-import { redirectTo } from '@tarojs/taro'
+// import { redirectTo } from '@tarojs/taro'
+import { navigateTo} from '@tarojs/taro'
 
 export default function PageMyNotes() {
     return (
@@ -14,7 +15,7 @@ export default function PageMyNotes() {
                 text={'上传视频'}
                 iconSrc={IconAdd}
                 style={{ width: '332rpx' }}
-                onClick={() => redirectTo({ url: '/pages/upload/index' })}
+                onClick={() => navigateTo({ url: '/pages/upload/index' })}
             />
             <ArgusVideoList />
         </MainLayout>
