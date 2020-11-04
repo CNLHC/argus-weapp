@@ -1,4 +1,5 @@
 @import "../../palette.scss";
+@import "../../font.format.scss";
 .select{
   margin-top: 47rpx;
   .title{
@@ -23,8 +24,9 @@ margin-right: 30rpx;
   position: relative;
   width: 670rpx;
   height: 500rpx;
+  margin-top: 25rpx;
   background: $argus-white;
-  border: 2px solid $argus-gray;
+  border: 2rpx solid $argus-gray;
   box-sizing: border-box;
   border-radius: 8px;
 
@@ -33,14 +35,77 @@ margin-right: 30rpx;
     justify-content: center;
     align-items: center;
     >textarea{
+      margin-top: 23rpx;
       letter-spacing: 4rpx;
       height: 400rpx;
+      color: $argus-black-light;
       width: 98%;
+      font-family: $font-PingFang;
+      font-size: $font-size-ms;
+      line-height: $font-lineHeight-ms;
     }
   }
   .count{
     position: absolute;
-    bottom: 0%;
-    right: 0%;
+    bottom: 30rpx;
+    right:10rpx;
   }
+}
+
+.thumbnail{
+  margin-top: 13rpx;
+  width: 670rpx;
+  height: 161rpx;
+  display: flex;
+  .itmes{
+
+   .imgItems{
+   // display: inline-block;
+     display: none;
+   }
+    .input{
+      display: inline-block;
+      .inputImage{
+        margin-right: unset;
+      }
+    }
+  }
+  .text{
+    margin-left: 25rpx;
+    font-family: $font-PingFang;
+    font-size: $font-size-ms;
+    line-height: $font-lineHeight-ms;
+    color: $argus-black-light;
+    view{
+      color: red;
+      display: inline-block;
+    }
+  }
+}
+
+.phone{
+  background-color: $argus-white;
+  margin-top: 30rpx;
+  width: 660rpx;
+  height: 88rpx;
+.input{
+  width: 650rpx;
+  height: 88rpx;
+  margin-left: 10rpx;
+}
+}
+
+.btns{
+  margin-top: 30rpx;
+  display: flex;
+  justify-content: center;
+  button{
+    margin-right: 20rpx;
+  }
+}
+
+.inputImage{
+  width: 161rpx;
+  height: 161rpx;
+  margin-right: 10rpx;
 }

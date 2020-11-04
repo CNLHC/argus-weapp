@@ -1,9 +1,14 @@
-import React  from 'react'
 
+import React from "react";
 import MainLayout from '../../components/main-layout'
 
 import sty from './index.module.scss'
-import { Radio,RadioGroup ,Label,Textarea} from '@tarojs/components'
+
+import { Radio,RadioGroup ,Label,Textarea,Image,Input} from '@tarojs/components'
+import { navigateBack } from '@tarojs/taro'
+import ArgusButton from '../../components/button'
+import inputImage from '../../../assets/feedback_input_file.svg'
+
 
 
 
@@ -23,16 +28,44 @@ export default function index() {
     text:'投诉反馈',
   }]
 
+  const feedbackImages = [{src:'',key:'0'},{src:'',key:'1'},{src:'',key:'2'},]
+
 
 
   let textLength:number = 0;
 
-  function test(event) {
+  function changeCount(event) {
     const val = event.detail.valueOf().value;
     textLength = val.length;
-    // console.log(textLength)
+  //  console.log(textLength)
   }
 
+  function test() {
+/*    wx.showModal({
+      title: 'confirm的弹窗',
+      content: '确认要删除该项吗？',
+      success: function (res) {
+        if (res.confirm) {
+          console.log('点击确认回调')
+        } else {
+          console.log('点击取消回调')
+        }
+      }
+    })*/
+    console.log('添加图片')
+  }
+
+  function inputBlur() {
+    console.log('失去焦点，开始验证')
+  }
+
+  function cancel() {
+    navigateBack()
+  }
+
+  function submit() {
+    console.log('提交')
+  }
 
 
   return (
@@ -49,19 +82,53 @@ export default function index() {
                                         </Label>
                                  )
                         })}
-
             </RadioGroup>
-
              </view>
-
       </view>
+
       <view className={sty.feedback}>
         <view className={sty.text}>
-          <Textarea onInput={test}   maxlength={200} placeholder="请在这里留下您宝贵的意见帮助我们成长" autoFocus />
+          <Textarea onInput={changeCount}   maxlength={200} placeholder="请在这里留下您宝贵的意见帮助我们成长"  />
         </view>
         <view className={sty.count}>
           {textLength}/200
         </view>
+      </view>
+
+      <view className={sty.thumbnail}>
+        <view className={sty.itmes}>
+          <view className={sty.imgItems}>
+            {feedbackImages.map((item) => {
+              return (
+                <Image key={item.key}  className={sty.inputImage} src={item.src} />
+              )
+            })}
+          </view>
+          <view className={sty.input}>
+            <Image onClick={test} className={sty.inputImage} src={inputImage} />
+          </view>
+        </view>
+        <view className={sty.text}>
+         <view>*</view>
+          最多可上传3张图片，图片格式为 jpg或png，大小不得超过1M; (上传图片能帮您更好地反馈问题)
+        </view>
+      </view>
+
+      <view className={sty.phone}>
+        <Input onBlur={inputBlur} className={sty.input} type='text' placeholder={'手机号/邮箱 (选填)'}/>
+      </view>
+
+      <view className={sty.btns}>
+        <ArgusButton
+          text={'取消'}
+          style={{ width: '240rpx' ,height:'88rpx'}}
+          onClick={cancel}
+        ></ArgusButton>
+        <ArgusButton
+          text={'提交意见'}
+          style={{ width: '240rpx' ,height:'88rpx'}}
+          onClick={submit}
+        ></ArgusButton>
       </view>
     </MainLayout>
   )
