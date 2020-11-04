@@ -1,0 +1,46 @@
+@import "../../palette.scss";
+.select{
+  margin-top: 47rpx;
+  .title{
+    font-family: PingFang SC;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36rpx;
+    line-height: 27rpx;
+    color: #606368;
+  }
+  .items{
+    display: flex;
+    margin-top: 33rpx;
+    justify-content: left;
+.radio{
+margin-right: 30rpx;
+}
+  }
+}
+
+.feedback{
+  position: relative;
+  width: 670rpx;
+  height: 500rpx;
+  background: $argus-white;
+  border: 2px solid $argus-gray;
+  box-sizing: border-box;
+  border-radius: 8px;
+
+  .text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    >textarea{
+      letter-spacing: 4rpx;
+      height: 400rpx;
+      width: 98%;
+    }
+  }
+  .count{
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+  }
+}

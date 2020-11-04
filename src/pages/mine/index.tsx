@@ -25,7 +25,7 @@ const MenuData = [
     {
         icon: <ArgusIcon icon={'smilepop'} style={IconStyles} />,
         title: '意见反馈',
-        url: '/pages/mine_manage/index',
+        url: '/pages/mine_feedback/index',
     },
     {
         icon: <ArgusIcon icon={'share'} style={IconStyles} />,
