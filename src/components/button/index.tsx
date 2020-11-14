@@ -9,6 +9,7 @@ interface IProps {
     theme?: 'default' | 'light'
     style?: React.CSSProperties
     color?: string
+    disabled?: boolean
     onClick?: () => void
 }
 
@@ -32,6 +33,7 @@ export default function ArgusButton(props: Partial<ButtonProps> & IProps) {
     }
     return (
         <Button
+            disabled={props.disabled}
             onClick={props.onClick}
             style={calStyle}
             className={
@@ -47,8 +49,8 @@ export default function ArgusButton(props: Partial<ButtonProps> & IProps) {
                     typeof iconSrc == 'string' ? (
                         <image src={iconSrc} />
                     ) : (
-                        iconSrc
-                    )
+                            iconSrc
+                        )
                 ) : null}
             </view>
             <view className={styles.textArea}>{text ?? null}</view>

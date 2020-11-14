@@ -1,6 +1,8 @@
 /* eslint-disable react/jsx-no-undef */
 import { Input } from '@tarojs/components'
+import { login, showModal } from '@tarojs/taro'
 import React, { useState } from 'react'
+import { ArgusLogin, getCode } from '../../libs/login'
 import ArgusButton from '../button'
 import ArgusIcon from '../icon'
 import ArgusInput from '../Input'
@@ -16,7 +18,27 @@ interface IProps {
 export default function LoginModal(props: IProps) {
     const { show, onClose } = props
     const [currentStep, setStep] = useState(0)
+    const [payload, setPayload] = useState<any>({})
+    const onClickSendCode = () => {
+        console.log(payload)
+        if (!payload.mobile) {
+            showModal({ title: "输入手机号" })
 
+            return
+        }
+        showModal({ title: "发送成功" })
+        getCode({ mobile: payload.mobile })
+
+    }
+    const onChangePhoneInput = mobile => setPayload(v => ({ ...v, mobile }))
+    const onChangeCodeInput = code => setPayload(v => ({ ...v, code }))
+    const onClickLogin = () => {
+        if (!payload.code || !payload.mobile) {
+            showModal({ title: "登陆信息错误" })
+            return
+        }
+        ArgusLogin({ ...payload })
+    }
     const Step0 = (
         <view className={sty.ButtonBox}>
             <ArgusButton
@@ -47,7 +69,7 @@ export default function LoginModal(props: IProps) {
                 <view className={sty.Label}>手机号</view>
                 <view className={sty.Component}>
                     <ArgusSelector
-                        items={['+86',"+852"]}
+                        items={['+86', "+852"]}
                         style={{
                             flexBasis: '25%',
                             flexGrow: 1,
@@ -56,6 +78,8 @@ export default function LoginModal(props: IProps) {
                         }}
                     />
                     <ArgusInput
+                        value={payload.phone}
+                        onChange={onChangePhoneInput}
                         style={{ height: '88rpx' }}
                         placeholder={'请输入手机号码'}
                     />
@@ -66,14 +90,16 @@ export default function LoginModal(props: IProps) {
                 <view className={sty.Label}>验证码</view>
                 <view className={sty.Component}>
                     <ArgusInput
+                        value={payload.code}
+                        onChange={onChangeCodeInput}
                         style={{ height: '88rpx', marginRight: '12rpx' }}
                         placeholder={'短信验证码'}
                     />
-                    <ArgusButton text={'发送验证码'} />
+                    <ArgusButton text={'发送验证码'} onClick={onClickSendCode} />
                 </view>
             </view>
 
-            <ArgusButton text={'登陆'} style={{ marginTop: '64rpx' }} />
+            <ArgusButton text={'登陆'} style={{ marginTop: '64rpx' }} onClick={onClickLogin} />
 
             <view className={sty.footer}>
                 登陆注册即表示同意用户协议和隐私条款
@@ -93,8 +119,8 @@ export default function LoginModal(props: IProps) {
                 currentStep == 0
                     ? '欢迎登陆十行笔记'
                     : currentStep == 1
-                    ? '登陆'
-                    : undefined
+                        ? '登陆'
+                        : undefined
             }
             visible={show}
             content={steps[currentStep]}

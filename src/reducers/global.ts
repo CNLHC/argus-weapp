@@ -1,5 +1,6 @@
 import { Reducer } from 'redux'
 import { produce } from 'immer'
+import { IArgusUserInfo } from '../libs/login'
 
 const ActionEnum = {
     SetState: '[global]SetState',
@@ -12,10 +13,12 @@ export const ActSetState = (state: Partial<IGlobalState>) => ({
 
 interface IGlobalState {
     showLoginModal: boolean
+    UserInfo?: IArgusUserInfo
 }
 
 const init: IGlobalState = {
     showLoginModal: false,
+    UserInfo: undefined,
 }
 export type TAction = ReturnType<typeof ActSetState>
 

@@ -38,6 +38,7 @@ export default function Mine() {
     const showLoginModal = useTypedSelector(
         (e) => e.GlobalReducers.showLoginModal
     )
+    const Userinfo = useTypedSelector(e => e.GlobalReducers.UserInfo)
     const dispatch = useDispatch()
     return (
         <MainLayout title={'我的账户'}>
@@ -52,7 +53,9 @@ export default function Mine() {
                         dispatch(ActSetState({ showLoginModal: true }))
                     }
                 ></view>
-                <view className={sty.Textarea}>argus</view>
+                <view className={sty.Textarea}>{
+                    Userinfo ? Userinfo?.name ?? "陌生人" : "未登录"
+                }</view>
             </view>
             <view className={sty.menu}>
                 {MenuData.map((e) => (

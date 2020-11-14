@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import ArgusIcon from '../../components/icon'
 import LoginModal from '../../components/login'
@@ -9,14 +9,20 @@ import { ActSetState } from '../../reducers/global'
 import sty from './index.module.scss'
 import IndexBg from '../../../assets/index_bg.svg'
 // import { redirectTo } from '@tarojs/taro'
-import { navigateTo} from '@tarojs/taro'
+import { navigateTo } from '@tarojs/taro'
+import { GetUserInfo } from '../../libs/login'
 
 export default function PageHome() {
     const showLogin = useTypedSelector((e) => e.GlobalReducers.showLoginModal)
     const dispatch = useDispatch()
     const onClickUpload = () => {
-      navigateTo({ url: `/pages/upload/index` })
+        navigateTo({ url: `/pages/upload/index` })
     }
+    useEffect(() => {
+        GetUserInfo().then(e => {
+            dispatch(ActSetState({ UserInfo: e }))
+        })
+    }, [])
     return (
         <view className={sty.root}>
             <LoginModal

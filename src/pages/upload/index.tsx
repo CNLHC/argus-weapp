@@ -3,7 +3,7 @@ import { Button, Picker } from '@tarojs/components'
 import Modal from '../../components/modal'
 import ArgusSelector from '../../components/selector'
 import ArgusButton from '../../components/button'
-import './index.scss'
+import sty from './index.module.scss'
 
 import IconBrownBean from '../../../assets/brown_bean_icon.svg'
 import IconBean from '../../../assets/bean_icon.svg'
@@ -13,12 +13,61 @@ import ImgCoffeMachine from '../../../assets/coffe_machine.svg'
 import bg from '../../../assets/welcome_bg.svg'
 import UploadLayout from '../../components/upload-layout'
 import ArgusBeanIndicator from '../../components/bean-indicator'
+import { uploadFile } from '@tarojs/taro'
+import getOSSUploadToken from '../../libs/crypto/getWXToken'
+import Constant from '../../libs/constant/constant'
 
+
+
+function calculateObjectName(filename: string) {
+    return new Date().getTime() + '&&${filename}';
+}
+interface ProgressRes {
+    /** 上传进度百分比 */
+    progress: number
+    /** 预期需要上传的数据总长度，单位 Bytes */
+    totalBytesExpectedToSend: number
+    /** 已经上传的数据长度，单位 Bytes */
+    totalBytesSent: number
+}
+function mUploadFile({ fp, onSuc, onFail, onProg }: {
+    fp: string
+    onSuc?: (res: any) => void
+    onFail?: (err: any) => void
+    onProg?: (res: ProgressRes) => void
+}) {
+    const ctx = getOSSUploadToken()
+    const fn = fp
+    const task = uploadFile({
+        url: Constant.ali.host,
+        filePath: fp,
+        name: 'file',
+        formData: {
+            key: calculateObjectName(fn),
+            policy: ctx.policy,
+            OSSAccessKeyId: Constant.ali.accessid,
+            success_action_status: '200', // 让服务端返回200,不然，默认会返回204
+            signature: ctx.signature,
+        },
+        success: res => {
+            console.log(res)
+            onSuc && onSuc(res)
+        },
+        fail: err => {
+            console.log("errl", err)
+            onFail && onFail(err)
+        }
+    })
+    task.onProgressUpdate((res) => {
+        console.log("prog", res)
+        onProg && onProg(res)
+    })
+}
 export default function PageUpload() {
     const [welcomeModal, setWelcomeModalVisible] = useState(true)
     const ModalContent = () => (
-        <view className={'welcom-modal'}>
-            <view className={'image-area'}>
+        <view className={sty.welcomeModal}>
+            <view className={sty.imageArea}>
                 <image src={bg} />
                 <image
                     src={IconBean}
@@ -28,10 +77,10 @@ export default function PageUpload() {
                     }}
                 />
             </view>
-            <view className={'text-area'}>
+            <view className={sty.textArea}>
                 为帮助你更好地生成视频笔记，我们提供您Argus咖啡豆来兑换视频识别时长，1个咖啡豆可兑换1分钟。
             </view>
-            <view className={'hbox'}>
+            <view className={sty.hbox}>
                 <ArgusBeanIndicator />
             </view>
         </view>
@@ -52,12 +101,12 @@ export default function PageUpload() {
                 ]}
             />
             <UploadLayout>
-                <view className="title">
+                <view className={sty.title}>
                     <view>上传视频生成AI笔记</view>
                 </view>
-                <view className="form">
-                    <view className="form-item">
-                        <view className="label">
+                <view className={sty.form}>
+                    <view className={sty.formItem}>
+                        <view className={sty.label}>
                             <image src={IconBrownBean} />
                             语言:
                         </view>
@@ -68,7 +117,7 @@ export default function PageUpload() {
                             }}
                         />
                     </view>
-                    <view className="form-item">
+                    <view className={sty.formItem}>
                         <ArgusButton
                             text={'选择文件'}
                             theme={'light'}
@@ -81,7 +130,7 @@ export default function PageUpload() {
                         />
                     </view>
                 </view>
-                <view className="img">
+                <view className={sty.img}>
                     <image src={ImgCoffeMachine} />
                 </view>
             </UploadLayout>
