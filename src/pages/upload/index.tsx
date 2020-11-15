@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, Picker } from '@tarojs/components'
+import { Button, Picker, Progress } from '@tarojs/components'
 import Modal from '../../components/modal'
 import ArgusSelector from '../../components/selector'
 import ArgusButton from '../../components/button'
@@ -13,9 +13,13 @@ import ImgCoffeMachine from '../../../assets/coffe_machine.svg'
 import bg from '../../../assets/welcome_bg.svg'
 import UploadLayout from '../../components/upload-layout'
 import ArgusBeanIndicator from '../../components/bean-indicator'
-import { uploadFile } from '@tarojs/taro'
+import { chooseMedia, chooseMessageFile, uploadFile } from '@tarojs/taro'
 import getOSSUploadToken from '../../libs/crypto/getWXToken'
 import Constant from '../../libs/constant/constant'
+import { useTypedSelector } from '../../reducers'
+import { useDispatch } from 'react-redux'
+import { ActSetState } from '../../reducers/global'
+import { video_process } from '../../libs/video'
 
 
 
@@ -30,43 +34,89 @@ interface ProgressRes {
     /** 已经上传的数据长度，单位 Bytes */
     totalBytesSent: number
 }
-function mUploadFile({ fp, onSuc, onFail, onProg }: {
+function mUploadFile({ fp, onSuc, onFail, onProg, preStart, uploadFilename }: {
     fp: string
+    uploadFilename: string
+    preStart?: () => void
     onSuc?: (res: any) => void
     onFail?: (err: any) => void
     onProg?: (res: ProgressRes) => void
 }) {
+    preStart && preStart()
     const ctx = getOSSUploadToken()
     const fn = fp
     const task = uploadFile({
         url: Constant.ali.host,
         filePath: fp,
+        fileName: uploadFilename,
         name: 'file',
         formData: {
-            key: calculateObjectName(fn),
+            key: uploadFilename,
             policy: ctx.policy,
             OSSAccessKeyId: Constant.ali.accessid,
             success_action_status: '200', // 让服务端返回200,不然，默认会返回204
             signature: ctx.signature,
         },
         success: res => {
-            console.log(res)
+            console.log("upload success", res)
             onSuc && onSuc(res)
         },
         fail: err => {
-            console.log("errl", err)
+            console.log("upload err", err)
             onFail && onFail(err)
         }
-    })
-    task.onProgressUpdate((res) => {
-        console.log("prog", res)
-        onProg && onProg(res)
-    })
+    }).progress(
+        (res) => {
+            console.log("prog", res)
+            onProg && onProg(res)
+        }
+    )
 }
+function fileType(filename: string) {
+    if (filename.lastIndexOf('.') !== -1) {
+        const index = filename.lastIndexOf('.');
+        const fileNameLength = filename.length; // 取到文件名长度
+        const fileFormat = filename.substring(index + 1, fileNameLength); // 截
+        return fileFormat;
+    } else {
+        return 'avi';
+    }
+}
+
 export default function PageUpload() {
     const [welcomeModal, setWelcomeModalVisible] = useState(true)
+    const progress = useTypedSelector(e => e.GlobalReducers.uploadProgress)
+    const user = useTypedSelector(e => e.GlobalReducers.UserInfo)
+    const dispatch = useDispatch()
+
+    const onSelectFile = () => {
+        const timestamp = new Date().getTime()
+        const getUploadName = ((fname: string) => (`${timestamp}${Math.floor(timestamp * Math.random())}.${fileType(fname)}`))
+        chooseMessageFile({
+            count: 1,
+            type: "video",
+            success(files) {
+                const uploadFilename = getUploadName(files.tempFiles[0].name)
+                const filename = files.tempFiles[0].name
+                mUploadFile({
+                    uploadFilename,
+                    fp: files.tempFiles[0].path,
+                    preStart: () => dispatch(ActSetState({ uploadProgress: 0 })),
+                    onProg: (prog) => dispatch(ActSetState({ uploadProgress: prog.progress })),
+                    onFail: () => dispatch(ActSetState({ uploadProgress: undefined })),
+                    onSuc: () => {
+                        video_process({
+                            filename,
+                            uploadFilename,
+                            user,
+                        })
+                    }
+                })
+            }
+        })
+    }
     const ModalContent = () => (
-        <view className={sty.welcomeModal}>
+        <view className={sty.welcomModal}>
             <view className={sty.imageArea}>
                 <image src={bg} />
                 <image
@@ -119,6 +169,7 @@ export default function PageUpload() {
                     </view>
                     <view className={sty.formItem}>
                         <ArgusButton
+                            onClick={onSelectFile}
                             text={'选择文件'}
                             theme={'light'}
                             style={{ width: '332rpx', marginRight: '20rpx' }}
@@ -133,6 +184,11 @@ export default function PageUpload() {
                 <view className={sty.img}>
                     <image src={ImgCoffeMachine} />
                 </view>
+                {progress ?
+                    <view className={sty.progress}>
+                        <Progress percent={progress} strokeWidth={2} showInfo activeColor='#B0865B' />
+                    </view> : null
+                }
             </UploadLayout>
         </view>
     )

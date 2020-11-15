@@ -1,5 +1,6 @@
 import { ScrollView } from '@tarojs/components'
 import React from 'react'
+import { useTypedSelector } from '../../../reducers'
 import ArgusVideoCard from '../card'
 
 const mocking = [
@@ -14,10 +15,12 @@ const mocking = [
 ]
 
 export default function ArgusVideoList() {
+    const notes = useTypedSelector(e => e.GlobalReducers.notes)
+
     return (
         <ScrollView>
-            {mocking.map((e) => (
-                <ArgusVideoCard {...e} key={e.title} />
+            {notes.map((e) => (
+                <ArgusVideoCard title={e.filename} key={e.id} status={e.isLoading === 0 ? "processing" : "done"} pic={e.pic} />
             ))}
         </ScrollView>
     )

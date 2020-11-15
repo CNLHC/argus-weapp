@@ -2,15 +2,29 @@ import { Progress } from '@tarojs/components'
 import React from 'react'
 import styles from './index.module.scss'
 import ImgCoffe from '../../../../assets/coffee-machine_processing_en.gif'
+import IndexBG from '../../../../assets/index_bg.svg'
 
 interface IProps {
     status: 'processing' | 'done' | string
+    pic?: string
     title: string
 }
 
 export default function ArgusVideoCard(props: IProps) {
     if (props.status == 'processing') return <ArgusProcessingCard {...props} />
-    else return <view className={styles.cardRoot}></view>
+    else return <ArgusDoneCard {...props} />
+}
+
+function ArgusDoneCard(props: IProps) {
+    return (
+        <view className={`${styles.cardRoot} ${styles.doneCard}`}>
+            <view className={styles.bg}><image src={props.pic}></image></view>
+
+            <view className={styles.infoBar}>
+                <view className={styles.textBox}>{props.title}</view>
+            </view>
+        </view>
+    )
 }
 
 function ArgusProcessingCard(props: IProps) {

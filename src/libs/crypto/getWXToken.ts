@@ -1,6 +1,6 @@
 import Constant from '../constant/constant'
-import Crypto from 'crypto-js'
-import Base64 from 'Base64'
+import * as Crypto from 'crypto-js'
+import b64 from 'base64-js'
 
 export default function getOSSUploadToken() {
     const policyText = {
@@ -10,10 +10,10 @@ export default function getOSSUploadToken() {
         ],
     }
 
-    const policyBase64 = Base64.encode(JSON.stringify(policyText))
-    const bytes = Crypto.HmacSHA1(policyBase64, Constant.ali.accesskey, {
-        asBytes: true,
-    })
+    const policyBase64 = b64.fromByteArray(
+        Buffer.from(JSON.stringify(policyText))
+    )
+    const bytes = Crypto.HmacSHA1(policyBase64, Constant.ali.accesskey)
     const signature = Crypto.enc.Base64.stringify(bytes)
     return {
         policy: policyBase64,

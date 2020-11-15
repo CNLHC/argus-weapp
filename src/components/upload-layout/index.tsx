@@ -5,7 +5,7 @@ import sty from './index.module.scss'
 import ArgusBeanIndicator from '../bean-indicator'
 
 export default function UploadLayout(props: {
-    children: React.ReactChild | React.ReactChild[] | React.ReactChildren
+    children: React.ReactNode
 }) {
     const { children } = props
     return (

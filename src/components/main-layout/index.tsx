@@ -13,14 +13,14 @@ export default function MainLayout(props: IProps) {
     const { title, children, selected } = props
     return (
         <view
-            className={`${styles.mainLayout} ${
-                props.no_bg ? '' : styles.texture
-            }`}
+            className={`${styles.mainLayout} ${props.no_bg ? '' : styles.texture
+                }`}
         >
             {title ? <view className={styles.title}>{title}</view> : null}
-
             <view className={styles.content}>{children}</view>
-            <ArgusNavBar selected={selected} />
+            <view className={styles.navBar}>
+                <ArgusNavBar selected={selected} />
+            </view>
         </view>
     )
 }

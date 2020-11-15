@@ -1,64 +1,98 @@
-@import "../../../palette.scss";
+@import '../../../palette.scss';
 
 .cardRoot {
-  width: 670rpx;
-  min-height: 320rpx;
-  background: #FFFFFF;
-  margin-top: 40rpx;
+    width: 670rpx;
+    min-height: 320rpx;
+    background: #ffffff;
+    margin-top: 40rpx;
 
-  border: 1px solid #E1E3E5;
-  box-sizing: border-box;
+    border: 1px solid #e1e3e5;
+    box-sizing: border-box;
 
-  box-shadow: 0px 4px 10px rgba(143, 88, 31, 0.1);
-  border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(143, 88, 31, 0.1);
+    border-radius: 20px;
 }
 
 .process {
-  padding: 20rpx;
+    padding: 20rpx;
 
-  .Tags {
-    margin-bottom: 20rpx;
-    height: 36rpx;
-    width: 88rpx;
-    border-radius: 8rpx;
-    font-size: 22px;
-    line-height: 33px;
-    text-align: center;
-    color: $argus-brown;
-    background-color: $argus-brown-light;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-
-  .Header {
-    font-size: 28rpx;
-    line-height: 42rpx;
-    corlor: #1c1c1c;
-  }
-
-  .Img {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 20rpx;
-    height: 128.1rpx;
-
-    image {
-      width: 152rpx;
-      height: 161.1rpx;
-      display: relative;
-      top: 33rpx;
-    }
-  }
-
-  .Progress {
-    .text {
-      font-size: 22px;
-      line-height: 33px;
-      color: #606368;
+    .Tags {
+        margin-bottom: 20rpx;
+        height: 36rpx;
+        width: 88rpx;
+        border-radius: 8rpx;
+        font-size: 22px;
+        line-height: 33px;
+        text-align: center;
+        color: $argus-brown;
+        background-color: $argus-brown-light;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
     }
 
-  }
+    .Header {
+        font-size: 28rpx;
+        line-height: 42rpx;
+        corlor: #1c1c1c;
+    }
 
+    .Img {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 20rpx;
+        height: 128.1rpx;
 
+        image {
+            width: 152rpx;
+            height: 161.1rpx;
+            display: relative;
+            top: 33rpx;
+        }
+    }
+
+    .Progress {
+        .text {
+            font-size: 22px;
+            line-height: 33px;
+            color: #606368;
+        }
+    }
+}
+
+.doneCard {
+    position: relative;
+    overflow: hidden;
+    .bg {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        image {
+            width: 100%;
+        }
+    }
+    .infoBar {
+        height: 96rpx;
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        padding-left: 24rpx;
+        align-items: center;
+
+        border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background: rgba(176, 134, 91, 0.8);
+        font-family: PingFang SC;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 26px;
+        line-height: 39px;
+        color: #ffffff;
+    }
 }

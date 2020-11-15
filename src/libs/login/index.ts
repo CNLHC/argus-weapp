@@ -24,6 +24,8 @@ export async function ArgusLogin(payload: ILoginPayload) {
         payload
     )
     console.log('login success', `token: ${res.data.token}`)
+
+    await setStorage({ key: 'code', data: payload.code })
     await setStorage({ key: 'token', data: res.data.token })
     await setStorage({ key: 'userid', data: payload.mobile })
 }

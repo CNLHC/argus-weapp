@@ -1,6 +1,7 @@
 import { Reducer } from 'redux'
 import { produce } from 'immer'
 import { IArgusUserInfo } from '../libs/login'
+import { INotes } from '../libs/notes'
 
 const ActionEnum = {
     SetState: '[global]SetState',
@@ -13,10 +14,13 @@ export const ActSetState = (state: Partial<IGlobalState>) => ({
 
 interface IGlobalState {
     showLoginModal: boolean
+    uploadProgress?: number
+    notes: INotes[]
     UserInfo?: IArgusUserInfo
 }
 
 const init: IGlobalState = {
+    notes: [],
     showLoginModal: false,
     UserInfo: undefined,
 }
