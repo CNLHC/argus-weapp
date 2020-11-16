@@ -25,14 +25,14 @@ export default function PageMyNotes() {
             return dispatch(ActSetState({ notes: e.data, loading: false }))
         })
     }
-
     useEffect(() => {
         if (!user)
             dispatch(ActSetState({ showLoginModal: true }))
     }, [])
     useEffect(() => {
-        getNotes()
-    }, [])
+        if (user)
+            getNotes()
+    }, [user])
     const showLogin = useTypedSelector((e) => e.GlobalReducers.showLoginModal)
     return (
         <MainLayout title={'我的笔记'} selected="mynotes">

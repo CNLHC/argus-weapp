@@ -2,7 +2,10 @@
 import { Input } from '@tarojs/components'
 import { login, showModal } from '@tarojs/taro'
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { ArgusLogin, getCode, IArgusUserInfo } from '../../libs/login'
+import { useTypedSelector } from '../../reducers'
+import { ActSetState, ActUpdateCodeCounter } from '../../reducers/global'
 import ArgusButton from '../button'
 import ArgusIcon from '../icon'
 import ArgusInput from '../Input'
@@ -20,6 +23,21 @@ export default function LoginModal(props: IProps) {
     const { show, onClose } = props
     const [currentStep, setStep] = useState(0)
     const [payload, setPayload] = useState<any>({})
+    // const [sendCounter, setSendCounter] = useState<{ value: number, handle?: NodeJS.Timeout }>({ value: 0 })
+    const counter = useTypedSelector(e => e.GlobalReducers.codeCounter)
+    const dispatch = useDispatch()
+
+    const updateCounter = () => {
+        if (counter.value > 0)
+            dispatch(ActUpdateCodeCounter())
+        else {
+            if (counter.handle)
+                clearInterval(counter.handle)
+            dispatch(ActUpdateCodeCounter())
+        }
+    }
+
+
     const onClickSendCode = () => {
         console.log(payload)
         if (!payload.mobile) {
@@ -28,6 +46,8 @@ export default function LoginModal(props: IProps) {
             return
         }
         showModal({ title: "发送成功" })
+        const handle = setInterval(() => updateCounter(), 1000)
+        dispatch(ActUpdateCodeCounter(handle))
         getCode({ mobile: payload.mobile })
 
     }
@@ -96,7 +116,7 @@ export default function LoginModal(props: IProps) {
                         style={{ height: '88rpx', marginRight: '12rpx' }}
                         placeholder={'短信验证码'}
                     />
-                    <ArgusButton text={'发送验证码'} onClick={onClickSendCode} />
+                    <ArgusButton disabled={counter.value > 0} text={`发送验证码${counter.value === 0 ? "" : `(${counter.value})`}`} onClick={onClickSendCode} />
                 </view>
             </view>
 

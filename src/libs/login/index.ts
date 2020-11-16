@@ -27,6 +27,10 @@ export async function ArgusLogin(
             `${Constant.api.host}/admin_login/login_phone`,
             payload
         )
+
+        await setStorage({ key: 'code', data: payload.code })
+        await setStorage({ key: 'token', data: res.data.token })
+        await setStorage({ key: 'userid', data: payload.mobile })
         const userinfo = await GetUserInfo()
         if (!userinfo) throw Error('no userinfo')
         onSuc && onSuc(userinfo)
@@ -36,11 +40,9 @@ export async function ArgusLogin(
             `token: ${res.data.token}`,
             `user:${userinfo}`
         )
-        await setStorage({ key: 'code', data: payload.code })
-        await setStorage({ key: 'token', data: res.data.token })
-        await setStorage({ key: 'userid', data: payload.mobile })
         showModal({ title: '登陆成功' })
-    } catch {
+    } catch (e) {
+        console.log(e)
         showModal({ title: '登陆失败' })
     }
 }
