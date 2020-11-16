@@ -1,0 +1,2050 @@
+
+{
+    "annex": null,
+    "data": {
+        "beforvideoUrl": "https://videoanalysisbj.oss-accelerate.aliyuncs.com/1604906577793506880966072.mp4",
+        "fileid": "1604906593209534",
+        "filetype": "mp4",
+        "fsize": 6.64,
+        "ppt": [
+            {
+                "base": "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",
+                "endTime": 21,
+                "image": "https://videoanalysisbj.oss-accelerate.aliyuncs.com/160490676472488407668.png",
+                "startTime": 0,
+                "timestamp": 0,
+                "wordsShow": [
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 19,
+                            "leftOffsetInPixel": 10,
+                            "topOffsetInPixel": 29,
+                            "widthInPixel": 181
+                        },
+                        "word": "The mathematical setup"
+                    },
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 101,
+                            "leftOffsetInPixel": 25,
+                            "topOffsetInPixel": 129,
+                            "widthInPixel": 380
+                        },
+                        "word": "let s start with finite-length signals i.e. vectors in Fourier analysis is a simple change of basis a change of basis is a change of perspective a change of perspective can reveal things if the basis is good"
+                    }
+                ]
+            },
+            {
+                "endTime": 62,
+                "image": "https://videoanalysisbj.oss-accelerate.aliyuncs.com/160490676493695031183.png",
+                "startTime": 22,
+                "timestamp": 22,
+                "wordsShow": [
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 19,
+                            "leftOffsetInPixel": 10,
+                            "topOffsetInPixel": 30,
+                            "widthInPixel": 108
+                        },
+                        "word": "Mystery signal"
+                    },
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 11,
+                            "leftOffsetInPixel": 171,
+                            "topOffsetInPixel": 264,
+                            "widthInPixel": 19
+                        },
+                        "word": "170"
+                    },
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 11,
+                            "leftOffsetInPixel": 224,
+                            "topOffsetInPixel": 264,
+                            "widthInPixel": 19
+                        },
+                        "word": "340"
+                    },
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 11,
+                            "leftOffsetInPixel": 435,
+                            "topOffsetInPixel": 264,
+                            "widthInPixel": 24
+                        },
+                        "word": "1020"
+                    },
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 10,
+                            "leftOffsetInPixel": 277,
+                            "topOffsetInPixel": 265,
+                            "widthInPixel": 19
+                        },
+                        "word": "510"
+                    },
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 10,
+                            "leftOffsetInPixel": 331,
+                            "topOffsetInPixel": 265,
+                            "widthInPixel": 18
+                        },
+                        "word": "680"
+                    },
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 10,
+                            "leftOffsetInPixel": 384,
+                            "topOffsetInPixel": 265,
+                            "widthInPixel": 18
+                        },
+                        "word": "850"
+                    }
+                ]
+            },
+            {
+                "endTime": 154,
+                "image": "https://videoanalysisbj.oss-accelerate.aliyuncs.com/160490676516191300709.png",
+                "startTime": 63,
+                "timestamp": 63,
+                "wordsShow": [
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 20,
+                            "leftOffsetInPixel": 10,
+                            "topOffsetInPixel": 26,
+                            "widthInPixel": 187
+                        },
+                        "word": "The Fourier Basis for CN"
+                    },
+                    {
+                        "confidence": 0.99,
+                        "rect": {
+                            "heightInPixel": 83,
+                            "leftOffsetInPixel": 164,
+                            "topOffsetInPixel": 135,
+                            "widthInPixel": 248
+                        },
+                        "word": "Claim the set of N signals in CN n nk, n, 0, 1,...,N-1 is an orthogonal basis in C."
+                    }
+                ]
+            },
+            {
+                "endTime": 219,
+                "image": "https://videoanalysisbj.oss-accelerate.aliyuncs.com/160490676537913714673.png",
+                "startTime": 155,
+                "timestamp": 155,
+                "wordsShow": [
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 19,
+                            "leftOffsetInPixel": 10,
+                            "topOffsetInPixel": 30,
+                            "widthInPixel": 396
+                        },
+                        "word": "Recall the complex exponential generating machine..."
+                    },
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 11,
+                            "leftOffsetInPixel": 264,
+                            "topOffsetInPixel": 91,
+                            "widthInPixel": 14
+                        },
+                        "word": "Im"
+                    },
+                    {
+                        "confidence": 0.99,
+                        "rect": {
+                            "heightInPixel": 13,
+                            "leftOffsetInPixel": 362,
+                            "topOffsetInPixel": 187,
+                            "widthInPixel": 30
+                        },
+                        "word": "w o"
+                    }
+                ]
+            },
+            {
+                "endTime": 311,
+                "image": "https://videoanalysisbj.oss-accelerate.aliyuncs.com/160490676562776666907.png",
+                "startTime": 220,
+                "timestamp": 220,
+                "wordsShow": [
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 11,
+                            "leftOffsetInPixel": 282,
+                            "topOffsetInPixel": 176,
+                            "widthInPixel": 14
+                        },
+                        "word": "32"
+                    },
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 11,
+                            "leftOffsetInPixel": 416,
+                            "topOffsetInPixel": 177,
+                            "widthInPixel": 10
+                        },
+                        "word": "64"
+                    },
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 11,
+                            "leftOffsetInPixel": 284,
+                            "topOffsetInPixel": 316,
+                            "widthInPixel": 11
+                        },
+                        "word": "32"
+                    },
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 11,
+                            "leftOffsetInPixel": 416,
+                            "topOffsetInPixel": 316,
+                            "widthInPixel": 14
+                        },
+                        "word": "64"
+                    }
+                ]
+            },
+            {
+                "endTime": 317,
+                "image": "https://videoanalysisbj.oss-accelerate.aliyuncs.com/160490676582709426246.png",
+                "startTime": 312,
+                "timestamp": 312,
+                "wordsShow": [
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 23,
+                            "leftOffsetInPixel": 518,
+                            "topOffsetInPixel": 25,
+                            "widthInPixel": 28
+                        },
+                        "word": "PAU"
+                    },
+                    {
+                        "confidence": 0.91,
+                        "rect": {
+                            "heightInPixel": 22,
+                            "leftOffsetInPixel": 10,
+                            "topOffsetInPixel": 26,
+                            "widthInPixel": 173
+                        },
+                        "word": "Basis vector 2 c64"
+                    },
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 11,
+                            "leftOffsetInPixel": 282,
+                            "topOffsetInPixel": 176,
+                            "widthInPixel": 14
+                        },
+                        "word": "32"
+                    },
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 12,
+                            "leftOffsetInPixel": 282,
+                            "topOffsetInPixel": 315,
+                            "widthInPixel": 13
+                        },
+                        "word": "32"
+                    },
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 11,
+                            "leftOffsetInPixel": 416,
+                            "topOffsetInPixel": 316,
+                            "widthInPixel": 13
+                        },
+                        "word": "64"
+                    }
+                ]
+            },
+            {
+                "endTime": 319,
+                "image": "https://videoanalysisbj.oss-accelerate.aliyuncs.com/160490676610310412800.png",
+                "startTime": 318,
+                "timestamp": 318,
+                "wordsShow": [
+                    {
+                        "confidence": 0.98,
+                        "rect": {
+                            "heightInPixel": 13,
+                            "leftOffsetInPixel": 95,
+                            "topOffsetInPixel": 255,
+                            "widthInPixel": 44
+                        },
+                        "word": "E0"
+                    }
+                ]
+            },
+            {
+                "endTime": 331,
+                "image": "https://videoanalysisbj.oss-accelerate.aliyuncs.com/160490676644823821221.png",
+                "startTime": 320,
+                "timestamp": 320,
+                "wordsShow": [
+                    {
+                        "confidence": 0.92,
+                        "rect": {
+                            "heightInPixel": 21,
+                            "leftOffsetInPixel": 10,
+                            "topOffsetInPixel": 26,
+                            "widthInPixel": 175
+                        },
+                        "word": "Basis vector 3 64"
+                    },
+                    {
+                        "confidence": 0.97,
+                        "rect": {
+                            "heightInPixel": 13,
+                            "leftOffsetInPixel": 95,
+                            "topOffsetInPixel": 255,
+                            "widthInPixel": 44
+                        },
+                        "word": "E0"
+                    },
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 12,
+                            "leftOffsetInPixel": 416,
+                            "topOffsetInPixel": 315,
+                            "widthInPixel": 14
+                        },
+                        "word": "64"
+                    }
+                ]
+            },
+            {
+                "endTime": 347,
+                "image": "https://videoanalysisbj.oss-accelerate.aliyuncs.com/160490676673187702105.png",
+                "startTime": 332,
+                "timestamp": 332,
+                "wordsShow": [
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 12,
+                            "leftOffsetInPixel": 282,
+                            "topOffsetInPixel": 176,
+                            "widthInPixel": 15
+                        },
+                        "word": "32"
+                    },
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 12,
+                            "leftOffsetInPixel": 416,
+                            "topOffsetInPixel": 315,
+                            "widthInPixel": 14
+                        },
+                        "word": "64"
+                    },
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 12,
+                            "leftOffsetInPixel": 284,
+                            "topOffsetInPixel": 316,
+                            "widthInPixel": 11
+                        },
+                        "word": "32"
+                    }
+                ]
+            },
+            {
+                "endTime": 457,
+                "image": "https://videoanalysisbj.oss-accelerate.aliyuncs.com/160490676700763402415.png",
+                "startTime": 348,
+                "timestamp": 348,
+                "wordsShow": [
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 21,
+                            "leftOffsetInPixel": 10,
+                            "topOffsetInPixel": 26,
+                            "widthInPixel": 181
+                        },
+                        "word": "Basis vector w 16 E C64"
+                    },
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 11,
+                            "leftOffsetInPixel": 282,
+                            "topOffsetInPixel": 176,
+                            "widthInPixel": 14
+                        },
+                        "word": "32"
+                    },
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 12,
+                            "leftOffsetInPixel": 95,
+                            "topOffsetInPixel": 255,
+                            "widthInPixel": 45
+                        },
+                        "word": "E0"
+                    },
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 13,
+                            "leftOffsetInPixel": 279,
+                            "topOffsetInPixel": 314,
+                            "widthInPixel": 16
+                        },
+                        "word": "32"
+                    },
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 10,
+                            "leftOffsetInPixel": 416,
+                            "topOffsetInPixel": 316,
+                            "widthInPixel": 13
+                        },
+                        "word": "64"
+                    }
+                ]
+            },
+            {
+                "endTime": 461,
+                "image": "https://videoanalysisbj.oss-accelerate.aliyuncs.com/160490676726268557274.png",
+                "startTime": 458,
+                "timestamp": 458,
+                "wordsShow": [
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 12,
+                            "leftOffsetInPixel": 282,
+                            "topOffsetInPixel": 176,
+                            "widthInPixel": 14
+                        },
+                        "word": "32"
+                    },
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 12,
+                            "leftOffsetInPixel": 416,
+                            "topOffsetInPixel": 176,
+                            "widthInPixel": 14
+                        },
+                        "word": "64"
+                    },
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 13,
+                            "leftOffsetInPixel": 95,
+                            "topOffsetInPixel": 255,
+                            "widthInPixel": 44
+                        },
+                        "word": "E0"
+                    },
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 12,
+                            "leftOffsetInPixel": 416,
+                            "topOffsetInPixel": 315,
+                            "widthInPixel": 14
+                        },
+                        "word": "64"
+                    },
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 12,
+                            "leftOffsetInPixel": 284,
+                            "topOffsetInPixel": 316,
+                            "widthInPixel": 11
+                        },
+                        "word": "32"
+                    }
+                ]
+            },
+            {
+                "endTime": 475,
+                "image": "https://videoanalysisbj.oss-accelerate.aliyuncs.com/160490676754993134837.png",
+                "startTime": 462,
+                "timestamp": 462,
+                "wordsShow": [
+                    {
+                        "confidence": 0.91,
+                        "rect": {
+                            "heightInPixel": 21,
+                            "leftOffsetInPixel": 10,
+                            "topOffsetInPixel": 26,
+                            "widthInPixel": 168
+                        },
+                        "word": "Basis vector 60 C"
+                    },
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 12,
+                            "leftOffsetInPixel": 282,
+                            "topOffsetInPixel": 176,
+                            "widthInPixel": 14
+                        },
+                        "word": "32"
+                    },
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 12,
+                            "leftOffsetInPixel": 416,
+                            "topOffsetInPixel": 176,
+                            "widthInPixel": 13
+                        },
+                        "word": "64"
+                    },
+                    {
+                        "confidence": 0.94,
+                        "rect": {
+                            "heightInPixel": 13,
+                            "leftOffsetInPixel": 95,
+                            "topOffsetInPixel": 255,
+                            "widthInPixel": 44
+                        },
+                        "word": "E0"
+                    },
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 12,
+                            "leftOffsetInPixel": 416,
+                            "topOffsetInPixel": 315,
+                            "widthInPixel": 14
+                        },
+                        "word": "64"
+                    },
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 12,
+                            "leftOffsetInPixel": 284,
+                            "topOffsetInPixel": 316,
+                            "widthInPixel": 12
+                        },
+                        "word": "32"
+                    }
+                ]
+            },
+            {
+                "endTime": 478,
+                "image": "https://videoanalysisbj.oss-accelerate.aliyuncs.com/160490676780587020187.png",
+                "startTime": 476,
+                "timestamp": 476,
+                "wordsShow": [
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 11,
+                            "leftOffsetInPixel": 282,
+                            "topOffsetInPixel": 176,
+                            "widthInPixel": 14
+                        },
+                        "word": "32"
+                    },
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 13,
+                            "leftOffsetInPixel": 95,
+                            "topOffsetInPixel": 255,
+                            "widthInPixel": 45
+                        },
+                        "word": "E0"
+                    },
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 14,
+                            "leftOffsetInPixel": 279,
+                            "topOffsetInPixel": 314,
+                            "widthInPixel": 16
+                        },
+                        "word": "32"
+                    },
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 11,
+                            "leftOffsetInPixel": 416,
+                            "topOffsetInPixel": 316,
+                            "widthInPixel": 14
+                        },
+                        "word": "64"
+                    }
+                ]
+            },
+            {
+                "endTime": 499,
+                "image": "https://videoanalysisbj.oss-accelerate.aliyuncs.com/160490676805969092609.png",
+                "startTime": 479,
+                "timestamp": 479,
+                "wordsShow": [
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 21,
+                            "leftOffsetInPixel": 10,
+                            "topOffsetInPixel": 26,
+                            "widthInPixel": 181
+                        },
+                        "word": "Basis vector w 62 E C64"
+                    },
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 11,
+                            "leftOffsetInPixel": 282,
+                            "topOffsetInPixel": 176,
+                            "widthInPixel": 14
+                        },
+                        "word": "32"
+                    },
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 13,
+                            "leftOffsetInPixel": 95,
+                            "topOffsetInPixel": 255,
+                            "widthInPixel": 45
+                        },
+                        "word": "E0"
+                    },
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 14,
+                            "leftOffsetInPixel": 279,
+                            "topOffsetInPixel": 314,
+                            "widthInPixel": 16
+                        },
+                        "word": "32"
+                    },
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 11,
+                            "leftOffsetInPixel": 416,
+                            "topOffsetInPixel": 316,
+                            "widthInPixel": 14
+                        },
+                        "word": "64"
+                    }
+                ]
+            },
+            {
+                "endTime": 622,
+                "image": "https://videoanalysisbj.oss-accelerate.aliyuncs.com/160490676825455645853.png",
+                "startTime": 500,
+                "timestamp": 500,
+                "wordsShow": [
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 21,
+                            "leftOffsetInPixel": 11,
+                            "topOffsetInPixel": 29,
+                            "widthInPixel": 166
+                        },
+                        "word": "Proof of orthogonality"
+                    },
+                    {
+                        "confidence": 0.93,
+                        "rect": {
+                            "heightInPixel": 26,
+                            "leftOffsetInPixel": 140,
+                            "topOffsetInPixel": 125,
+                            "widthInPixel": 204
+                        },
+                        "word": "w h nk nh"
+                    },
+                    {
+                        "confidence": 0.98,
+                        "rect": {
+                            "heightInPixel": 12,
+                            "leftOffsetInPixel": 228,
+                            "topOffsetInPixel": 149,
+                            "widthInPixel": 25
+                        },
+                        "word": "n 0"
+                    },
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 14,
+                            "leftOffsetInPixel": 365,
+                            "topOffsetInPixel": 222,
+                            "widthInPixel": 56
+                        },
+                        "word": "for h k"
+                    },
+                    {
+                        "confidence": 0.95,
+                        "rect": {
+                            "heightInPixel": 33,
+                            "leftOffsetInPixel": 247,
+                            "topOffsetInPixel": 247,
+                            "widthInPixel": 176
+                        },
+                        "word": "1-e h- otherwise"
+                    }
+                ]
+            },
+            {
+                "endTime": 649,
+                "image": "https://videoanalysisbj.oss-accelerate.aliyuncs.com/160490676843241090134.png",
+                "startTime": 623,
+                "timestamp": 623,
+                "wordsShow": [
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 16,
+                            "leftOffsetInPixel": 10,
+                            "topOffsetInPixel": 30,
+                            "widthInPixel": 64
+                        },
+                        "word": "Remarks"
+                    },
+                    {
+                        "confidence": 1.0,
+                        "rect": {
+                            "heightInPixel": 45,
+                            "leftOffsetInPixel": 25,
+                            "topOffsetInPixel": 151,
+                            "widthInPixel": 403
+                        },
+                        "word": "N orthogonal vectors basis for CN vectors are not orthonormal. Normalization factor would be 1 VN"
+                    }
+                ]
+            }
+        ],
+        "realname": "index.mp4",
+        "soundWord": [
+            {
+                "bg": "0",
+                "ed": "3340",
+                "onebest": " Let's start with finite length signals，which are the easiest",
+                "speaker": "0"
+            },
+            {
+                "bg": "3340",
+                "ed": "4210",
+                "onebest": " to handle。",
+                "speaker": "0"
+            },
+            {
+                "bg": "4260",
+                "ed": "5460",
+                "onebest": "We have seen that",
+                "speaker": "0"
+            },
+            {
+                "bg": "5460",
+                "ed": "8530",
+                "onebest": " a finite length signal is simply a vector in c n",
+                "speaker": "0"
+            },
+            {
+                "bg": "8640",
+                "ed": "14110",
+                "onebest": " and it turns out the fourier analysis in this case is simply a change of bases in c n",
+                "speaker": "0"
+            },
+            {
+                "bg": "14320",
+                "ed": "17180",
+                "onebest": " now remember，a change of bases is a change of perspective。",
+                "speaker": "0"
+            },
+            {
+                "bg": "17470",
+                "ed": "21870",
+                "onebest": "And a change of perspective can reveal things you're looking at things from a different angle。",
+                "speaker": "0"
+            },
+            {
+                "bg": "21870",
+                "ed": "27330",
+                "onebest": "So for example，imagine you have a signal like this this is a 1024 point signal",
+                "speaker": "0"
+            },
+            {
+                "bg": "27680",
+                "ed": "29950",
+                "onebest": " and as you look at it in the time domain。",
+                "speaker": "0"
+            },
+            {
+                "bg": "29950",
+                "ed": "33530",
+                "onebest": "Yeah，you can see some oscillatory behavior，but it's not really clear what's going on。",
+                "speaker": "0"
+            },
+            {
+                "bg": "33730",
+                "ed": "38890",
+                "onebest": "While if we perform an appropriate change of basis，and we will show shortly how to do that。",
+                "speaker": "0"
+            },
+            {
+                "bg": "38890",
+                "ed": "43920",
+                "onebest": "The signal will look like this。So in the fourier basis，the same signal will have this structure。",
+                "speaker": "0"
+            },
+            {
+                "bg": "44030",
+                "ed": "49910",
+                "onebest": "And It is clear here that we have two very different things going on at the same time we have",
+                "speaker": "0"
+            },
+            {
+                "bg": "49910",
+                "ed": "56350",
+                "onebest": " two spikes and we will see very shortly what the spikes mean。And then we have something that looks like nose in the bottom。",
+                "speaker": "0"
+            },
+            {
+                "bg": "56360",
+                "ed": "62950",
+                "onebest": "Well Fourier analysis allows to separate these two elements that in the time domain were。",
+                "speaker": "0"
+            },
+            {
+                "bg": "63050",
+                "ed": "65570",
+                "onebest": "So here is the fourier basis for c n",
+                "speaker": "0"
+            },
+            {
+                "bg": "65590",
+                "ed": "68130",
+                "onebest": " remember c n as the nationality n",
+                "speaker": "0"
+            },
+            {
+                "bg": "68130",
+                "ed": "69210",
+                "onebest": " so we will need",
+                "speaker": "0"
+            },
+            {
+                "bg": "69420",
+                "ed": "71220",
+                "onebest": " n different vectors。",
+                "speaker": "0"
+            },
+            {
+                "bg": "71390",
+                "ed": "73370",
+                "onebest": "Each one of which will have length n",
+                "speaker": "0"
+            },
+            {
+                "bg": "73430",
+                "ed": "78860",
+                "onebest": " so k will be the index that indicates different vector，and k will go",
+                "speaker": "0"
+            },
+            {
+                "bg": "78860",
+                "ed": "79930",
+                "onebest": " from zero，",
+                "speaker": "0"
+            },
+            {
+                "bg": "80300",
+                "ed": "82030",
+                "onebest": "two big n minus one。",
+                "speaker": "0"
+            },
+            {
+                "bg": "82220",
+                "ed": "84190",
+                "onebest": "And Then We will use small n",
+                "speaker": "0"
+            },
+            {
+                "bg": "84190",
+                "ed": "89990",
+                "onebest": " to indicate the index of the element within each vector，and small n will also range from zero，",
+                "speaker": "0"
+            },
+            {
+                "bg": "90030",
+                "ed": "91500",
+                "onebest": "two，big n minus one。",
+                "speaker": "0"
+            },
+            {
+                "bg": "91660",
+                "ed": "94320",
+                "onebest": "The end signals will have this form。",
+                "speaker": "0"
+            },
+            {
+                "bg": "94830",
+                "ed": "100170",
+                "onebest": "So remember，k is the index of the signal，and small n is the index of the element within each signal。",
+                "speaker": "0"
+            },
+            {
+                "bg": "100180",
+                "ed": "105160",
+                "onebest": "And each element is simply e to the j to pi over big n and k",
+                "speaker": "0"
+            },
+            {
+                "bg": "105290",
+                "ed": "107390",
+                "onebest": " what does that mean？This is simple，",
+                "speaker": "0"
+            },
+            {
+                "bg": "107390",
+                "ed": "108980",
+                "onebest": "complex exponential",
+                "speaker": "0"
+            },
+            {
+                "bg": "108980",
+                "ed": "113430",
+                "onebest": " at a frequency omega，which is two pi over big n",
+                "speaker": "0"
+            },
+            {
+                "bg": "113430",
+                "ed": "114290",
+                "onebest": " times k",
+                "speaker": "0"
+            },
+            {
+                "bg": "114290",
+                "ed": "117610",
+                "onebest": " so the index of the vector or of the signal",
+                "speaker": "0"
+            },
+            {
+                "bg": "117610",
+                "ed": "121020",
+                "onebest": " gives you the fundamental frequency of the complex exponential。",
+                "speaker": "0"
+            },
+            {
+                "bg": "121020",
+                "ed": "122350",
+                "onebest": "We claimed that this",
+                "speaker": "0"
+            },
+            {
+                "bg": "122350",
+                "ed": "126200",
+                "onebest": " constitutes a set of orthogonal vectors in c n",
+                "speaker": "0"
+            },
+            {
+                "bg": "126640",
+                "ed": "130090",
+                "onebest": " we can express the signals in vector notation。",
+                "speaker": "0"
+            },
+            {
+                "bg": "130090",
+                "ed": "130810",
+                "onebest": "So",
+                "speaker": "0"
+            },
+            {
+                "bg": "130810",
+                "ed": "135020",
+                "onebest": " remember our convention，we use bold face letter to indicate vectors。",
+                "speaker": "0"
+            },
+            {
+                "bg": "135020",
+                "ed": "142030",
+                "onebest": "A superscript in parenthesis will give you the index of a vector when the vector comes from a set。In this case，it comes from a set of",
+                "speaker": "0"
+            },
+            {
+                "bg": "142030",
+                "ed": "143120",
+                "onebest": " big n vectors",
+                "speaker": "0"
+            },
+            {
+                "bg": "144090",
+                "ed": "145270",
+                "onebest": " and a subscript",
+                "speaker": "0"
+            },
+            {
+                "bg": "145270",
+                "ed": "148220",
+                "onebest": " will indicate the element within each vector。So again，",
+                "speaker": "0"
+            },
+            {
+                "bg": "148270",
+                "ed": "153840",
+                "onebest": "w of k of n is simply equal to e to the j 2 pi over began。",
+                "speaker": "0"
+            },
+            {
+                "bg": "153840",
+                "ed": "154390",
+                "onebest": "And k",
+                "speaker": "0"
+            },
+            {
+                "bg": "154940",
+                "ed": "157450",
+                "onebest": " we can quickly get a feeling for",
+                "speaker": "0"
+            },
+            {
+                "bg": "157450",
+                "ed": "164610",
+                "onebest": " what this vectors look like。If we remember the complex exponential generating machine that we saw a few modules back。",
+                "speaker": "0"
+            },
+            {
+                "bg": "164640",
+                "ed": "167150",
+                "onebest": "So here，for instance，we show the components of",
+                "speaker": "0"
+            },
+            {
+                "bg": "167150",
+                "ed": "168560",
+                "onebest": " w1，",
+                "speaker": "0"
+            },
+            {
+                "bg": "168560",
+                "ed": "170060",
+                "onebest": "the second vector in",
+                "speaker": "0"
+            },
+            {
+                "bg": "170060",
+                "ed": "170900",
+                "onebest": " our basis",
+                "speaker": "0"
+            },
+            {
+                "bg": "171150",
+                "ed": "177110",
+                "onebest": " and as we go through the components。So this would be the first component of the vector。It would be equal to one。",
+                "speaker": "0"
+            },
+            {
+                "bg": "177110",
+                "ed": "179300",
+                "onebest": "The second component would translate",
+                "speaker": "0"
+            },
+            {
+                "bg": "180200",
+                "ed": "184000",
+                "onebest": " the point around the circle by an angle two pi over n",
+                "speaker": "0"
+            },
+            {
+                "bg": "184040",
+                "ed": "186200",
+                "onebest": " and so on and so forth。Remember，",
+                "speaker": "0"
+            },
+            {
+                "bg": "187050",
+                "ed": "190640",
+                "onebest": " one of n will be equal to e to the j",
+                "speaker": "0"
+            },
+            {
+                "bg": "190640",
+                "ed": "192700",
+                "onebest": " two pi over big n",
+                "speaker": "0"
+            },
+            {
+                "bg": "193280",
+                "ed": "197450",
+                "onebest": " so we're going around the circles and increments of two pi over began。",
+                "speaker": "0"
+            },
+            {
+                "bg": "201720",
+                "ed": "205500",
+                "onebest": "Now the second vector in the basis w 2 of n",
+                "speaker": "0"
+            },
+            {
+                "bg": "205520",
+                "ed": "207950",
+                "onebest": " will be of the form e to the j",
+                "speaker": "0"
+            },
+            {
+                "bg": "207950",
+                "ed": "209570",
+                "onebest": " two pi over big n",
+                "speaker": "0"
+            },
+            {
+                "bg": "209570",
+                "ed": "214780",
+                "onebest": "2 n and so this vector will move in increments of two pi over n times two。",
+                "speaker": "0"
+            },
+            {
+                "bg": "214780",
+                "ed": "218880",
+                "onebest": "So the points for that would actually be these guys",
+                "speaker": "0"
+            },
+            {
+                "bg": "218990",
+                "ed": "219960",
+                "onebest": " and so on。",
+                "speaker": "0"
+            },
+            {
+                "bg": "220770",
+                "ed": "225630",
+                "onebest": "Okay，so let's look at a concrete example by selling big n equal to64",
+                "speaker": "0"
+            },
+            {
+                "bg": "225630",
+                "ed": "229080",
+                "onebest": " and look at the fourier basis of the space c64。",
+                "speaker": "0"
+            },
+            {
+                "bg": "229210",
+                "ed": "230640",
+                "onebest": "Here we're looking at",
+                "speaker": "0"
+            },
+            {
+                "bg": "230640",
+                "ed": "233260",
+                "onebest": " the real and imaginary components",
+                "speaker": "0"
+            },
+            {
+                "bg": "233260",
+                "ed": "235010",
+                "onebest": " of each basis vector。",
+                "speaker": "0"
+            },
+            {
+                "bg": "235070",
+                "ed": "235850",
+                "onebest": "This，",
+                "speaker": "0"
+            },
+            {
+                "bg": "235850",
+                "ed": "240480",
+                "onebest": "if you think of the point moving around in circles in the complex plane will be",
+                "speaker": "0"
+            },
+            {
+                "bg": "240500",
+                "ed": "243240",
+                "onebest": " the cosine and sine of",
+                "speaker": "0"
+            },
+            {
+                "bg": "243440",
+                "ed": "245400",
+                "onebest": " sat答案哦 as"
+            },
+            {
+                "bg": "245480",
+                "ed": "247080",
+                "onebest": " the point moves along the circle。",
+                "speaker": "0"
+            },
+            {
+                "bg": "247110",
+                "ed": "249580",
+                "onebest": "So here we have the first factor in the basis。",
+                "speaker": "0"
+            },
+            {
+                "bg": "251780",
+                "ed": "255810",
+                "onebest": " And each component of this vector will be simply e to the j",
+                "speaker": "0"
+            },
+            {
+                "bg": "255810",
+                "ed": "262340",
+                "onebest": " two pi over big n zero time n and because of the multiplication by zero，the exponent will be always zero。",
+                "speaker": "0"
+            },
+            {
+                "bg": "262340",
+                "ed": "265280",
+                "onebest": "And So this vector is equal to one。",
+                "speaker": "0"
+            },
+            {
+                "bg": "265690",
+                "ed": "268990",
+                "onebest": "It's real component，therefore is one for all indices。",
+                "speaker": "0"
+            },
+            {
+                "bg": "268990",
+                "ed": "271960",
+                "onebest": "And its imaginary component is zero everywhere。",
+                "speaker": "0"
+            },
+            {
+                "bg": "272560",
+                "ed": "274580",
+                "onebest": "The next vector is w1。",
+                "speaker": "0"
+            },
+            {
+                "bg": "275020",
+                "ed": "279450",
+                "onebest": "And Here，the fundamental angle of the complex exponential is omega",
+                "speaker": "0"
+            },
+            {
+                "bg": "279450",
+                "ed": "281400",
+                "onebest": " two pi over big n",
+                "speaker": "0"
+            },
+            {
+                "bg": "282040",
+                "ed": "288040",
+                "onebest": " what this means is that the point will complete one full revolution over 64points。",
+                "speaker": "0"
+            },
+            {
+                "bg": "288060",
+                "ed": "289400",
+                "onebest": "And we can see this",
+                "speaker": "0"
+            },
+            {
+                "bg": "289400",
+                "ed": "295230",
+                "onebest": " in the plots of its real and imaginary components。Here，we have a full cosine period",
+                "speaker": "0"
+            },
+            {
+                "bg": "295230",
+                "ed": "296230",
+                "onebest": " for the real part",
+                "speaker": "0"
+            },
+            {
+                "bg": "296230",
+                "ed": "298960",
+                "onebest": " and a full time period for the imaginary part。",
+                "speaker": "0"
+            },
+            {
+                "bg": "299810",
+                "ed": "301060",
+                "onebest": "The next vector",
+                "speaker": "0"
+            },
+            {
+                "bg": "301190",
+                "ed": "306720",
+                "onebest": " goes twice as fast。Now，the fundamental frequency of the complex exponential will be",
+                "speaker": "0"
+            },
+            {
+                "bg": "306760",
+                "ed": "309150",
+                "onebest": " two pi over big n times two。",
+                "speaker": "0"
+            },
+            {
+                "bg": "309190",
+                "ed": "310950",
+                "onebest": "And indeed，we have",
+                "speaker": "0"
+            },
+            {
+                "bg": "311300",
+                "ed": "312540",
+                "onebest": " two periods",
+                "speaker": "0"
+            },
+            {
+                "bg": "312830",
+                "ed": "314110",
+                "onebest": " of the cosine",
+                "speaker": "0"
+            },
+            {
+                "bg": "314520",
+                "ed": "316530",
+                "onebest": " and two periods of the sign",
+                "speaker": "0"
+            },
+            {
+                "bg": "316570",
+                "ed": "317920",
+                "onebest": " in the imaginary part。",
+                "speaker": "0"
+            },
+            {
+                "bg": "319670",
+                "ed": "321880",
+                "onebest": "The next factor is w3。",
+                "speaker": "0"
+            },
+            {
+                "bg": "322340",
+                "ed": "326380",
+                "onebest": "And the fundamental frequency will be two pi over big n times three。",
+                "speaker": "0"
+            },
+            {
+                "bg": "326380",
+                "ed": "327510",
+                "onebest": "So We have three",
+                "speaker": "0"
+            },
+            {
+                "bg": "327510",
+                "ed": "328350",
+                "onebest": " periods",
+                "speaker": "0"
+            },
+            {
+                "bg": "328350",
+                "ed": "329770",
+                "onebest": " both in the real",
+                "speaker": "0"
+            },
+            {
+                "bg": "329770",
+                "ed": "331340",
+                "onebest": " and in the imaginary part。",
+                "speaker": "0"
+            },
+            {
+                "bg": "331750",
+                "ed": "333760",
+                "onebest": "But now you understand what's going on。",
+                "speaker": "0"
+            },
+            {
+                "bg": "334110",
+                "ed": "336430",
+                "onebest": "And as we go up with a basis index，",
+                "speaker": "0"
+            },
+            {
+                "bg": "336620",
+                "ed": "339860",
+                "onebest": "the vectors will start moving faster and faster",
+                "speaker": "0"
+            },
+            {
+                "bg": "340760",
+                "ed": "343060",
+                "onebest": " because of discrete nature here，",
+                "speaker": "0"
+            },
+            {
+                "bg": "343060",
+                "ed": "348990",
+                "onebest": "it will be hard at one point to recognize that we have sinusoid here。For instance，you have w16",
+                "speaker": "0"
+            },
+            {
+                "bg": "348990",
+                "ed": "351660",
+                "onebest": " that moves very quickly，but you have to imagine that",
+                "speaker": "0"
+            },
+            {
+                "bg": "351820",
+                "ed": "353860",
+                "onebest": " the movement captures",
+                "speaker": "0"
+            },
+            {
+                "bg": "353860",
+                "ed": "358160",
+                "onebest": " a rotation that goes very fast around the unit circle here。For instance，",
+                "speaker": "0"
+            },
+            {
+                "bg": "358160",
+                "ed": "360000",
+                "onebest": "we have only four points",
+                "speaker": "0"
+            },
+            {
+                "bg": "360000",
+                "ed": "361370",
+                "onebest": " because the angle",
+                "speaker": "0"
+            },
+            {
+                "bg": "361650",
+                "ed": "363380",
+                "onebest": " of the complex exponential",
+                "speaker": "0"
+            },
+            {
+                "bg": "363380",
+                "ed": "364530",
+                "onebest": " turns out to be",
+                "speaker": "0"
+            },
+            {
+                "bg": "364600",
+                "ed": "368540",
+                "onebest": " two pi over 64times16，which is equal to",
+                "speaker": "0"
+            },
+            {
+                "bg": "368540",
+                "ed": "369620",
+                "onebest": " pi over two。",
+                "speaker": "0"
+            },
+            {
+                "bg": "369630",
+                "ed": "375340",
+                "onebest": "And So here the point will move between this four points。And if you look at the coordinates",
+                "speaker": "0"
+            },
+            {
+                "bg": "375880",
+                "ed": "379280",
+                "onebest": " in the real and imaginary part，you see exactly this behavior",
+                "speaker": "0"
+            },
+            {
+                "bg": "379770",
+                "ed": "382610",
+                "onebest": " as we increase the index of our fourier vector，",
+                "speaker": "0"
+            },
+            {
+                "bg": "382620",
+                "ed": "385230",
+                "onebest": "the underlying frequency increases as well。",
+                "speaker": "0"
+            },
+            {
+                "bg": "385290",
+                "ed": "391060",
+                "onebest": "Now the discrete nature of the vector makes it a little bit hard to understand the signs of the shape",
+                "speaker": "0"
+            },
+            {
+                "bg": "391060",
+                "ed": "392150",
+                "onebest": " of the signal。",
+                "speaker": "0"
+            },
+            {
+                "bg": "392150",
+                "ed": "394600",
+                "onebest": "But you can see，for instance，here that we are",
+                "speaker": "0"
+            },
+            {
+                "bg": "394960",
+                "ed": "401140",
+                "onebest": " in the high frequency range because the sign of the samples changes at every step。",
+                "speaker": "0"
+            },
+            {
+                "bg": "401140",
+                "ed": "405860",
+                "onebest": "So the sine alternation is a telltale sign of a high frequency sign zone。",
+                "speaker": "0"
+            },
+            {
+                "bg": "405860",
+                "ed": "411120",
+                "onebest": "Finally，we reach the highest frequency，the discrete time complex exponential can have。",
+                "speaker": "0"
+            },
+            {
+                "bg": "411120",
+                "ed": "416650",
+                "onebest": "So here it happens for k equal to32，where our frequency becomes",
+                "speaker": "0"
+            },
+            {
+                "bg": "416770",
+                "ed": "420590",
+                "onebest": " two pi over 64times32，which is equal to pi。",
+                "speaker": "0"
+            },
+            {
+                "bg": "420710",
+                "ed": "421850",
+                "onebest": "At this point，",
+                "speaker": "0"
+            },
+            {
+                "bg": "422820",
+                "ed": "427380",
+                "onebest": "we will be moving from this position to this position in the complex plane。",
+                "speaker": "0"
+            },
+            {
+                "bg": "427380",
+                "ed": "431740",
+                "onebest": "And this is clearly indicated by the real and imaginary components of the vector，",
+                "speaker": "0"
+            },
+            {
+                "bg": "431850",
+                "ed": "437760",
+                "onebest": "which are alternating plus and minus one in the real part and identical is zero in the imaginary part。",
+                "speaker": "0"
+            },
+            {
+                "bg": "438160",
+                "ed": "443900",
+                "onebest": "As we go forward，the index，as we saw a model2.2，the apparent speed",
+                "speaker": "0"
+            },
+            {
+                "bg": "443900",
+                "ed": "444930",
+                "onebest": " of the point",
+                "speaker": "0"
+            },
+            {
+                "bg": "444930",
+                "ed": "446020",
+                "onebest": " decreases",
+                "speaker": "0"
+            },
+            {
+                "bg": "446020",
+                "ed": "448550",
+                "onebest": " and the direction of the rotation",
+                "speaker": "0"
+            },
+            {
+                "bg": "448550",
+                "ed": "451130",
+                "onebest": " changes from counterclockwise，the clockwise。",
+                "speaker": "0"
+            },
+            {
+                "bg": "451350",
+                "ed": "454200",
+                "onebest": "So here，as the index increases from",
+                "speaker": "0"
+            },
+            {
+                "bg": "454200",
+                "ed": "455120",
+                "onebest": "32",
+                "speaker": "0"
+            },
+            {
+                "bg": "455390",
+                "ed": "457070",
+                "onebest": " up to63。",
+                "speaker": "0"
+            },
+            {
+                "bg": "457070",
+                "ed": "458150",
+                "onebest": "We see that",
+                "speaker": "0"
+            },
+            {
+                "bg": "458300",
+                "ed": "462980",
+                "onebest": " the apparent speed of the sinusoid decreases back to zero。",
+                "speaker": "0"
+            },
+            {
+                "bg": "462980",
+                "ed": "468690",
+                "onebest": "But the sign that we're passed by as far as the angular increment at each step is concerned，",
+                "speaker": "0"
+            },
+            {
+                "bg": "468690",
+                "ed": "471330",
+                "onebest": "comes from the phase of the imaginary part，",
+                "speaker": "0"
+            },
+            {
+                "bg": "471330",
+                "ed": "476930",
+                "onebest": "which is inverted with respect to the equivalent frequency that we have seen for low values of the index。",
+                "speaker": "0"
+            },
+            {
+                "bg": "477090",
+                "ed": "480060",
+                "onebest": "So here，for instance，if you compare this",
+                "speaker": "0"
+            },
+            {
+                "bg": "480300",
+                "ed": "481640",
+                "onebest": " basis vector",
+                "speaker": "0"
+            },
+            {
+                "bg": "481640",
+                "ed": "486820",
+                "onebest": " to w of two，you would see that the real part is the same，but the imaginary part",
+                "speaker": "0"
+            },
+            {
+                "bg": "486820",
+                "ed": "488100",
+                "onebest": " has a sign in version",
+                "speaker": "0"
+            },
+            {
+                "bg": "488100",
+                "ed": "489400",
+                "onebest": " in w of two。",
+                "speaker": "0"
+            },
+            {
+                "bg": "489400",
+                "ed": "490580",
+                "onebest": "It would be like this。",
+                "speaker": "0"
+            },
+            {
+                "bg": "491580",
+                "ed": "492890",
+                "onebest": "Same goes for",
+                "speaker": "0"
+            },
+            {
+                "bg": "492890",
+                "ed": "494800",
+                "onebest": " uh w63。",
+                "speaker": "0"
+            },
+            {
+                "bg": "494910",
+                "ed": "497330",
+                "onebest": "Real part is equal to w of one。",
+                "speaker": "0"
+            },
+            {
+                "bg": "497330",
+                "ed": "498810",
+                "onebest": "But imaginary part",
+                "speaker": "0"
+            },
+            {
+                "bg": "498810",
+                "ed": "500110",
+                "onebest": " has a sign in version。",
+                "speaker": "0"
+            },
+            {
+                "bg": "500240",
+                "ed": "505990",
+                "onebest": "Okay，so this is all nice and fine。We just showed a very beautiful family of sensual vectors。",
+                "speaker": "0"
+            },
+            {
+                "bg": "506110",
+                "ed": "510030",
+                "onebest": "But in order for these factors to be a basis of c n",
+                "speaker": "0"
+            },
+            {
+                "bg": "510110",
+                "ed": "513550",
+                "onebest": " we have to prove that they are orthogonal to each other。",
+                "speaker": "0"
+            },
+            {
+                "bg": "513580",
+                "ed": "519720",
+                "onebest": "Orthogonality requires that the inner product between any two vectors of the family is zero。",
+                "speaker": "0"
+            },
+            {
+                "bg": "520090",
+                "ed": "522360",
+                "onebest": "So we write out the inner product",
+                "speaker": "0"
+            },
+            {
+                "bg": "522830",
+                "ed": "525520",
+                "onebest": " between uh w of k and w of h",
+                "speaker": "0"
+            },
+            {
+                "bg": "525730",
+                "ed": "527600",
+                "onebest": " we write out explicitly",
+                "speaker": "0"
+            },
+            {
+                "bg": "527600",
+                "ed": "529530",
+                "onebest": " the inner product by considering",
+                "speaker": "0"
+            },
+            {
+                "bg": "529530",
+                "ed": "531870",
+                "onebest": " each component of the first vector，",
+                "speaker": "0"
+            },
+            {
+                "bg": "531890",
+                "ed": "536690",
+                "onebest": "conjugate the component and multiplied by the corresponding component of the second vector。",
+                "speaker": "0"
+            },
+            {
+                "bg": "537380",
+                "ed": "539140",
+                "onebest": "And We obtain a sum",
+                "speaker": "0"
+            },
+            {
+                "bg": "539710",
+                "ed": "543310",
+                "onebest": " for n small n goes from zero to big n minus one",
+                "speaker": "0"
+            },
+            {
+                "bg": "543310",
+                "ed": "546980",
+                "onebest": " of e to the j 2 pi over big n h minus k",
+                "speaker": "0"
+            },
+            {
+                "bg": "547340",
+                "ed": "548440",
+                "onebest": " times n",
+                "speaker": "0"
+            },
+            {
+                "bg": "548930",
+                "ed": "552080",
+                "onebest": " so how do we solve this formula？Well，there are two cases。",
+                "speaker": "0"
+            },
+            {
+                "bg": "552190",
+                "ed": "558020",
+                "onebest": "First of all，let's assume h is equal to k so we are actually taking the inner product of a vector with itself。",
+                "speaker": "0"
+            },
+            {
+                "bg": "558400",
+                "ed": "559590",
+                "onebest": "This point",
+                "speaker": "0"
+            },
+            {
+                "bg": "559870",
+                "ed": "560710",
+                "onebest": " all",
+                "speaker": "0"
+            },
+            {
+                "bg": "560820",
+                "ed": "562490",
+                "onebest": " this elements in the sum",
+                "speaker": "0"
+            },
+            {
+                "bg": "562490",
+                "ed": "563730",
+                "onebest": " will be equal",
+                "speaker": "0"
+            },
+            {
+                "bg": "563740",
+                "ed": "564710",
+                "onebest": " to one。",
+                "speaker": "0"
+            },
+            {
+                "bg": "564710",
+                "ed": "567180",
+                "onebest": "And So the sum will converge to n",
+                "speaker": "0"
+            },
+            {
+                "bg": "568180",
+                "ed": "569910",
+                "onebest": " in case h",
+                "speaker": "0"
+            },
+            {
+                "bg": "569910",
+                "ed": "570520",
+                "onebest": " is",
+                "speaker": "0"
+            },
+            {
+                "bg": "571410",
+                "ed": "572960",
+                "onebest": " not equal to k",
+                "speaker": "0"
+            },
+            {
+                "bg": "573210",
+                "ed": "575190",
+                "onebest": " then this is a sum",
+                "speaker": "0"
+            },
+            {
+                "bg": "575190",
+                "ed": "576210",
+                "onebest": " of the form",
+                "speaker": "0"
+            },
+            {
+                "bg": "576810",
+                "ed": "579770",
+                "onebest": " small and goes from zero to begin minus one。",
+                "speaker": "0"
+            },
+            {
+                "bg": "579770",
+                "ed": "581240",
+                "onebest": "A to the n",
+                "speaker": "0"
+            },
+            {
+                "bg": "581340",
+                "ed": "582350",
+                "onebest": " and we know",
+                "speaker": "0"
+            },
+            {
+                "bg": "582840",
+                "ed": "587930",
+                "onebest": " this is equal to one minus eight，big n 1 minus eight。",
+                "speaker": "0"
+            },
+            {
+                "bg": "587930",
+                "ed": "590580",
+                "onebest": "So We plug the complex exponential",
+                "speaker": "0"
+            },
+            {
+                "bg": "590580",
+                "ed": "591920",
+                "onebest": " into this formula。",
+                "speaker": "0"
+            },
+            {
+                "bg": "591920",
+                "ed": "593020",
+                "onebest": "And we obtain",
+                "speaker": "0"
+            },
+            {
+                "bg": "593300",
+                "ed": "594700",
+                "onebest": " this ratio。",
+                "speaker": "0"
+            },
+            {
+                "bg": "594940",
+                "ed": "595880",
+                "onebest": "But now",
+                "speaker": "0"
+            },
+            {
+                "bg": "596510",
+                "ed": "598360",
+                "onebest": " this guy here on top",
+                "speaker": "0"
+            },
+            {
+                "bg": "598470",
+                "ed": "602150",
+                "onebest": " is e to the j 2 pi times h minus k",
+                "speaker": "0"
+            },
+            {
+                "bg": "602160",
+                "ed": "604000",
+                "onebest": " this guy is an integer。",
+                "speaker": "0"
+            },
+            {
+                "bg": "604630",
+                "ed": "606800",
+                "onebest": "And Therefore，this is e to the j",
+                "speaker": "0"
+            },
+            {
+                "bg": "607030",
+                "ed": "609550",
+                "onebest": " times an integer multiple of two pi。",
+                "speaker": "0"
+            },
+            {
+                "bg": "609550",
+                "ed": "613810",
+                "onebest": "So what that means is that no matter what the value of h minus k is，",
+                "speaker": "0"
+            },
+            {
+                "bg": "613810",
+                "ed": "616270",
+                "onebest": "we're in this point here on the complex plane。",
+                "speaker": "0"
+            },
+            {
+                "bg": "616800",
+                "ed": "619440",
+                "onebest": "And So one minus one will be zero。",
+                "speaker": "0"
+            },
+            {
+                "bg": "619440",
+                "ed": "620780",
+                "onebest": "And this will be zero",
+                "speaker": "0"
+            },
+            {
+                "bg": "620800",
+                "ed": "621570",
+                "onebest": " for all",
+                "speaker": "0"
+            },
+            {
+                "bg": "621570",
+                "ed": "622250",
+                "onebest": " h",
+                "speaker": "0"
+            },
+            {
+                "bg": "622250",
+                "ed": "623270",
+                "onebest": " not equal to k",
+                "speaker": "0"
+            },
+            {
+                "bg": "623280",
+                "ed": "627810",
+                "onebest": " so the vectors are orthogonal，and therefore，they form a basis for c n",
+                "speaker": "0"
+            },
+            {
+                "bg": "628230",
+                "ed": "631640",
+                "onebest": " now note that the vectors are not orthonormal because",
+                "speaker": "0"
+            },
+            {
+                "bg": "631640",
+                "ed": "633340",
+                "onebest": " w of h",
+                "speaker": "0"
+            },
+            {
+                "bg": "633340",
+                "ed": "634030",
+                "onebest": " times",
+                "speaker": "0"
+            },
+            {
+                "bg": "634030",
+                "ed": "635480",
+                "onebest": " w of h",
+                "speaker": "0"
+            },
+            {
+                "bg": "635610",
+                "ed": "638040",
+                "onebest": " is equal to n as we've shown before。",
+                "speaker": "0"
+            },
+            {
+                "bg": "638770",
+                "ed": "645780",
+                "onebest": "The normalization factor will be one over square root of n but you will see later that we usually keep this normalization factor",
+                "speaker": "0"
+            },
+            {
+                "bg": "645800",
+                "ed": "649140",
+                "onebest": " explicit rather than implicit for computational reasons。",
+                "speaker": "0"
+            }
+        ],
+        "status": "200",
+        "videoUrl": "http://bj.bcebos.com/vaas-common-bucket-6/4d038de505772493c8d7e4dd88141627/video/video2.mp4"
+    },
+    "filename": "index.mp4",
+    "id": "1604906593209534",
+    "isLoding": 3,
+    "ispublic": null,
+    "money": null,
+    "spenttime": 11,
+    "userid": "15811292892"
+}

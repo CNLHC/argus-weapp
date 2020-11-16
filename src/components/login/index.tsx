@@ -37,7 +37,6 @@ export default function LoginModal(props: IProps) {
         }
     }
 
-
     const onClickSendCode = () => {
         console.log(payload)
         if (!payload.mobile) {
@@ -116,7 +115,7 @@ export default function LoginModal(props: IProps) {
                         style={{ height: '88rpx', marginRight: '12rpx' }}
                         placeholder={'短信验证码'}
                     />
-                    <ArgusButton disabled={counter.value > 0} text={`发送验证码${counter.value === 0 ? "" : `(${counter.value})`}`} onClick={onClickSendCode} />
+                    <ArgusButton disabled={counter.value > 0} text={counter.value === 0 ? `发送验证码` : `已发送(${counter.value})`} onClick={onClickSendCode} />
                 </view>
             </view>
 

@@ -1,11 +1,12 @@
-import { RichText, Video } from '@tarojs/components'
-import { getCurrentInstance } from '@tarojs/taro'
-import React, { useEffect, useState } from 'react'
+import { Editor, RichText, Video } from '@tarojs/components'
+import { createSelectorQuery, EditorContext, getCurrentInstance } from '@tarojs/taro'
+import React, { useCallback, useContext, useEffect, useRef, useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { GetNoteDetails } from '../../libs/notes/detail'
+import { GetNoteDetails, INoteDettail } from '../../libs/notes/detail'
 import { useTypedSelector } from '../../reducers'
 import { ActSetState } from '../../reducers/global'
 import sty from './index.module.scss'
+import sampleData from '../../../assets/sample_sam.json'
 
 const reparse = (text) => {
     // const ast = unified()
@@ -19,10 +20,10 @@ export default function index() {
     const dispatch = useDispatch()
     const [dataid, setDataID] = useState<any>(undefined)
     const [ts, setTs] = useState<string | undefined>(undefined)
-    const notedetails = useTypedSelector(e => e.GlobalReducers.noteDetail)
+    // const notedetails = useTypedSelector(e => e.GlobalReducers.noteDetail)
+    const notedetails: INoteDettail = sampleData
     const getNoteDetail = (id) => {
         id && GetNoteDetails(id).then(e => {
-
             const testString = e?.data.data.imgTxt.reduce((acc, cur) => cur.onebest + acc, "") ?? []
             console.log(testString)
             setTs(testString)
@@ -30,6 +31,13 @@ export default function index() {
             dispatch(ActSetState({ noteDetail: e.data }))
         })
     }
+    const [editorCtx, setEditorCtx] = useState<EditorContext | undefined>(undefined)
+    const editorRef = useCallback(() => {
+        createSelectorQuery().select("#editor").context((res) => {
+            console.log(1234, res.context)
+            setEditorCtx(res.context as EditorContext)
+        }).exec()
+    }, [])
 
     useEffect(() => {
         const id = getCurrentInstance()?.router?.params.id
@@ -40,6 +48,14 @@ export default function index() {
     useEffect(() => {
         getNoteDetail(dataid)
     }, [dataid])
+    useEffect(() => {
+        editorCtx?.setContents({
+            html: notedetails?.data.imgTxt.reduce((acc, cur) => cur.onebest + acc, "") ?? []
+        })
+    }, [editorCtx])
+
+    const onEditorReady = () => { editorRef() }
+
 
 
 
@@ -52,14 +68,24 @@ export default function index() {
             </view>
 
             <view className={sty.text}>
-                {
+
+                <Editor
+                    id='editor'
+                    className='editor'
+                    placeholder={'hi'}
+                    onReady={onEditorReady}
+                ></Editor>
+
+
+                {/* {
                     notedetails?.data.imgTxt.map(e => (
                         <view className={sty.block}>
-                            <RichText nodes={e.onebest} />
-                        </view>)
+                            <Editor nodes={e.onebest} />
+                        </view>
+                    )
                     )
 
-                }
+                } */}
             </view>
 
 

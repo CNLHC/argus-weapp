@@ -1,12 +1,12 @@
 export default {
     pages: [
+        'pages/editor/index',
         'pages/home/index',
         'pages/mynotes/index',
         'pages/index/index',
         'pages/mine/index',
         'pages/mine_manage/index',
         'pages/mine_feedback/index',
-        'pages/editor/index',
         'pages/upload/index',
     ],
     window: {
