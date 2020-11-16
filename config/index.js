@@ -20,6 +20,7 @@ const config = {
   },
   framework: 'react',
   mini: {
+    enableSourceMap: false,
     postcss: {
       pxtransform: {
         enable: true,

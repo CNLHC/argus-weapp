@@ -1,4 +1,4 @@
-import { getStorageSync, setStorage } from '@tarojs/taro'
+import { getStorageSync, redirectTo, setStorage, showModal } from '@tarojs/taro'
 import axios from 'axios'
 import Constant from '../constant/constant'
 import mpAdapter from 'axios-miniprogram-adapter'
@@ -18,16 +18,31 @@ interface ILoginPayload {
     code: string
     mobile: string
 }
-export async function ArgusLogin(payload: ILoginPayload) {
-    const res = await axios.post(
-        `${Constant.api.host}/admin_login/login_phone`,
-        payload
-    )
-    console.log('login success', `token: ${res.data.token}`)
+export async function ArgusLogin(
+    payload: ILoginPayload,
+    onSuc?: (user: IArgusUserInfo) => void
+) {
+    try {
+        const res = await axios.post(
+            `${Constant.api.host}/admin_login/login_phone`,
+            payload
+        )
+        const userinfo = await GetUserInfo()
+        if (!userinfo) throw Error('no userinfo')
+        onSuc && onSuc(userinfo)
 
-    await setStorage({ key: 'code', data: payload.code })
-    await setStorage({ key: 'token', data: res.data.token })
-    await setStorage({ key: 'userid', data: payload.mobile })
+        console.log(
+            'login success',
+            `token: ${res.data.token}`,
+            `user:${userinfo}`
+        )
+        await setStorage({ key: 'code', data: payload.code })
+        await setStorage({ key: 'token', data: res.data.token })
+        await setStorage({ key: 'userid', data: payload.mobile })
+        showModal({ title: '登陆成功' })
+    } catch {
+        showModal({ title: '登陆失败' })
+    }
 }
 
 export interface IArgusUserInfo {

@@ -2,6 +2,7 @@ import { Reducer } from 'redux'
 import { produce } from 'immer'
 import { IArgusUserInfo } from '../libs/login'
 import { INotes } from '../libs/notes'
+import { INoteDettail } from '../libs/notes/detail'
 
 const ActionEnum = {
     SetState: '[global]SetState',
@@ -16,6 +17,8 @@ interface IGlobalState {
     showLoginModal: boolean
     uploadProgress?: number
     notes: INotes[]
+    loading?: boolean
+    noteDetail?: INoteDettail
     UserInfo?: IArgusUserInfo
 }
 
@@ -23,6 +26,7 @@ const init: IGlobalState = {
     notes: [],
     showLoginModal: false,
     UserInfo: undefined,
+    loading: false,
 }
 export type TAction = ReturnType<typeof ActSetState>
 

@@ -1,6 +1,7 @@
 const Constant = {
     api: {
-        host: 'http://localhost:7890',
+        // host: 'http://localhost:7890',
+        host: 'https://argusuat.perspectivar.com:8080',
     },
     ali: {
         host: 'https://videoanalysisbj.oss-accelerate.aliyuncs.com',

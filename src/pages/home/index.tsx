@@ -13,7 +13,7 @@ import { navigateTo } from '@tarojs/taro'
 import { GetUserInfo } from '../../libs/login'
 
 export default function PageHome() {
-    const showLogin = useTypedSelector((e) => e.GlobalReducers.showLoginModal)
+    const user = useTypedSelector((e) => e.GlobalReducers.UserInfo)
     const dispatch = useDispatch()
     const onClickUpload = () => {
         navigateTo({ url: `/pages/upload/index` })
@@ -25,16 +25,6 @@ export default function PageHome() {
     }, [])
     return (
         <view className={sty.root}>
-            <LoginModal
-                show={showLogin}
-                onClose={() =>
-                    dispatch(
-                        ActSetState({
-                            showLoginModal: false,
-                        })
-                    )
-                }
-            />
             <view className={sty.Header}>
                 <image src={IndexBg} className={sty.bg} />
                 <view className={sty.slogan}>

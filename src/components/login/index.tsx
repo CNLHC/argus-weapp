@@ -2,7 +2,7 @@
 import { Input } from '@tarojs/components'
 import { login, showModal } from '@tarojs/taro'
 import React, { useState } from 'react'
-import { ArgusLogin, getCode } from '../../libs/login'
+import { ArgusLogin, getCode, IArgusUserInfo } from '../../libs/login'
 import ArgusButton from '../button'
 import ArgusIcon from '../icon'
 import ArgusInput from '../Input'
@@ -12,6 +12,7 @@ import sty from './index.module.scss'
 
 interface IProps {
     show: boolean
+    onLoginSuccess?: (user: IArgusUserInfo) => void
     onClose?: () => void
 }
 
@@ -37,7 +38,7 @@ export default function LoginModal(props: IProps) {
             showModal({ title: "登陆信息错误" })
             return
         }
-        ArgusLogin({ ...payload })
+        ArgusLogin({ ...payload }, props.onLoginSuccess)
     }
     const Step0 = (
         <view className={sty.ButtonBox}>

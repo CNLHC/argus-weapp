@@ -39,8 +39,8 @@ export default function ArgusSelector(props: IProps) {
                         {value
                             ? value
                             : selectedItem
-                            ? selectedItem
-                            : placeHolder}
+                                ? selectedItem
+                                : placeHolder}
                     </view>
                     <view>
                         <image src={arrow} />

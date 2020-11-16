@@ -5,7 +5,8 @@ export default {
         'pages/index/index',
         'pages/mine/index',
         'pages/mine_manage/index',
-      'pages/mine_feedback/index',
+        'pages/mine_feedback/index',
+        'pages/editor/index',
         'pages/upload/index',
     ],
     window: {

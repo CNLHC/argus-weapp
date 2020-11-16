@@ -1,19 +1,19 @@
-import React, { useState } from 'react'
-import { Button, Picker, Progress } from '@tarojs/components'
+import React, { useEffect, useState } from 'react'
+import { Progress } from '@tarojs/components'
 import Modal from '../../components/modal'
 import ArgusSelector from '../../components/selector'
 import ArgusButton from '../../components/button'
 import sty from './index.module.scss'
+import { chooseVideo, redirectTo, uploadFile } from '@tarojs/taro'
 
 import IconBrownBean from '../../../assets/brown_bean_icon.svg'
 import IconBean from '../../../assets/bean_icon.svg'
-import IconLink from '../../../assets/link.svg'
-import ImgCoffeMachine from '../../../assets/coffe_machine.svg'
 
+import ImgCoffeMachine from '../../../assets/coffe_machine.svg'
+import ImgCoffeGif from '../../../assets/coffee-machine_processing_en.gif'
 import bg from '../../../assets/welcome_bg.svg'
 import UploadLayout from '../../components/upload-layout'
 import ArgusBeanIndicator from '../../components/bean-indicator'
-import { chooseMedia, chooseMessageFile, uploadFile } from '@tarojs/taro'
 import getOSSUploadToken from '../../libs/crypto/getWXToken'
 import Constant from '../../libs/constant/constant'
 import { useTypedSelector } from '../../reducers'
@@ -88,19 +88,21 @@ export default function PageUpload() {
     const progress = useTypedSelector(e => e.GlobalReducers.uploadProgress)
     const user = useTypedSelector(e => e.GlobalReducers.UserInfo)
     const dispatch = useDispatch()
+    useEffect(() => {
+        const cts = getOSSUploadToken()
+        console.log(cts)
+    }, [])
 
     const onSelectFile = () => {
         const timestamp = new Date().getTime()
         const getUploadName = ((fname: string) => (`${timestamp}${Math.floor(timestamp * Math.random())}.${fileType(fname)}`))
-        chooseMessageFile({
-            count: 1,
-            type: "video",
+        chooseVideo({
             success(files) {
-                const uploadFilename = getUploadName(files.tempFiles[0].name)
-                const filename = files.tempFiles[0].name
+                const uploadFilename = getUploadName(files.tempFilePath)
+                const filename = files.tempFilePath
                 mUploadFile({
                     uploadFilename,
-                    fp: files.tempFiles[0].path,
+                    fp: filename,
                     preStart: () => dispatch(ActSetState({ uploadProgress: 0 })),
                     onProg: (prog) => dispatch(ActSetState({ uploadProgress: prog.progress })),
                     onFail: () => dispatch(ActSetState({ uploadProgress: undefined })),
@@ -109,7 +111,11 @@ export default function PageUpload() {
                             filename,
                             uploadFilename,
                             user,
+                        }).then(() => {
+                            redirectTo({ url: '/pages/mynotes/index' })
+
                         })
+
                     }
                 })
             }
@@ -161,6 +167,7 @@ export default function PageUpload() {
                             语言:
                         </view>
                         <ArgusSelector
+                            placeHolder={"选择语言"}
                             items={['中文', 'English']}
                             onChange={(e) => {
                                 console.log(e)
@@ -170,19 +177,20 @@ export default function PageUpload() {
                     <view className={sty.formItem}>
                         <ArgusButton
                             onClick={onSelectFile}
+
                             text={'选择文件'}
                             theme={'light'}
                             style={{ width: '332rpx', marginRight: '20rpx' }}
                         />
-                        <ArgusButton
+                        {/* <ArgusButton
                             iconSrc={IconLink}
                             theme={'light'}
                             style={{ width: '72rpx', padding: '10rpx' }}
-                        />
+                        /> */}
                     </view>
                 </view>
                 <view className={sty.img}>
-                    <image src={ImgCoffeMachine} />
+                    <image src={progress ? ImgCoffeGif : ImgCoffeMachine} />
                 </view>
                 {progress ?
                     <view className={sty.progress}>

@@ -43,7 +43,6 @@
     "@tarojs/taro": "3.0.14",
     "@types/crypto-js": "^4.0.1",
     "@types/react-redux": "^7.1.9",
-    "Base64": "^1.1.0",
     "axios": "^0.21.0",
     "axios-miniprogram-adapter": "^0.3.2",
     "base64-js": "^1.5.1",
@@ -53,8 +52,7 @@
     "react-dom": "^16.10.0",
     "react-redux": "^7.2.1",
     "redux": "^4.0.0",
-    "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.3.0"
+    "redux-logger": "^3.0.6"
   },
   "devDependencies": {
     "@babel/core": "^7.8.0",

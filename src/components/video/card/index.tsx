@@ -8,6 +8,7 @@ interface IProps {
     status: 'processing' | 'done' | string
     pic?: string
     title: string
+    onClick: () => void
 }
 
 export default function ArgusVideoCard(props: IProps) {
@@ -16,10 +17,12 @@ export default function ArgusVideoCard(props: IProps) {
 }
 
 function ArgusDoneCard(props: IProps) {
+    const OnClick = () => {
+        props.onClick && props.onClick()
+    }
     return (
-        <view className={`${styles.cardRoot} ${styles.doneCard}`}>
-            <view className={styles.bg}><image src={props.pic}></image></view>
-
+        <view className={`${styles.cardRoot} ${styles.doneCard}`} onClick={OnClick}>
+            <view className={styles.bg} ><image src={props.pic}></image></view>
             <view className={styles.infoBar}>
                 <view className={styles.textBox}>{props.title}</view>
             </view>
@@ -36,8 +39,8 @@ function ArgusProcessingCard(props: IProps) {
                 <image src={ImgCoffe} />
             </view>
             <view className={styles.Progress}>
-                <view className={styles.text}>剩馀31% • 预计12分钟 Copy</view>
-                <Progress color={'#B0865B'} percent={31} />
+                <view className={styles.text}>剩馀3% • 预计--分钟 Copy</view>
+                <Progress color={'#B0865B'} percent={97} active />
             </view>
         </view>
     )
