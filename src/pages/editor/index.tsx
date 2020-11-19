@@ -1,7 +1,7 @@
 import { Editor, RichText, Video } from '@tarojs/components'
-import { createSelectorQuery, EditorContext, getCurrentInstance } from '@tarojs/taro'
+import { createSelectorQuery, EditorContext, getCurrentInstance, hideLoading, showLoading } from '@tarojs/taro'
 import React, { useCallback, useContext, useEffect, useRef, useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { GetNoteDetails, INoteDettail } from '../../libs/notes/detail'
 import { useTypedSelector } from '../../reducers'
 import { ActSetState } from '../../reducers/global'
@@ -18,20 +18,31 @@ const reparse = (text) => {
 export default function index() {
 
     const dispatch = useDispatch()
+    const loading = useTypedSelector(e => e.GlobalReducers.loading)
     const [dataid, setDataID] = useState<any>(undefined)
     const [ts, setTs] = useState<string | undefined>(undefined)
     // const notedetails = useTypedSelector(e => e.GlobalReducers.noteDetail)
     const notedetails: INoteDettail = sampleData
     const getNoteDetail = (id) => {
+
+        dispatch(ActSetState({ loading: true, noteDetail: undefined }))
         id && GetNoteDetails(id).then(e => {
             const testString = e?.data.data.imgTxt.reduce((acc, cur) => cur.onebest + acc, "") ?? []
             console.log(testString)
             setTs(testString)
             e.data.data.imgTxt.forEach(e => reparse(e.onebest))
-            dispatch(ActSetState({ noteDetail: e.data }))
+            dispatch(ActSetState({ noteDetail: e.data, loading: false }))
         })
     }
     const [editorCtx, setEditorCtx] = useState<EditorContext | undefined>(undefined)
+
+    useEffect(() => {
+        if (loading)
+            showLoading()
+        else
+            hideLoading()
+    }, [loading])
+
     const editorRef = useCallback(() => {
         createSelectorQuery().select("#editor").context((res) => {
             console.log(1234, res.context)

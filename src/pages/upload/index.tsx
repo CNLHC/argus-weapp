@@ -4,7 +4,7 @@ import Modal from '../../components/modal'
 import ArgusSelector from '../../components/selector'
 import ArgusButton from '../../components/button'
 import sty from './index.module.scss'
-import { chooseVideo, redirectTo, uploadFile } from '@tarojs/taro'
+import { chooseVideo, getStorageSync, redirectTo, setStorageSync, uploadFile } from '@tarojs/taro'
 
 import IconBrownBean from '../../../assets/brown_bean_icon.svg'
 import IconBean from '../../../assets/bean_icon.svg'
@@ -84,13 +84,17 @@ function fileType(filename: string) {
 }
 
 export default function PageUpload() {
-    const [welcomeModal, setWelcomeModalVisible] = useState(true)
+    const [welcomeModal, setWelcomeModalVisible] = useState(false)
     const progress = useTypedSelector(e => e.GlobalReducers.uploadProgress)
     const user = useTypedSelector(e => e.GlobalReducers.UserInfo)
     const dispatch = useDispatch()
     useEffect(() => {
-        const cts = getOSSUploadToken()
-        console.log(cts)
+        if (getStorageSync("isNew") === "false") {
+            setStorageSync("isNew", "false")
+            setWelcomeModalVisible(false)
+        } else {
+            setWelcomeModalVisible(true)
+        }
     }, [])
 
     const onSelectFile = () => {
@@ -113,9 +117,7 @@ export default function PageUpload() {
                             user,
                         }).then(() => {
                             redirectTo({ url: '/pages/mynotes/index' })
-
                         })
-
                     }
                 })
             }

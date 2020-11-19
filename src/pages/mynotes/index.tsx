@@ -17,18 +17,27 @@ export default function PageMyNotes() {
     const loading = useTypedSelector(e => e.GlobalReducers.loading)
     const notes = useTypedSelector(e => e.GlobalReducers.notes)
     const dispatch = useDispatch()
+
     const getNotes = () => {
-        dispatch(ActSetState({ loading: true }))
-        if (!notes || notes.length == 0) showLoading()
+        if (!notes || notes.length == 0)
+            dispatch(ActSetState({ loading: true }))
         GetNotes({ userid: user?.id ?? "" }).then(e => {
-            hideLoading()
             return dispatch(ActSetState({ notes: e.data, loading: false }))
         })
     }
+
+    useEffect(() => {
+        if (loading)
+            showLoading()
+        else
+            hideLoading()
+    }, [loading])
+
     useEffect(() => {
         if (!user)
             dispatch(ActSetState({ showLoginModal: true }))
     }, [])
+
     useEffect(() => {
         if (user)
             getNotes()
