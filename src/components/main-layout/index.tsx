@@ -1,4 +1,5 @@
 import React, { ReactChild, ReactChildren } from 'react'
+import Authed from '../Authed'
 import ArgusNavBar from '../navbar'
 import styles from './index.module.scss'
 
@@ -12,15 +13,17 @@ interface IProps {
 export default function MainLayout(props: IProps) {
     const { title, children, selected } = props
     return (
-        <view
-            className={`${styles.mainLayout} ${props.no_bg ? '' : styles.texture
-                }`}
-        >
-            {title ? <view className={styles.title}>{title}</view> : null}
-            <view className={styles.content}>{children}</view>
-            <view className={styles.navBar}>
-                <ArgusNavBar selected={selected} />
+        <Authed>
+            <view
+                className={`${styles.mainLayout} ${props.no_bg ? '' : styles.texture
+                    }`}
+            >
+                {title ? <view className={styles.title}>{title}</view> : null}
+                <view className={styles.content}>{children}</view>
+                <view className={styles.navBar}>
+                    <ArgusNavBar selected={selected} />
+                </view>
             </view>
-        </view>
+        </Authed>
     )
 }

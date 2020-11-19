@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import ArgusIcon from '../../components/icon'
-import LoginModal from '../../components/login'
-import MainLayout from '../../components/main-layout'
 import ArgusNavBar from '../../components/navbar'
 import { useTypedSelector } from '../../reducers'
 import { ActSetState } from '../../reducers/global'

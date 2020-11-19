@@ -35,17 +35,10 @@ const MenuData = [
 ]
 
 export default function Mine() {
-    const showLoginModal = useTypedSelector(
-        (e) => e.GlobalReducers.showLoginModal
-    )
     const Userinfo = useTypedSelector(e => e.GlobalReducers.UserInfo)
     const dispatch = useDispatch()
     return (
         <MainLayout title={'我的账户'}>
-            <LoginModal
-                show={showLoginModal}
-                onClose={() => dispatch(ActSetState({ showLoginModal: false }))}
-            />
             <view className={sty.banner}>
                 <view
                     className={sty.Avatar}

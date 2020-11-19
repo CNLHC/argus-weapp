@@ -1,4 +1,4 @@
-import { getStorageSync, redirectTo, setStorage, showModal } from '@tarojs/taro'
+import { getStorageSync, setStorage, showToast } from '@tarojs/taro'
 import axios from 'axios'
 import Constant from '../constant/constant'
 import mpAdapter from 'axios-miniprogram-adapter'
@@ -40,10 +40,10 @@ export async function ArgusLogin(
             `token: ${res.data.token}`,
             `user:${userinfo}`
         )
-        showModal({ title: '登陆成功' })
+        showToast({ title: '登陆成功' })
     } catch (e) {
         console.log(e)
-        showModal({ title: '登陆失败' })
+        showToast({ title: '登陆失败' })
     }
 }
 
@@ -61,8 +61,7 @@ export interface IArgusUserInfo {
 export async function GetUserInfo(): Promise<IArgusUserInfo | undefined> {
     if (getToken().length == 0) return
     const res = await axios.get(
-        `${
-            Constant.api.host
+        `${Constant.api.host
         }/fix_user/query_login_user_info?userid=${getUserId()}`,
         { headers: AuthedHeader() }
     )

@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-no-undef */
 import { Input } from '@tarojs/components'
-import { login, showModal } from '@tarojs/taro'
+import { login, showModal, showToast } from '@tarojs/taro'
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { ArgusLogin, getCode, IArgusUserInfo } from '../../libs/login'
@@ -44,7 +44,7 @@ export default function LoginModal(props: IProps) {
 
             return
         }
-        showModal({ title: "发送成功" })
+        showToast({ title: "发送成功" })
         const handle = setInterval(() => updateCounter(), 1000)
         dispatch(ActUpdateCodeCounter(handle))
         getCode({ mobile: payload.mobile })
@@ -54,7 +54,7 @@ export default function LoginModal(props: IProps) {
     const onChangeCodeInput = code => setPayload(v => ({ ...v, code }))
     const onClickLogin = () => {
         if (!payload.code || !payload.mobile) {
-            showModal({ title: "登陆信息错误" })
+            showToast({ title: "登陆信息错误" })
             return
         }
         ArgusLogin({ ...payload }, props.onLoginSuccess)

@@ -7,6 +7,7 @@ import { useTypedSelector } from '../../reducers'
 import { ActSetState } from '../../reducers/global'
 import sty from './index.module.scss'
 import sampleData from '../../../assets/sample_sam.json'
+import Authed from '../../components/Authed'
 
 const reparse = (text) => {
     // const ast = unified()
@@ -24,7 +25,6 @@ export default function index() {
     // const notedetails = useTypedSelector(e => e.GlobalReducers.noteDetail)
     const notedetails: INoteDettail = sampleData
     const getNoteDetail = (id) => {
-
         dispatch(ActSetState({ loading: true, noteDetail: undefined }))
         id && GetNoteDetails(id).then(e => {
             const testString = e?.data.data.imgTxt.reduce((acc, cur) => cur.onebest + acc, "") ?? []
@@ -37,10 +37,12 @@ export default function index() {
     const [editorCtx, setEditorCtx] = useState<EditorContext | undefined>(undefined)
 
     useEffect(() => {
-        if (loading)
+        if (loading) {
             showLoading()
+        }
         else
             hideLoading()
+        return () => hideLoading()
     }, [loading])
 
     const editorRef = useCallback(() => {
@@ -73,33 +75,35 @@ export default function index() {
     const videoUrl = notedetails?.data.beforvideoUrl
 
     return (
-        <view className={sty.root}>
-            <view className={sty.video}>
-                {videoUrl ? <Video src={videoUrl} style={{ width: "100%" }} ></Video> : null}
-            </view>
+        <Authed>
+            <view className={sty.root}>
+                <view className={sty.video}>
+                    {videoUrl ? <Video src={videoUrl} style={{ width: "100%" }} ></Video> : null}
+                </view>
 
-            <view className={sty.text}>
+                <view className={sty.text}>
 
-                <Editor
-                    id='editor'
-                    className='editor'
-                    placeholder={'hi'}
-                    onReady={onEditorReady}
-                ></Editor>
+                    <Editor
+                        id='editor'
+                        className='editor'
+                        placeholder={'hi'}
+                        onReady={onEditorReady}
+                        style={{ height: "100%" }}
+                    ></Editor>
 
 
-                {/* {
+                    {/* {
                     notedetails?.data.imgTxt.map(e => (
                         <view className={sty.block}>
                             <Editor nodes={e.onebest} />
                         </view>
                     )
                     )
+                    } */}
+                </view>
 
-                } */}
+
             </view>
-
-
-        </view>
+        </Authed>
     )
 }

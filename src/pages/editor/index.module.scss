@@ -1,4 +1,7 @@
 .root {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
     width: 100vw;
     .video {
         width: 100%;
@@ -7,6 +10,7 @@
     }
 
     .text {
+        flex-grow: 1;
         margin-top: 40rpx;
         padding: 22rpx;
         .block {

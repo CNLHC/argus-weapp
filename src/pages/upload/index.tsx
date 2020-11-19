@@ -8,6 +8,8 @@ import { chooseVideo, getStorageSync, redirectTo, setStorageSync, uploadFile } f
 
 import IconBrownBean from '../../../assets/brown_bean_icon.svg'
 import IconBean from '../../../assets/bean_icon.svg'
+import Moment from 'moment'
+import 'moment/locale/zh-cn'
 
 import ImgCoffeMachine from '../../../assets/coffe_machine.svg'
 import ImgCoffeGif from '../../../assets/coffee-machine_processing_en.gif'
@@ -20,7 +22,9 @@ import { useTypedSelector } from '../../reducers'
 import { useDispatch } from 'react-redux'
 import { ActSetState } from '../../reducers/global'
 import { video_process } from '../../libs/video'
+import Authed from '../../components/Authed'
 
+Moment.locale('zh-cn')
 
 
 function calculateObjectName(filename: string) {
@@ -89,11 +93,11 @@ export default function PageUpload() {
     const user = useTypedSelector(e => e.GlobalReducers.UserInfo)
     const dispatch = useDispatch()
     useEffect(() => {
-        if (getStorageSync("isNew") === "false") {
-            setStorageSync("isNew", "false")
-            setWelcomeModalVisible(false)
-        } else {
+        if (getStorageSync("isNew") !== "false") {
             setWelcomeModalVisible(true)
+            setStorageSync("isNew", "false")
+        } else {
+            setWelcomeModalVisible(false)
         }
     }, [])
 
@@ -103,7 +107,7 @@ export default function PageUpload() {
         chooseVideo({
             success(files) {
                 const uploadFilename = getUploadName(files.tempFilePath)
-                const filename = files.tempFilePath
+                const filename = `wx视频笔记_${Moment().toISOString()}.${fileType(getUploadName(files.tempFilePath))}`
                 mUploadFile({
                     uploadFilename,
                     fp: filename,
@@ -145,7 +149,7 @@ export default function PageUpload() {
     )
 
     return (
-        <view>
+        <Authed>
             <Modal
                 visible={welcomeModal}
                 title={'欢迎来到十行笔记'}
@@ -200,6 +204,6 @@ export default function PageUpload() {
                     </view> : null
                 }
             </UploadLayout>
-        </view>
+        </Authed>
     )
 }
