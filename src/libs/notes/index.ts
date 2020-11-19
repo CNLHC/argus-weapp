@@ -42,3 +42,14 @@ export async function query_single_video(params: { id: string }) {
         { headers: AuthedHeader() }
     )
 }
+
+export async function save_notes(params: { data: any, fid: string }) {
+    return Axios.post(
+        `${Constant.api.host}/fix_user/update_single_user_notes`,
+        {
+            fileid: params.fid,
+            data: params.data
+        },
+        { headers: AuthedHeader() }
+    )
+}

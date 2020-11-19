@@ -3,11 +3,24 @@ import { produce } from 'immer'
 import { IArgusUserInfo } from '../libs/login'
 import { INotes } from '../libs/notes'
 import { INoteDettail } from '../libs/notes/detail'
+import { EditorContext } from '@tarojs/taro'
+import { Editor } from '@tarojs/components'
 
 const ActionEnum = {
     SetState: '[global]SetState',
     UpdateCodeCounter: 'globalUpdateCodeCounter',
+    EditorUpdate:`EditorUpdate`,
+    EditorClear:`EditorClear`
 }
+
+export const ActEditorCtxUpdate= (idx: number,ctx:EditorContext) => ({
+    type: ActionEnum.EditorUpdate,
+    idx,
+    ctx
+})
+export const ActEditorClear= () => ({
+    type: ActionEnum.EditorClear,
+})
 
 export const ActSetState = (state: Partial<IGlobalState>) => ({
     type: ActionEnum.SetState,
@@ -25,6 +38,7 @@ interface IGlobalState {
     notes: INotes[]
     loading?: boolean
     noteDetail?: INoteDettail
+    editorCtx: EditorContext[]
     UserInfo?: IArgusUserInfo
     codeCounter: {
         value: number
@@ -33,6 +47,7 @@ interface IGlobalState {
 }
 
 const init: IGlobalState = {
+    editorCtx:[],
     notes: [],
     showLoginModal: false,
     UserInfo: undefined,
@@ -41,8 +56,11 @@ const init: IGlobalState = {
         value: 0,
     },
 }
+
 export type TAction = ReturnType<typeof ActSetState> &
-    ReturnType<typeof ActUpdateCodeCounter>
+    ReturnType<typeof ActUpdateCodeCounter>&
+    ReturnType<typeof ActEditorClear>&
+    ReturnType<typeof ActEditorCtxUpdate>
 
 export const GlobalReducers: Reducer<IGlobalState, TAction> = (
     state = init,
@@ -61,6 +79,12 @@ export const GlobalReducers: Reducer<IGlobalState, TAction> = (
                 }
                 if (draft.codeCounter.value > 0) draft.codeCounter.value -= 1
                 else draft.codeCounter.value = 0
+                return
+              case ActionEnum.EditorClear:
+                draft.editorCtx=[]
+                return
+              case ActionEnum.EditorUpdate:
+                draft[action.idx]=action.ctx
                 return
         }
     })
