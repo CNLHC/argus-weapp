@@ -10,7 +10,6 @@ import { GetNotes } from '../../libs/notes'
 import { useTypedSelector } from '../../reducers'
 import { useDispatch } from 'react-redux'
 import { ActSetState } from '../../reducers/global'
-import LoginModal from '../../components/login'
 
 export default function PageMyNotes() {
     const user = useTypedSelector(e => e.GlobalReducers.UserInfo)
@@ -33,29 +32,13 @@ export default function PageMyNotes() {
             hideLoading()
     }, [loading])
 
-    useEffect(() => {
-        if (!user)
-            dispatch(ActSetState({ showLoginModal: true }))
-    }, [])
 
     useEffect(() => {
         if (user)
             getNotes()
     }, [user])
-    const showLogin = useTypedSelector((e) => e.GlobalReducers.showLoginModal)
     return (
         <MainLayout title={'我的笔记'} selected="mynotes">
-            <LoginModal
-                show={showLogin}
-                onLoginSuccess={(info) => dispatch(ActSetState({ UserInfo: info, showLoginModal: false }))}
-                onClose={() =>
-                    dispatch(
-                        ActSetState({
-                            showLoginModal: false,
-                        })
-                    )
-                }
-            />
             <ArgusButton
                 theme="light"
                 text={'上传视频'}

@@ -61,7 +61,7 @@ export default function LoginModal(props: IProps) {
     }
     const Step0 = (
         <view className={sty.ButtonBox}>
-            <ArgusButton
+            {/* <ArgusButton
                 style={{ marginTop: '40rpx;' }}
                 iconSrc={
                     <ArgusIcon
@@ -74,7 +74,7 @@ export default function LoginModal(props: IProps) {
                 }
                 text={'微信手机登陆'}
                 color={'#60BD38'}
-            />
+            /> */}
 
             <ArgusButton
                 style={{ marginTop: '40rpx;' }}

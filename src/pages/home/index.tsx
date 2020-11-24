@@ -10,9 +10,11 @@ import IndexBg from '../../../assets/index_bg.svg'
 import { navigateTo } from '@tarojs/taro'
 import { GetUserInfo } from '../../libs/login'
 import { GetNotes } from '../../libs/notes'
+import LoginModal from '../../components/login'
 
 export default function PageHome() {
     const user = useTypedSelector((e) => e.GlobalReducers.UserInfo)
+    const showLogin = useTypedSelector((e) => e.GlobalReducers.showLoginModal)
     const [sampleID, setSampleID] = useState<undefined | string>(undefined)
     const notes = useTypedSelector(e => e.GlobalReducers.notes)
     const dispatch = useDispatch()
@@ -33,6 +35,10 @@ export default function PageHome() {
     useEffect(() => {
         GetUserInfo()
             .then(e => {
+                if (!e?.id) {
+                    dispatch(ActSetState({ showLoginModal: true }))
+
+                }
                 dispatch(ActSetState({ UserInfo: e }))
                 GetNotes({ userid: e?.id ?? "" })
                     .then(e => {
@@ -43,6 +49,17 @@ export default function PageHome() {
 
     return (
         <view className={sty.root}>
+            <LoginModal
+                show={showLogin}
+                onLoginSuccess={(info) => dispatch(ActSetState({ UserInfo: info, showLoginModal: false }))}
+                onClose={() =>
+                    dispatch(
+                        ActSetState({
+                            showLoginModal: false,
+                        })
+                    )
+                }
+            />
             <view className={sty.Header}>
                 <image src={IndexBg} className={sty.bg} />
                 <view className={sty.slogan}>

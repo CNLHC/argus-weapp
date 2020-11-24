@@ -2,7 +2,6 @@ import { navigateTo, redirectTo } from '@tarojs/taro'
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import ArgusIcon from '../../components/icon'
-import LoginModal from '../../components/login'
 import MainLayout from '../../components/main-layout'
 import { useTypedSelector } from '../../reducers'
 import { ActSetState } from '../../reducers/global'
@@ -38,7 +37,7 @@ export default function Mine() {
     const Userinfo = useTypedSelector(e => e.GlobalReducers.UserInfo)
     const dispatch = useDispatch()
     return (
-        <MainLayout title={'我的账户'}>
+        <MainLayout title={'我的账户'} selected={'mine'}>
             <view className={sty.banner}>
                 <view
                     className={sty.Avatar}
