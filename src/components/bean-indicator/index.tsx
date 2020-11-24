@@ -10,7 +10,7 @@ export default function ArgusBeanIndicator(props: IProps) {
     return (
         <view className={sty.coins}>
             <image src={IconBean} />
-            <view>+{count ?? 150}</view>
+            <view>x{count ?? 150}</view>
         </view>
     )
 }

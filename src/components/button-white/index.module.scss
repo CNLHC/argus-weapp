@@ -14,12 +14,12 @@
 
 .argus-button {
   padding: 20rpx 32rpx;
-  background-color: $argus-brown;
+  background-color: white;
   font-family: PingFang SC;
   font-style: normal;
   font-weight: normal;
   font-size: 28rpx;
-  color: white;
+  color: $argus-brown;
 
 }
 
@@ -28,13 +28,14 @@
   font-family: PingFang SC;
   font-style: normal;
   font-weight: 500;
-  font-size: 28rpx;
+  font-size: 36rpx;
   color: #B0865B;
 
-  border: 10px solid #F3F2F1;
+  border: 10px solid #B0865B;
 
   box-sizing: border-box;
   box-shadow: 0 8rpx 16rpx rgba(143, 88, 31, 0.15);
+  border-radius: 36rpx;
 
   image {
     width: 40rpx;
@@ -53,6 +54,4 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-
-
 }

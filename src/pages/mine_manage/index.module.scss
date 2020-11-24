@@ -1,8 +1,65 @@
-.form {
-  image {
-    width: 48rpx;
-    width: 49rpx;
-
+@import "../../palette";
+.iconImage {
+  width: 48rpx;
+  height: 49rpx;
+  margin-right:  20rpx;
+}
+.radioGroup{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding:10rpx;
+}
+.form{
+  >view{
+    padding-top: 10rpx;
+    padding-bottom: 10rpx;
+    .Label{
+      display: flex;
+      align-items: center;
+      padding-bottom: 10rpx;
+    }
   }
+  .btns{
+    >view{
+      margin-right: 10rpx;
+    }
+    margin-left: 35rpx;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    Button{
+      margin-left: 20rpx;
+    }
+  }
+}
 
+
+
+
+.avatar{
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  >view{
+    display: flex;
+    align-items: center;
+  }
+  .Component{
+    height: 200rpx;
+    width: 200rpx;
+    border-radius: 400rpx;
+    margin-left: 59rpx;
+    border: $argus-brown solid 1rpx;
+    position: relative;
+    image{
+      width: 80rpx;
+      height: 80rpx;
+      position: absolute;
+      right: 0rpx;
+      bottom: 0rpx;
+    }
+  }
 }

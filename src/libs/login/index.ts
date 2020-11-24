@@ -35,12 +35,12 @@ export async function ArgusLogin(
         if (!userinfo) throw Error('no userinfo')
         onSuc && onSuc(userinfo)
 
-        console.log(
+/*        console.log(
             'login success',
             `token: ${res.data.token}`,
             `user:${userinfo}`
         )
-        showToast({ title: '登陆成功' })
+     */   showToast({ title: '登陆成功' })
     } catch (e) {
         console.log(e)
         showToast({ title: '登陆失败' })

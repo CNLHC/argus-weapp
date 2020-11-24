@@ -7,6 +7,7 @@ import sty from './index.module.scss'
 import { Radio,RadioGroup ,Label,Textarea,Image,Input} from '@tarojs/components'
 import { navigateBack } from '@tarojs/taro'
 import ArgusButton from '../../components/button'
+
 import inputImage from '../../../assets/feedback_input_file.svg'
 
 
@@ -121,12 +122,13 @@ export default function index() {
       <view className={sty.btns}>
         <ArgusButton
           text={'取消'}
-          style={{ width: '240rpx' ,height:'88rpx'}}
+          theme={'light'}
+          style={{ width: '240rpx' ,height:'88rpx',minWidth:'0'}}
           onClick={cancel}
         ></ArgusButton>
         <ArgusButton
           text={'提交意见'}
-          style={{ width: '240rpx' ,height:'88rpx'}}
+          style={{ width: '240rpx' ,height:'88rpx',minWidth:'0'}}
           onClick={submit}
         ></ArgusButton>
       </view>

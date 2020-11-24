@@ -66,8 +66,8 @@ export const GlobalReducers: Reducer<IGlobalState, TAction> = (
     state = init,
     action
 ) =>
-    produce(state, (draft) => {
-        switch (action.type) {
+  produce(state, (draft) => {
+    switch (action.type) {
             case ActionEnum.SetState:
                 Object.assign(draft, action.state)
                 return
