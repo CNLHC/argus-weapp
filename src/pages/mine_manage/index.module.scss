@@ -53,13 +53,19 @@
     border-radius: 400rpx;
     margin-left: 59rpx;
     border: $argus-brown solid 1rpx;
-    position: relative;
-    image{
-      width: 80rpx;
-      height: 80rpx;
-      position: absolute;
-      right: 0rpx;
-      bottom: 0rpx;
-    }
   }
+}
+
+.control{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 74rpx;
+  Button:nth-child(1){
+    margin-right: 11rpx;
+  }
+  Button:nth-child(2){
+    margin-left: 11rpx;
+  }
+
 }

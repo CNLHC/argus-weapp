@@ -37,7 +37,6 @@ export default function PageHome() {
             .then(e => {
                 if (!e?.id) {
                     dispatch(ActSetState({ showLoginModal: true }))
-
                 }
                 dispatch(ActSetState({ UserInfo: e }))
                 GetNotes({ userid: e?.id ?? "" })

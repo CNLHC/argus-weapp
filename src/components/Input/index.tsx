@@ -10,7 +10,7 @@ interface IProps {
 }
 
 export default function ArgusInput(props: IProps) {
-    const { onChange, style, placeholder } = props
+    const { onChange, style, placeholder ,value} = props
     return (
         <Input
             placeholder={placeholder}
@@ -19,6 +19,7 @@ export default function ArgusInput(props: IProps) {
             onInput={(e) => {
                 onChange && onChange(e.detail.value)
             }}
+            value={value||''}
         ></Input>
     )
 }

@@ -8,14 +8,17 @@ import ArgusSelector from '../../components/selector'
 import sty from './index.module.scss'
 import { Label, Radio, RadioGroup } from '@tarojs/components'
 import ArgusButton from '../../components/button'
+import { useTypedSelector } from '../../reducers'
 
+import {isChecked} from '../../libs/argus/isChecked'
 
 
 export default function index() {
+  const user = useTypedSelector(e => e.GlobalReducers.UserInfo)
 
   const radioArrary = [{
     value:'0',
-    checked:true,
+    checked:false,
     text:'男',
   },{
     value:'1',
@@ -27,14 +30,20 @@ export default function index() {
     text:'保密',
   }]
 
+  const checkedIndex:number = isChecked(user.sex);
+  radioArrary[checkedIndex].checked = true;
+
+  const items = ['简体','繁体','English'];
+
     return (
-        <MainLayout title={'账户管理'}>
+        <MainLayout  title={'账户管理'}>
             <view className={sty.avatar}>
                 <view className={sty.Label}>
                   <ArgusIcon className={sty.iconImage} icon={'pro-file'} />
                   头像</view>
-                <view className={sty.Component}>
-                  <ArgusIcon icon={'camera-group'} />
+                <view className={sty.Component} >{
+                  user.headimg?<image src={user.headimg} />:''
+                }
                 </view>
             </view>
             <view className={sty.form}>
@@ -44,16 +53,16 @@ export default function index() {
                         用户名
                     </view>
                     <view className={sty.Component}>
-                        <ArgusInput />
+                        <ArgusInput value={user.name||''} placeholder={'请输入用户名'}/>
                     </view>
                 </view>
                 <view className={sty.formField}>
                     <view className={sty.Label}>
-                        <ArgusIcon className={sty.iconImage} icon={'mail'} />
+                        <ArgusIcon  className={sty.iconImage} icon={'mail'} />
                         电子邮件
                     </view>
                     <view className={sty.Component}>
-                        <ArgusInput />
+                        <ArgusInput value={user.email||''} placeholder={'请输入电子邮箱'} />
                     </view>
                 </view>
                 <view className={sty.formField}>
@@ -62,7 +71,7 @@ export default function index() {
                         语言
                     </view>
                     <view className={sty.Component}>
-                        <ArgusSelector placeHolder={'简体'}  items={['简体','繁体','英文']} />
+                        <ArgusSelector value={items[user.language||0]} placeHolder={'简体'}  items={items} />
                     </view>
                 </view>
                 <view className={sty.formField}>
@@ -71,7 +80,7 @@ export default function index() {
                         手机号
                     </view>
                     <view className={sty.Component}>
-                        <ArgusInput />
+                        <ArgusInput  value={user.phone||''} placeholder={'请输入手机号'}/>
                     </view>
                 </view>
               <view className={sty.formField}>
@@ -97,7 +106,7 @@ export default function index() {
 
                     <view className={sty.btns}>
                       <view className={sty.Component}>
-                        <ArgusBeanIndicator />
+                        <ArgusBeanIndicator count={user.retime} />
                       </view>
                       <ArgusButton
                       text={'充值'}
@@ -111,7 +120,17 @@ export default function index() {
                       /></view>
                 </view>
             </view>
-            <view className={sty.control}></view>
+            <view className={sty.control}>
+              <ArgusButton
+                text={'放弃修改'}
+                theme={'light'}
+                style={{ width: '240rpx' ,height:'88rpx',minWidth:'0'}}
+              />
+              <ArgusButton
+                text={'保存修改'}
+                style={{ width: '240rpx' ,height:'88rpx',minWidth:'0'}}
+              />
+            </view>
         </MainLayout>
     )
 }
