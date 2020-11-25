@@ -1,0 +1,61 @@
+@import "../../palette";
+.mask{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: $argus-mask;
+  .box{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin:auto;
+    width: 670rpx;
+    height: 872rpx;
+    background-color: $argus-white;
+    box-sizing: border-box;
+    padding: 40rpx;
+    >view:nth-child(1){
+      text-align: center;
+      padding-top: 26rpx;
+    }
+    >view:nth-child(2){
+      padding-top: 54rpx;
+    }
+    >view:nth-child(3){
+      padding-top: 30rpx;
+    }
+    >view:nth-child(4){
+      padding-top: 16rpx;
+    }
+    >view:nth-child(5){
+      padding-top: 50rpx;
+    }
+    .title{
+      font-family: PingFang SC;
+      font-weight: 500;
+      font-size: 36rpx;
+      line-height: 54rpx;
+    }
+    .content{
+      font-family: PingFang SC;
+      font-size: 32rpx;
+      line-height: 48rpx;
+      color: #202124;
+    }
+    .btns{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      Button{
+        margin-left: 20rpx;
+      }
+      Button:nth-child(1){
+        margin-left: 0;
+      }
+    }
+  }
+}

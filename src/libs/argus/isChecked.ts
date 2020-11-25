@@ -9,3 +9,13 @@ export function isChecked(sex:string|null) {
   }
   return sexNum;
 }
+
+export function isLanuageSelect(val:string) {
+  let i = 0;
+  switch (val) {
+    case '简体':i=0;break;
+    case '繁体':i=1;break;
+    case 'English':i=2;break;
+  }
+  return i;
+}

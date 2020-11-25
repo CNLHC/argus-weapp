@@ -1,20 +1,40 @@
-import React from 'react'
+import React, { useState } from 'react'
+
+import { Input, Label, Radio, RadioGroup } from '@tarojs/components'
+import { useTypedSelector } from '../../reducers'
+import { navigateBack } from '@tarojs/taro'
+import { ActSetState } from '../../reducers/global'
+import { useDispatch } from 'react-redux'
 
 import ArgusBeanIndicator from '../../components/bean-indicator'
 import ArgusIcon from '../../components/icon'
 import ArgusInput from '../../components/Input'
 import MainLayout from '../../components/main-layout'
 import ArgusSelector from '../../components/selector'
-import sty from './index.module.scss'
-import { Label, Radio, RadioGroup } from '@tarojs/components'
 import ArgusButton from '../../components/button'
-import { useTypedSelector } from '../../reducers'
+import LearnMore from '../../components/learn-more'
 
-import {isChecked} from '../../libs/argus/isChecked'
+
+
+import sty from './index.module.scss'
+
+import { isChecked, isLanuageSelect } from '../../libs/argus/isChecked'
+import { saveManage } from '../../libs/manage'
+import { IArgusUserInfoNoReTime } from '../../libs/login'
+import Recharge from '../../components/recharge'
+
 
 
 export default function index() {
   const user = useTypedSelector(e => e.GlobalReducers.UserInfo)
+  const [show, setShow] = useState(false)
+  const [showRecharge, setshowRecharge] = useState(false);
+
+  const dispatch = useDispatch()
+  const {email,phone,sex,headimg,id,language,name} = {...user};
+  const newUser:IArgusUserInfoNoReTime = {
+    email,phone,sex,headimg,id,language,name
+  }
 
   const radioArrary = [{
     value:'0',
@@ -30,10 +50,49 @@ export default function index() {
     text:'保密',
   }]
 
+
+
+  const items = ['简体','繁体','English'];
+
+  const btnStyle = { width: '240rpx' ,height:'88rpx',minWidth:'0'}
+
   const checkedIndex:number = isChecked(user.sex);
   radioArrary[checkedIndex].checked = true;
 
-  const items = ['简体','繁体','English'];
+  async function save() {
+  const flat = await saveManage(newUser);
+    if (!!flat){
+    const newUserInfo:any = newUser;
+    newUserInfo.retime = user.retime;
+    dispatch(ActSetState({ UserInfo:newUserInfo}))
+  }
+  }
+
+  function changeName(e) {
+    newUser.name = e;
+  }
+
+  function changeEmail(e) {
+    newUser.email = e;
+  }
+
+  function radioChange(e) {
+    newUser.sex = radioArrary[Number(e.detail.value)].text
+  }
+
+  function languagechange(e) {
+    const languageIndex = isLanuageSelect(e)
+    newUser.language = languageIndex;
+  }
+
+  function handleFun(val:Boolean) {
+    setShow(val)
+  }
+
+  function toggleShowRecharge(val:Boolean) {
+    setshowRecharge(val)
+  }
+
 
     return (
         <MainLayout  title={'账户管理'}>
@@ -53,7 +112,9 @@ export default function index() {
                         用户名
                     </view>
                     <view className={sty.Component}>
-                        <ArgusInput value={user.name||''} placeholder={'请输入用户名'}/>
+                        <ArgusInput onChange={
+                          changeName
+                        } value={user.name||''} placeholder={'请输入用户名'}/>
                     </view>
                 </view>
                 <view className={sty.formField}>
@@ -62,7 +123,9 @@ export default function index() {
                         电子邮件
                     </view>
                     <view className={sty.Component}>
-                        <ArgusInput value={user.email||''} placeholder={'请输入电子邮箱'} />
+                        <ArgusInput onChange={
+                          changeEmail
+                        } value={user.email||''} placeholder={'请输入电子邮箱'} />
                     </view>
                 </view>
                 <view className={sty.formField}>
@@ -71,7 +134,7 @@ export default function index() {
                         语言
                     </view>
                     <view className={sty.Component}>
-                        <ArgusSelector value={items[user.language||0]} placeHolder={'简体'}  items={items} />
+                        <ArgusSelector onChange={languagechange} placeHolder={items[user.language||0]}  items={items} />
                     </view>
                 </view>
                 <view className={sty.formField}>
@@ -79,8 +142,8 @@ export default function index() {
                         <ArgusIcon className={sty.iconImage} icon={'mobile'} />
                         手机号
                     </view>
-                    <view className={sty.Component}>
-                        <ArgusInput  value={user.phone||''} placeholder={'请输入手机号'}/>
+                    <view className={sty.phone}>
+                      <Input disabled={true} value={user.phone||''}/>
                     </view>
                 </view>
               <view className={sty.formField}>
@@ -88,11 +151,13 @@ export default function index() {
                   <ArgusIcon className={sty.iconImage} icon={'gender'} />
                   性别
                 </view>
-                <RadioGroup className={sty.radioGroup}>
+                <RadioGroup onChange={
+                  radioChange
+                }   className={sty.radioGroup}>
                   {radioArrary.map((item, i) => {
                     return (
                       <Label className='radio-list__label' for={i.toString()} key={i}>
-                        <Radio color={'#B0865B'} className={sty.radio}  value={item.value} checked={item.checked}>{item.text}</Radio>
+                        <Radio color={'#B0865B'} className={sty.radio}   value={item.value} checked={item.checked}>{item.text}</Radio>
                       </Label>
                     )
                   })}
@@ -103,17 +168,24 @@ export default function index() {
                         <ArgusIcon className={sty.iconImage} icon={'bean-line'} />
                         咖啡豆
                     </view>
-
                     <view className={sty.btns}>
                       <view className={sty.Component}>
                         <ArgusBeanIndicator count={user.retime} />
                       </view>
                       <ArgusButton
+                        onClick={()=>{
+                          toggleShowRecharge(true);
+                        }}
                       text={'充值'}
                       theme={'light'}
                       style={{ width: '150rpx' ,height:'88rpx',minWidth:'0'}}
                     />
                       <ArgusButton
+                        onClick={
+                          ()=>{
+                            handleFun(true)
+                          }
+                        }
                         text={'了解更多'}
                         theme={'light'}
                         style={{ width: '196rpx' ,height:'88rpx',minWidth:'0'}}
@@ -124,13 +196,23 @@ export default function index() {
               <ArgusButton
                 text={'放弃修改'}
                 theme={'light'}
-                style={{ width: '240rpx' ,height:'88rpx',minWidth:'0'}}
+                onClick={()=>{
+                  navigateBack();
+                }}
+                style={btnStyle}
               />
               <ArgusButton
+                onClick={save}
                 text={'保存修改'}
-                style={{ width: '240rpx' ,height:'88rpx',minWidth:'0'}}
+                style={btnStyle}
               />
             </view>
+          <LearnMore show={show} handleFun={()=>{
+            handleFun(false);
+          }}/>
+          <Recharge handleFun={()=>{
+            toggleShowRecharge(false);
+          }} show={showRecharge}/>
         </MainLayout>
     )
 }

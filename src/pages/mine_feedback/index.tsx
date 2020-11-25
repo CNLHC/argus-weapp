@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useState } from 'react'
 import MainLayout from '../../components/main-layout'
 
 import sty from './index.module.scss'
@@ -14,7 +14,7 @@ import inputImage from '../../../assets/feedback_input_file.svg'
 
 
 export default function index() {
-
+  const [textLength,setTextLength] = useState(0);
   const radioArrary = [{
     value:'0',
     checked:true,
@@ -33,26 +33,15 @@ export default function index() {
 
 
 
-  let textLength:number = 0;
+
 
   function changeCount(event) {
     const val = event.detail.valueOf().value;
-    textLength = val.length;
-  //  console.log(textLength)
+    setTextLength(val.length)
   }
 
   function test() {
-/*    wx.showModal({
-      title: 'confirm的弹窗',
-      content: '确认要删除该项吗？',
-      success: function (res) {
-        if (res.confirm) {
-          console.log('点击确认回调')
-        } else {
-          console.log('点击取消回调')
-        }
-      }
-    })*/
+
     console.log('添加图片')
   }
 

@@ -1,0 +1,75 @@
+@import "../../palette";
+.mask{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: $argus-mask;
+  .box{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin:auto;
+    margin-top: 60rpx;
+    width: 670rpx;
+    height: 1000rpx;
+    background-color: $argus-white;
+    box-shadow: 0 4rpx 10rpx $argus-gray;
+    border-radius: 32rpx;
+    box-sizing: border-box;
+    padding: 40rpx;
+    >view:nth-child(1){
+      text-align: center;
+    }
+    >view:nth-child(2){
+      padding-top: 44rpx;
+    }
+    >view:nth-child(3){
+      padding-top: 22rpx;
+    }
+    .title{
+      font-family: PingFang SC;
+      font-weight: 500;
+      font-size: 36rpx;
+      line-height: 54rpx;
+      color: #000000;
+    }
+    .itemBox{
+     >view{
+       box-sizing: border-box;
+       display: inline-block;
+       margin: 11rpx;
+       width: 176rpx;
+       height: 120rpx;
+       background: $argus-brown-light;
+       border-radius: 4px;
+     }
+      .activeItem{
+        background: #FFFFFF;
+        border: 2rpx solid $argus-brown;
+        box-sizing: border-box;
+        box-shadow: 0px 4rpx 10rpx rgba(143, 88, 31, 0.1);
+    }
+    }
+    .content{
+      padding-top: 14rpx;
+     >view{
+       font-family: PingFang SC;
+       font-size: 28rpx;
+       line-height: 40rpx;
+     }
+    }
+    .btns{
+      padding-top: 40rpx;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      Button:nth-child(1){
+        margin-right: 20rpx;
+      }
+    }
+  }
+}

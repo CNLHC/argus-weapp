@@ -33,7 +33,11 @@
     }
   }
 }
-
+.phone{
+  box-sizing: border-box;
+  padding:20rpx;
+  border: solid 2rpx $argus-gray;
+}
 
 
 
@@ -43,6 +47,7 @@
   display: flex;
   align-items: center;
   justify-content: start;
+
   >view{
     display: flex;
     align-items: center;
@@ -53,6 +58,7 @@
     border-radius: 400rpx;
     margin-left: 59rpx;
     border: $argus-brown solid 1rpx;
+    background-color: $argus-white;
   }
 }
 
@@ -69,3 +75,4 @@
   }
 
 }
+
