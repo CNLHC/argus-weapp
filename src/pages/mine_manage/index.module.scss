@@ -33,10 +33,17 @@
     }
   }
 }
-.phone{
-  box-sizing: border-box;
-  padding:20rpx;
-  border: solid 2rpx $argus-gray;
+
+.editPhone{
+  display: flex;
+  .phone{
+    flex: 1;
+    box-sizing: border-box;
+    padding:20rpx;
+    border: solid 2rpx $argus-gray;
+    margin-right: 20rpx;
+  }
+
 }
 
 

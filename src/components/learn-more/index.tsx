@@ -4,11 +4,12 @@ import ArgusButton from '../button'
 
 interface IProps {
   handleFun:Function
+  handleFun2:Function
   show:boolean
 }
 
 export default function LearnMore(props: IProps) {
-  const { handleFun ,show} = props
+  const { handleFun, handleFun2 ,show} = props
   if (!show) return null
     return (
      <view className={sty.mask} >
@@ -33,7 +34,9 @@ export default function LearnMore(props: IProps) {
              handleFun()
            }}  text={'关闭'} theme={'light'} style={{ width: '160rpx' ,height:'88rpx',minWidth:'0'}} />
            <ArgusButton theme={'light'} text={'充值记录'} style={{ width: '192rpx' ,height:'88rpx',minWidth:'0'}}/>
-           <ArgusButton  text={'充值'} style={{ width: '160rpx' ,height:'88rpx',minWidth:'0'}}/>
+           <ArgusButton  onClick={()=>{
+             handleFun2()
+           }} text={'充值'} style={{ width: '160rpx' ,height:'88rpx',minWidth:'0'}}/>
          </view>
        </view>
      </view>

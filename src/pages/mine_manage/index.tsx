@@ -22,13 +22,15 @@ import { isChecked, isLanuageSelect } from '../../libs/argus/isChecked'
 import { saveManage } from '../../libs/manage'
 import { IArgusUserInfoNoReTime } from '../../libs/login'
 import Recharge from '../../components/recharge'
+import EditPhone from "../../components/edit-phone";
 
 
 
 export default function index() {
   const user = useTypedSelector(e => e.GlobalReducers.UserInfo)
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(false);
   const [showRecharge, setshowRecharge] = useState(false);
+  const [showEditPhone, setShowEditPhone] = useState(false);
 
   const dispatch = useDispatch()
   const {email,phone,sex,headimg,id,language,name} = {...user};
@@ -93,6 +95,12 @@ export default function index() {
     setshowRecharge(val)
   }
 
+  function EditSuccess(val:string) {
+    const newUserInfo:any = newUser;
+    newUserInfo.phone = val;
+    dispatch(ActSetState({ UserInfo:newUserInfo}))
+  }
+
 
     return (
         <MainLayout  title={'账户管理'}>
@@ -142,8 +150,17 @@ export default function index() {
                         <ArgusIcon className={sty.iconImage} icon={'mobile'} />
                         手机号
                     </view>
-                    <view className={sty.phone}>
-                      <Input disabled={true} value={user.phone||''}/>
+                    <view className={sty.editPhone}>
+                      <view className={sty.phone}>
+                        <Input disabled={true} value={user.phone||''}/>
+                      </view>
+                      <ArgusButton className={sty.phoneBtn} text={'修改'}
+                                   theme={'light'}
+                                   style={{ width: '150rpx' ,height:'88rpx',minWidth:'0'}}
+                                   onClick={()=>{
+                                     setShowEditPhone(true);
+                                   }}
+                      />
                     </view>
                 </view>
               <view className={sty.formField}>
@@ -209,10 +226,19 @@ export default function index() {
             </view>
           <LearnMore show={show} handleFun={()=>{
             handleFun(false);
+          }} handleFun2={()=>{
+            handleFun(false);
+            toggleShowRecharge(true);
           }}/>
           <Recharge handleFun={()=>{
             toggleShowRecharge(false);
           }} show={showRecharge}/>
+          <EditPhone onEditSuccess={(e)=>{
+            console.log(e);
+            EditSuccess(e)
+          }} onClose={()=>{
+             setShowEditPhone(false);
+          }} show={showEditPhone} />
         </MainLayout>
     )
 }

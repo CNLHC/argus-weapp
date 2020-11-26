@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import sty from './index.module.scss'
 import ArgusButton from '../button'
+import ArgusIcon from '../icon'
 
 
 interface IProps {
@@ -47,7 +48,12 @@ export default function Recharge(props: IProps) {
                  ()=>{
                   setCurrentItem(i);
                  }
-               } className={item.checked?sty.activeItem:''} >{i}:{item.money}</view>
+               } className={item.checked?sty.activeItem:''} >
+                 <view className={sty.itemContent}>
+                   <view>{item.money}元</view>
+                   <view className={sty.iconBox}><ArgusIcon icon={'coffee-beans'} />x{item.beans}</view>
+                 </view>
+               </view>
              )
            })}
          </view>

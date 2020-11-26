@@ -14,6 +14,7 @@ import assetsIconBeanLine from '../../../assets/icon_bean_line.svg'
 import assetsIconProfile from '../../../assets/icon_profile.svg'
 import assetsIconGlobe from '../../../assets/icon_globe.svg'
 import assetsIconCameraGroup from '../../../assets/icon_camera_group.svg'
+import assetsIconBeans from '../../../assets/icon_beans.svg'
 
 interface IProps {
     icon: 'wx' | string
@@ -62,13 +63,16 @@ export default function ArgusIcon(props: IProps) {
             src = assetsIconBeanLine
             break
         case 'pro-file':
-          src = assetsIconProfile
-          break
+            src = assetsIconProfile
+            break
         case 'globe':
            src = assetsIconGlobe
            break
         case 'camera-group':
            src = assetsIconCameraGroup
+           break
+        case 'coffee-beans':
+          src = assetsIconBeans
            break
     }
     return <image src={src} className={className} style={props.style} />

@@ -1,0 +1,29 @@
+.loginForm {
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+
+  .FormItem {
+    margin-top: 36rpx;
+
+    .Label {
+      font-size: 28px;
+      line-height: 42px;
+      color: #4F4E48;
+    }
+
+    .Component {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 88rpx;
+    }
+  }
+
+  .footer {
+    margin-top: 30rpx;
+    font-size: 22rpx;
+    line-height: 33rpx;
+    text-align: center;
+  }
+}

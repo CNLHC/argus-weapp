@@ -47,6 +47,29 @@ export async function ArgusLogin(
     }
 }
 
+export async function ArgusEditPhone(
+  payload: ILoginPayload
+) {
+  let flat = false;
+  try {
+    const res = await axios.post(
+      `${Constant.api.host}/admin_login/login_phone`,
+      payload
+    )
+    await setStorage({ key: 'code', data: payload.code })
+    await setStorage({ key: 'token', data: res.data.token })
+    await setStorage({ key: 'userid', data: payload.mobile })
+    const userinfo = await GetUserInfo()
+    if (!userinfo) throw Error('no userinfo')
+    flat = true;
+    showToast({ title: '修改手机号成功' ,icon:'none'})
+  } catch (e) {
+    console.log(e)
+    showToast({ title: '修改手机号失败' ,icon:'none'})
+  }
+  return flat;
+}
+
 export interface IArgusUserInfo {
   email: null | string
   headimg: null | string
