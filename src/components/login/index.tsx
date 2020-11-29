@@ -98,7 +98,7 @@ export default function LoginModal(props: IProps) {
                         }}
                     />
                     <ArgusInput
-                        value={payload.phone}
+                        value={payload.mobile}
                         onChange={onChangePhoneInput}
                         style={{ height: '88rpx' }}
                         placeholder={'请输入手机号码'}

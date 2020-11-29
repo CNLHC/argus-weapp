@@ -1,7 +1,7 @@
 import { Picker } from '@tarojs/components'
 import React, { useState } from 'react'
 import arrow from './arrow.svg'
-import './index.scss'
+import sty from './index.module.scss'
 
 interface IProps {
     items: string[]
@@ -18,7 +18,7 @@ export default function ArgusSelector(props: IProps) {
     )
     const placeHolder = props.placeHolder ?? '+86'
     return (
-        <view style={style} className={'selector'}>
+        <view style={style} className={sty.selector}>
             <Picker
                 mode="selector"
                 range={items}

@@ -5,6 +5,7 @@ import ArgusSelector from '../../components/selector'
 import ArgusButton from '../../components/button'
 import sty from './index.module.scss'
 import { chooseVideo, getStorageSync, redirectTo, setStorageSync, uploadFile } from '@tarojs/taro'
+import * as Sentry from "sentry-miniapp";
 
 import IconBrownBean from '../../../assets/brown_bean_icon.svg'
 import IconBean from '../../../assets/bean_icon.svg'
@@ -49,32 +50,37 @@ function mUploadFile({ fp, onSuc, onFail, onProg, preStart, uploadFilename }: {
     preStart && preStart()
     const ctx = getOSSUploadToken()
     const fn = fp
-    const task = uploadFile({
-        url: Constant.ali.host,
-        filePath: fp,
-        fileName: uploadFilename,
-        name: 'file',
-        formData: {
-            key: uploadFilename,
-            policy: ctx.policy,
-            OSSAccessKeyId: Constant.ali.accessid,
-            success_action_status: '200', // 让服务端返回200,不然，默认会返回204
-            signature: ctx.signature,
-        },
-        success: res => {
-            console.log("upload success", res)
-            onSuc && onSuc(res)
-        },
-        fail: err => {
-            console.log("upload err", err)
-            onFail && onFail(err)
-        }
-    }).progress(
-        (res) => {
-            console.log("prog", res)
-            onProg && onProg(res)
-        }
-    )
+
+    try {
+        const task = uploadFile({
+            url: Constant.ali.host,
+            filePath: fp,
+            fileName: uploadFilename,
+            name: 'file',
+            formData: {
+                key: uploadFilename,
+                policy: ctx.policy,
+                OSSAccessKeyId: Constant.ali.accessid,
+                success_action_status: '200', // 让服务端返回200,不然，默认会返回204
+                signature: ctx.signature,
+            },
+            success: res => {
+                console.log("upload success", res)
+                onSuc && onSuc(res)
+            },
+            fail: err => {
+                console.log("upload err", err)
+                onFail && onFail(err)
+            }
+        }).progress(
+            (res) => {
+                console.log("prog", res)
+                onProg && onProg(res)
+            }
+        )
+    } catch (e) {
+        onFail && onFail(e)
+    }
 }
 function fileType(filename: string) {
     if (filename.lastIndexOf('.') !== -1) {
@@ -105,15 +111,30 @@ export default function PageUpload() {
         const timestamp = new Date().getTime()
         const getUploadName = ((fname: string) => (`${timestamp}${Math.floor(timestamp * Math.random())}.${fileType(fname)}`))
         chooseVideo({
+            compressed: false,
             success(files) {
                 const uploadFilename = getUploadName(files.tempFilePath)
                 const filename = `wx视频笔记_${Moment().toISOString()}.${fileType(getUploadName(files.tempFilePath))}`
                 mUploadFile({
                     uploadFilename,
-                    fp: filename,
-                    preStart: () => dispatch(ActSetState({ uploadProgress: 0 })),
-                    onProg: (prog) => dispatch(ActSetState({ uploadProgress: prog.progress })),
-                    onFail: () => dispatch(ActSetState({ uploadProgress: undefined })),
+                    fp: files.tempFilePath,
+                    preStart: () => {
+                        const cost = files.duration / 60;
+                        dispatch(ActSetState({ uploadProgress: 0, }))
+                        if (user)
+                            dispatch(ActSetState({ UserInfo: { ...user, retime: user?.retime ?? 150 - cost } }))
+                    },
+                    onProg: (prog) => dispatch(ActSetState({ uploadProgress: prog.progress - 1 })),
+                    onFail: (e) => {
+                        console.error(e)
+                        Sentry.configureScope(s => {
+                            s.setExtras({
+                                errMsg: e.errMsg
+                            })
+                            Sentry.captureMessage('upload')
+                        })
+                        dispatch(ActSetState({ uploadProgress: undefined }))
+                    },
                     onSuc: () => {
                         video_process({
                             filename,
@@ -124,7 +145,16 @@ export default function PageUpload() {
                         })
                     }
                 })
+            },
+            fail() {
+                Sentry.configureScope(s => {
+                    const msg = 'can not choose video'
+                    console.error(msg)
+                    Sentry.captureMessage(msg)
+
+                })
             }
+
         })
     }
     const ModalContent = () => (
@@ -183,16 +213,10 @@ export default function PageUpload() {
                     <view className={sty.formItem}>
                         <ArgusButton
                             onClick={onSelectFile}
-
                             text={'选择文件'}
                             theme={'light'}
                             style={{ width: '332rpx', marginRight: '20rpx' }}
                         />
-                        {/* <ArgusButton
-                            iconSrc={IconLink}
-                            theme={'light'}
-                            style={{ width: '72rpx', padding: '10rpx' }}
-                        /> */}
                     </view>
                 </view>
                 <view className={sty.img}>

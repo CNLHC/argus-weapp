@@ -7,8 +7,8 @@ import { ActSetState } from '../../reducers/global'
 import sty from './index.module.scss'
 import IndexBg from '../../../assets/index_bg.svg'
 // import { redirectTo } from '@tarojs/taro'
-import { navigateTo } from '@tarojs/taro'
-import { GetUserInfo } from '../../libs/login'
+import { getStorageSync, navigateTo } from '@tarojs/taro'
+import { GetUserInfo, shouldLogin } from '../../libs/login'
 import { GetNotes } from '../../libs/notes'
 import LoginModal from '../../components/login'
 
@@ -33,10 +33,15 @@ export default function PageHome() {
     }, [notes])
 
     useEffect(() => {
+        shouldLogin().then(e => {
+            if (e)
+                dispatch(ActSetState({ showLoginModal: true }))
+        })
         GetUserInfo()
             .then(e => {
                 if (!e?.id) {
                     dispatch(ActSetState({ showLoginModal: true }))
+
                 }
                 dispatch(ActSetState({ UserInfo: e }))
                 GetNotes({ userid: e?.id ?? "" })
@@ -44,6 +49,7 @@ export default function PageHome() {
                         dispatch(ActSetState({ notes: e.data, loading: false }))
                     })
             })
+
     }, [])
 
     return (

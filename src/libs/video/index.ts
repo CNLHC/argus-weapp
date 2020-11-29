@@ -1,6 +1,7 @@
 import { getStorageSync } from '@tarojs/taro'
 import Axios from 'axios'
 import Constant from '../constant/constant'
+import errorMsg from '../error'
 import { AuthedHeader } from '../login'
 
 class ArgusVideoLogic {
@@ -99,7 +100,7 @@ export async function video_process({
             user: user,
         })
         if (res2.data.status === 401) {
-            console.log('重新登陆')
+            console.error(errorMsg.API_FAILED_401)
         }
     }
 }

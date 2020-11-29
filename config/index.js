@@ -51,7 +51,8 @@ const config = {
           enable: true, // 默认为 false，如需使用 css modules 功能，则设为 true
           config: {
             namingPattern: 'module', // 转换模式，取值为 global/module，下文详细说明
-            generateScopedName: '[name]-[local]-[hash:base64:2]'
+            generateScopedName: '[name]-[local]-[hash:base64:2]',
+            ignoreOrder:true
           }
         }
       }

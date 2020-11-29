@@ -1277,51 +1277,46 @@
   dependencies:
     mkdirp "^1.0.4"
 
-"@sentry/core@4.4.1":
-  version "4.4.1"
-  resolved "https://registry.npm.taobao.org/@sentry/core/download/@sentry/core-4.4.1.tgz#8836813d9d309059913b464cee6d23da09cc4056"
-  integrity sha1-iDaBPZ0wkFmRO0ZM7m0j2gnMQFY=
+"@sentry/core@5.15.4":
+  version "5.15.4"
+  resolved "https://registry.npm.taobao.org/@sentry/core/download/@sentry/core-5.15.4.tgz#08b617e093a636168be5aebad141d1f744217085"
+  integrity sha1-CLYX4JOmNhaL5a660UHR90QhcIU=
   dependencies:
-    "@sentry/hub" "4.4.1"
-    "@sentry/minimal" "4.4.1"
-    "@sentry/types" "4.4.1"
-    "@sentry/utils" "4.4.1"
+    "@sentry/hub" "5.15.4"
+    "@sentry/minimal" "5.15.4"
+    "@sentry/types" "5.15.4"
+    "@sentry/utils" "5.15.4"
     tslib "^1.9.3"
 
-"@sentry/hub@4.4.1":
-  version "4.4.1"
-  resolved "https://registry.npm.taobao.org/@sentry/hub/download/@sentry/hub-4.4.1.tgz#3f82405131bf10ef9e751e2760d63bfff809fa4a"
-  integrity sha1-P4JAUTG/EO+edR4nYNY7//gJ+ko=
+"@sentry/hub@5.15.4":
+  version "5.15.4"
+  resolved "https://registry.npm.taobao.org/@sentry/hub/download/@sentry/hub-5.15.4.tgz#cb64473725a60eec63b0be58ed1143eaaf894bee"
+  integrity sha1-y2RHNyWmDuxjsL5Y7RFD6q+JS+4=
   dependencies:
-    "@sentry/types" "4.4.1"
-    "@sentry/utils" "4.4.1"
+    "@sentry/types" "5.15.4"
+    "@sentry/utils" "5.15.4"
     tslib "^1.9.3"
 
-"@sentry/minimal@4.4.1":
-  version "4.4.1"
-  resolved "https://registry.npm.taobao.org/@sentry/minimal/download/@sentry/minimal-4.4.1.tgz#332e97395a20a01e398ae6614a8fb857f2566c31"
-  integrity sha1-My6XOVogoB45iuZhSo+4V/JWbDE=
+"@sentry/minimal@5.15.4":
+  version "5.15.4"
+  resolved "https://registry.npm.taobao.org/@sentry/minimal/download/@sentry/minimal-5.15.4.tgz#113f01fefb86b7830994c3dfa7ad4889ba7b2003"
+  integrity sha1-ET8B/vuGt4MJlMPfp61Iibp7IAM=
   dependencies:
-    "@sentry/hub" "4.4.1"
-    "@sentry/types" "4.4.1"
+    "@sentry/hub" "5.15.4"
+    "@sentry/types" "5.15.4"
     tslib "^1.9.3"
 
-"@sentry/types@4.4.1":
-  version "4.4.1"
-  resolved "https://registry.npm.taobao.org/@sentry/types/download/@sentry/types-4.4.1.tgz#d19f9b0450a543aa11b136681ea19612e3cc1611"
-  integrity sha1-0Z+bBFClQ6oRsTZoHqGWEuPMFhE=
+"@sentry/types@5.15.4":
+  version "5.15.4"
+  resolved "https://registry.npm.taobao.org/@sentry/types/download/@sentry/types-5.15.4.tgz#37f30e35b06e8e12ad1101f1beec3e9b88ca1aab"
+  integrity sha1-N/MONbBujhKtEQHxvuw+m4jKGqs=
 
-"@sentry/types@^4.4.1":
-  version "4.5.3"
-  resolved "https://registry.npm.taobao.org/@sentry/types/download/@sentry/types-4.5.3.tgz#3350dce2b7f9b936a8c327891c12e3aef7bd8852"
-  integrity sha1-M1Dc4rf5uTaowyeJHBLjrve9iFI=
-
-"@sentry/utils@4.4.1":
-  version "4.4.1"
-  resolved "https://registry.npm.taobao.org/@sentry/utils/download/@sentry/utils-4.4.1.tgz#cf80fe596d43dc04f51cb780e0cf70017a8c1eb1"
-  integrity sha1-z4D+WW1D3AT1HLeA4M9wAXqMHrE=
+"@sentry/utils@5.15.4":
+  version "5.15.4"
+  resolved "https://registry.npm.taobao.org/@sentry/utils/download/@sentry/utils-5.15.4.tgz#02865ab3c9b745656cea0ab183767ec26c96f6e6"
+  integrity sha1-AoZas8m3RWVs6gqxg3Z+wmyW9uY=
   dependencies:
-    "@sentry/types" "4.4.1"
+    "@sentry/types" "5.15.4"
     tslib "^1.9.3"
 
 "@stencil/core@~1.8.1":
@@ -3472,11 +3467,6 @@ crypto-browserify@^3.11.0:
     public-encrypt "^4.0.0"
     randombytes "^2.0.0"
     randomfill "^1.0.3"
-
-crypto-js@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.npm.taobao.org/crypto-js/download/crypto-js-4.0.0.tgz#2904ab2677a9d042856a2ea2ef80de92e4a36dcc"
-  integrity sha1-KQSrJnep0EKFai6i74DekuSjbcw=
 
 css-loader@3.4.2:
   version "3.4.2"
@@ -9139,14 +9129,15 @@ send@0.17.1:
     range-parser "~1.2.1"
     statuses "~1.5.0"
 
-sentry-mina@^0.4.7:
-  version "0.4.7"
-  resolved "https://registry.npm.taobao.org/sentry-mina/download/sentry-mina-0.4.7.tgz#56462a8aa3dddc1c4581f3be354c07f83302a756"
-  integrity sha1-VkYqiqPd3BxFgfO+NUwH+DMCp1Y=
+sentry-miniapp@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.npm.taobao.org/sentry-miniapp/download/sentry-miniapp-0.10.0.tgz#6ed59bbb6406f55b1f95e6524bb09c5f0078d3d7"
+  integrity sha1-btWbu2QG9VsfleZSS7CcXwB409c=
   dependencies:
-    "@sentry/core" "4.4.1"
-    "@sentry/types" "^4.4.1"
-    "@sentry/utils" "4.4.1"
+    "@sentry/core" "5.15.4"
+    "@sentry/types" "5.15.4"
+    "@sentry/utils" "5.15.4"
+    tslib "^1.10.0"
 
 serialize-javascript@^2.1.2:
   version "2.1.2"

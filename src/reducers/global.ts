@@ -9,16 +9,16 @@ import { Editor } from '@tarojs/components'
 const ActionEnum = {
     SetState: '[global]SetState',
     UpdateCodeCounter: 'globalUpdateCodeCounter',
-    EditorUpdate:`EditorUpdate`,
-    EditorClear:`EditorClear`
+    EditorUpdate: `EditorUpdate`,
+    EditorClear: `EditorClear`
 }
 
-export const ActEditorCtxUpdate= (idx: number,ctx:EditorContext) => ({
+export const ActEditorCtxUpdate = (idx: number, ctx: EditorContext) => ({
     type: ActionEnum.EditorUpdate,
     idx,
     ctx
 })
-export const ActEditorClear= () => ({
+export const ActEditorClear = () => ({
     type: ActionEnum.EditorClear,
 })
 
@@ -40,6 +40,7 @@ interface IGlobalState {
     noteDetail?: INoteDettail
     editorCtx: EditorContext[]
     UserInfo?: IArgusUserInfo
+    decreasingCost?: number
     codeCounter: {
         value: number
         handle?: NodeJS.Timeout
@@ -47,7 +48,7 @@ interface IGlobalState {
 }
 
 const init: IGlobalState = {
-    editorCtx:[],
+    editorCtx: [],
     notes: [],
     showLoginModal: false,
     UserInfo: undefined,
@@ -58,16 +59,16 @@ const init: IGlobalState = {
 }
 
 export type TAction = ReturnType<typeof ActSetState> &
-    ReturnType<typeof ActUpdateCodeCounter>&
-    ReturnType<typeof ActEditorClear>&
+    ReturnType<typeof ActUpdateCodeCounter> &
+    ReturnType<typeof ActEditorClear> &
     ReturnType<typeof ActEditorCtxUpdate>
 
 export const GlobalReducers: Reducer<IGlobalState, TAction> = (
     state = init,
     action
 ) =>
-  produce(state, (draft) => {
-    switch (action.type) {
+    produce(state, (draft) => {
+        switch (action.type) {
             case ActionEnum.SetState:
                 Object.assign(draft, action.state)
                 return
@@ -80,11 +81,11 @@ export const GlobalReducers: Reducer<IGlobalState, TAction> = (
                 if (draft.codeCounter.value > 0) draft.codeCounter.value -= 1
                 else draft.codeCounter.value = 0
                 return
-              case ActionEnum.EditorClear:
-                draft.editorCtx=[]
+            case ActionEnum.EditorClear:
+                draft.editorCtx = []
                 return
-              case ActionEnum.EditorUpdate:
-                draft[action.idx]=action.ctx
+            case ActionEnum.EditorUpdate:
+                draft[action.idx] = action.ctx
                 return
         }
     })
