@@ -26,6 +26,7 @@ export default function index() {
     const editorCtx = useTypedSelector(e => e.GlobalReducers.editorCtx)
     const thisCancel = useTypedSelector(e => e.GlobalReducers.cancelToken)
     const [$subject, _] = useState(new RxJS.Subject<string>())
+    const [top, setTop] = useState(0)
 
     const getNoteDetail = (id: string) => {
         if (!id) return
@@ -99,6 +100,7 @@ export default function index() {
         const data = {
             ...nd?.data,
             imgTxt: nd?.data.imgTxt?.map((e, idx) => ({
+                ...e,
                 onebest: res[idx]
             }))
         }
@@ -139,12 +141,16 @@ export default function index() {
 
     useEffect(() => {
         if (notedetails) {
-            const rxjsHandle = $subject.pipe(debounceTime(3000)).subscribe(() => onsave(notedetails))
+            const rxjsHandle = $subject.pipe(debounceTime(1500)).subscribe(() => onsave(notedetails))
+            const h = setTimeout(() => setTop(e => e === 1 ? 0 : 1), 100)
             return () => {
                 console.log('uns')
+                clearTimeout(h)
                 rxjsHandle.unsubscribe()
             }
         }
+
+
     }, [notedetails, editorCtx])
 
     useEffect(() => {
@@ -166,6 +172,16 @@ export default function index() {
 
 
     const videoUrl = notedetails?.data.beforvideoUrl
+    const timeFrame = notedetails?.data?.ppt?.reduce((a, c) => {
+        if (a.length == 0) {
+            return [[0, c.endTime]]
+        }
+        return [...a, [
+            a[a.length - 1][1],
+            c.endTime
+        ]]
+    }, [])
+    const toTimeTag = (seconds?: number) => new Date((seconds ?? 0) * 1000).toISOString().substr(11, 8);
 
     return (
         <Authed>
@@ -176,16 +192,19 @@ export default function index() {
 
                 <ScrollView
                     scrollY
-                    scrollTop={100}
+                    scrollX={false}
+                    scrollTop={top}
                     className={sty.text}>
                     {
                         notedetails?.data?.imgTxt?.map((e, idx) => (
                             <view className={sty.block}>
-                                <ArgusTag txt={`第${idx}帧`} />
+                                <ArgusTag txt={`${toTimeTag(timeFrame?.[idx][0] ?? 0)}:${toTimeTag(timeFrame?.[idx][1] ?? 0)}`} />
+
                                 <Editor
                                     onInput={onInput}
                                     id={`editor${idx}`}
                                     className={sty.editor}
+                                    style={{ height: 'auto', minHeight: "20rpx" }}
                                     onReady={() => onEditorReady(e?.onebest, idx)}
                                 ></Editor>
                             </view>

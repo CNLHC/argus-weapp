@@ -14,9 +14,7 @@
     .text {
         background-image: url('../../../assets/page_line.svg');
         flex-grow: 1;
-        margin-top: 20rpx;
-        padding-left: 22rpx;
-        padding-right: 22rpx;
+        margin: 20rpx;
         .block {
             margin-top: 10rpx;
             height: fit-content;
@@ -25,6 +23,8 @@
             border: 1 solid black;
         }
         overflow: scroll;
+        overflow-x: none;
+        width: calc(100% - 40rpx);
     }
 
     .submit {
