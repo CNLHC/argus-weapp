@@ -120,7 +120,7 @@ export default function PageUpload() {
                     fp: files.tempFilePath,
                     preStart: () => {
                         const cost = files.duration / 60;
-                        dispatch(ActSetState({ uploadProgress: 0, }))
+                        dispatch(ActSetState({ uploadProgress: 0, decreasingCost: cost }))
                         if (user)
                             dispatch(ActSetState({ UserInfo: { ...user, retime: user?.retime ?? 150 - cost } }))
                     },

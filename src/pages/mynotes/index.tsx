@@ -10,20 +10,24 @@ import { GetNotes } from '../../libs/notes'
 import { useTypedSelector } from '../../reducers'
 import { useDispatch } from 'react-redux'
 import { ActSetState } from '../../reducers/global'
+import { saveManage } from '../../libs/manage'
+import { GetUserInfo } from '../../libs/login'
 
 export default function PageMyNotes() {
     const user = useTypedSelector(e => e.GlobalReducers.UserInfo)
     const loading = useTypedSelector(e => e.GlobalReducers.loading)
     const notes = useTypedSelector(e => e.GlobalReducers.notes)
+    const timer = useTypedSelector(e => e.GlobalReducers.listUpdateTimer)
     const dispatch = useDispatch()
 
     const getNotes = () => {
         if (!notes || notes.length == 0)
             dispatch(ActSetState({ loading: true }))
         GetNotes({ userid: user?.id ?? "" }).then(e => {
-            return dispatch(ActSetState({ notes: e.data, loading: false }))
+            return dispatch(ActSetState({ notes: e.data.filter(e => e.isLoading !== 3), loading: false }))
         })
     }
+
 
     useEffect(() => {
         if (loading)
@@ -32,6 +36,15 @@ export default function PageMyNotes() {
             hideLoading()
     }, [loading])
 
+    useEffect(() => {
+        if (user) {
+            saveManage(user).then(() => GetUserInfo().then(e => dispatch(ActSetState({ UserInfo: e }))));
+            if (!timer) {
+                const h = setInterval(() => getNotes(), 5000)
+                dispatch(ActSetState({ listUpdateTimer: h }))
+            }
+        }
+    }, [])
 
     useEffect(() => {
         if (user)

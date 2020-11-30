@@ -14,4 +14,7 @@ export default {
         navigationBarTitleText: '',
         navigationBarTextStyle: 'black',
     },
+    networkTimeout: {
+        "request": 5000,
+    },
 }

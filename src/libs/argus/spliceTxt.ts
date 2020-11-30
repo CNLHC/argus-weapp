@@ -204,7 +204,7 @@ export function textEditor(resData: any) {
 }
 
 // 翻译的笔记，需要给原文soundWord中onebest的每句添加p标签，方便原文和翻译按p标签形成一一对应的关系
-function textEditorAddTagP(resData: any) {
+export function textEditorAddTagP(resData: any) {
   const timeArr: any = [];
   const textArr: any = [];
   const pptCutArr: any = [];

@@ -5,6 +5,7 @@ import { INotes } from '../libs/notes'
 import { INoteDettail } from '../libs/notes/detail'
 import { EditorContext } from '@tarojs/taro'
 import { Editor } from '@tarojs/components'
+import { CancelToken, CancelTokenSource } from 'axios'
 
 const ActionEnum = {
     SetState: '[global]SetState',
@@ -45,6 +46,8 @@ interface IGlobalState {
         value: number
         handle?: NodeJS.Timeout
     }
+    listUpdateTimer?: NodeJS.Timeout
+    cancelToken?: CancelTokenSource
 }
 
 const init: IGlobalState = {
@@ -85,7 +88,7 @@ export const GlobalReducers: Reducer<IGlobalState, TAction> = (
                 draft.editorCtx = []
                 return
             case ActionEnum.EditorUpdate:
-                draft[action.idx] = action.ctx
+                draft.editorCtx[action.idx] = action.ctx
                 return
         }
     })

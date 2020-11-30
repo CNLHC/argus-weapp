@@ -54,6 +54,7 @@
     "react-redux": "^7.2.1",
     "redux": "^4.0.0",
     "redux-logger": "^3.0.6",
+    "rxjs": "^6.6.3",
     "sentry-miniapp": "^0.10.0"
   },
   "devDependencies": {
