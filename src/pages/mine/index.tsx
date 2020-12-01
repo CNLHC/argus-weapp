@@ -41,10 +41,12 @@ export default function Mine() {
             <view className={sty.banner}>
                 <view
                     className={sty.Avatar}
-                    onClick={() =>
-                        dispatch(ActSetState({ showLoginModal: true }))
+                    onClick={() => navigateTo({ url: '/pages/mine_manage/index', })}
+                >
+                    {
+                        Userinfo?.headimg ? <image src={Userinfo?.headimg} /> : null
                     }
-                ></view>
+                </view>
                 <view className={sty.Textarea}>{
                     Userinfo ? Userinfo?.name ?? "陌生人" : "未登录"
                 }</view>

@@ -72,7 +72,7 @@ interface IGetDetails extends PayloadBase {
 }
 export async function GetNoteDetails(payload: IGetDetails) {
     return Axios.get<INoteDettail>(
-        `${Constant.api.host}/fix_user/query_single_notes_detail?fileid=${payload.notesid}`,
+        `${Constant.api.host}/fix_user/query_single_notes_detail?fileid=${payload.notesid}&source=all`,
         {
             headers: AuthedHeader(),
             timeout: 2000,

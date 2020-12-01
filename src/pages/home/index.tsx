@@ -7,13 +7,12 @@ import { ActSetState } from '../../reducers/global'
 import sty from './index.module.scss'
 import IndexBg from '../../../assets/index_bg.svg'
 // import { redirectTo } from '@tarojs/taro'
-import { getStorageSync, navigateTo } from '@tarojs/taro'
+import { navigateTo } from '@tarojs/taro'
 import { GetUserInfo, shouldLogin } from '../../libs/login'
 import { GetNotes } from '../../libs/notes'
 import LoginModal from '../../components/login'
 
 export default function PageHome() {
-    const user = useTypedSelector((e) => e.GlobalReducers.UserInfo)
     const showLogin = useTypedSelector((e) => e.GlobalReducers.showLoginModal)
     const [sampleID, setSampleID] = useState<undefined | string>(undefined)
     const notes = useTypedSelector(e => e.GlobalReducers.notes)

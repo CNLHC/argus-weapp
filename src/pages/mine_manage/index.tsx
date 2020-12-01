@@ -106,12 +106,10 @@ export default function index() {
   return (
     <MainLayout title={'账户管理'}>
       <view className={sty.avatar}>
-        <view className={sty.Label}>
-          <ArgusIcon className={sty.iconImage} icon={'pro-file'} />
-                  头像</view>
-        <view className={sty.Component} >{
-          user.headimg ? <image src={user.headimg} /> : ''
-        }
+        <view className={sty.Component} >
+          {
+            user.headimg ? <image src={user.headimg} /> : ''
+          }
         </view>
       </view>
       <view className={sty.form}>

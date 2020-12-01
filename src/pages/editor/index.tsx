@@ -7,9 +7,8 @@ import { useTypedSelector } from '../../reducers'
 import { ActEditorCtxUpdate, ActSetState } from '../../reducers/global'
 import sty from './index.module.scss'
 import Authed from '../../components/Authed'
-import { textEditor, textEditorAddTagP } from '../../libs/argus/spliceTxt'
+import { textEditorAddTagP } from '../../libs/argus/spliceTxt'
 import { save_notes } from '../../libs/notes'
-import ArgusButton from '../../components/button'
 import * as RxJS from 'rxjs'
 import { debounceTime } from 'rxjs/operators'
 import errorMsg from '../../libs/error'
@@ -27,16 +26,18 @@ export default function index() {
     const thisCancel = useTypedSelector(e => e.GlobalReducers.cancelToken)
     const [$subject, _] = useState(new RxJS.Subject<string>())
     const [top, setTop] = useState(0)
+    const [allContent, setContent] = useState<string[]>([])
 
     const getNoteDetail = (id: string) => {
         if (!id) return
         dispatch(ActSetState({ loading: true, noteDetail: undefined }))
         GetNoteDetails({ notesid: id, cToken: thisCancel?.token })
             .then(e => {
-                let imgTxt = e?.data?.data?.imgTxt;
+                let imgTxt = e?.data?.data?.imgTxt?.filter(e => e.onebest.length > 0);
                 if (!imgTxt) {
                     const newData = textEditorAddTagP(e?.data.data)
                     imgTxt = newData.textArr.map(e => ({ onebest: e }))
+                    imgTxt = imgTxt?.filter(e => e.onebest.length > 0)
                 }
                 dispatch(ActSetState({
                     noteDetail: {
@@ -91,6 +92,7 @@ export default function index() {
             res.push(st)
         }
 
+        setContent(res)
         return res
     }
 
@@ -181,7 +183,7 @@ export default function index() {
             c.endTime
         ]]
     }, [])
-    const toTimeTag = (seconds?: number) => new Date((seconds ?? 0) * 1000).toISOString().substr(11, 8);
+    const toTimeTag = (seconds?: number) => new Date((seconds ?? 0) * 1000).toISOString().substr(14, 5);
 
     return (
         <Authed>
@@ -198,7 +200,7 @@ export default function index() {
                     {
                         notedetails?.data?.imgTxt?.map((e, idx) => (
                             <view className={sty.block}>
-                                <ArgusTag txt={`${toTimeTag(timeFrame?.[idx][0] ?? 0)}:${toTimeTag(timeFrame?.[idx][1] ?? 0)}`} />
+                                <ArgusTag txt={`${toTimeTag(timeFrame?.[idx][0] ?? 0)}`} />
 
                                 <Editor
                                     onInput={onInput}
