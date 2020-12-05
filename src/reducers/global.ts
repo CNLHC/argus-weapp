@@ -48,9 +48,11 @@ interface IGlobalState {
     }
     listUpdateTimer?: NodeJS.Timeout
     cancelToken?: CancelTokenSource
+    loading_mynotes: boolean
 }
 
 const init: IGlobalState = {
+    loading_mynotes: false,
     editorCtx: [],
     notes: [],
     showLoginModal: false,

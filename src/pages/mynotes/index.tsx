@@ -15,16 +15,16 @@ import { GetUserInfo } from '../../libs/login'
 
 export default function PageMyNotes() {
     const user = useTypedSelector(e => e.GlobalReducers.UserInfo)
-    const loading = useTypedSelector(e => e.GlobalReducers.loading)
+    const loading = useTypedSelector(e => e.GlobalReducers.loading_mynotes)
     const notes = useTypedSelector(e => e.GlobalReducers.notes)
     const timer = useTypedSelector(e => e.GlobalReducers.listUpdateTimer)
     const dispatch = useDispatch()
 
     const getNotes = () => {
         if (!notes || notes.length == 0)
-            dispatch(ActSetState({ loading: true }))
+            dispatch(ActSetState({ loading_mynotes: true }))
         GetNotes({ userid: user?.id ?? "" }).then(e => {
-            return dispatch(ActSetState({ notes: e.data.filter(e => e.isLoading !== 3), loading: false }))
+            return dispatch(ActSetState({ notes: e.data.filter(e => e.isLoading !== 3), loading_mynotes: false }))
         })
     }
 
@@ -42,6 +42,9 @@ export default function PageMyNotes() {
             if (!timer) {
                 const h = setInterval(() => getNotes(), 5000)
                 dispatch(ActSetState({ listUpdateTimer: h }))
+                return () => {
+                    clearInterval(h)
+                }
             }
         }
     }, [])

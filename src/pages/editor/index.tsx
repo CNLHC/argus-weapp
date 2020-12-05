@@ -16,6 +16,7 @@ import errorMsg from '../../libs/error'
 import * as Sentry from 'sentry-miniapp'
 import Axios from 'axios'
 import ArgusTag from '../../components/Tag'
+import ArgusButton from '../../components/button'
 export default function index() {
 
     const dispatch = useDispatch()
@@ -26,7 +27,7 @@ export default function index() {
     const thisCancel = useTypedSelector(e => e.GlobalReducers.cancelToken)
     const [$subject, _] = useState(new RxJS.Subject<string>())
     const [top, setTop] = useState(0)
-    const [allContent, setContent] = useState<string[]>([])
+    const [, setContent] = useState<string[]>([])
 
     const getNoteDetail = (id: string) => {
         if (!id) return
@@ -144,15 +145,18 @@ export default function index() {
     useEffect(() => {
         if (notedetails) {
             const rxjsHandle = $subject.pipe(debounceTime(1500)).subscribe(() => onsave(notedetails))
-            const h = setTimeout(() => setTop(e => e === 1 ? 0 : 1), 100)
+            const h = setTimeout(() => setTop(e => e + 1), 100)
+            if (notedetails.data.imgTxt?.length == editorCtx.length) {
+                setTimeout(() => setTop(e => {
+                    console.log(`set e from ${e}`)
+                    return e === 1 ? 0 : 1
+                }), 100)
+            }
             return () => {
-                console.log('uns')
-                clearTimeout(h)
                 rxjsHandle.unsubscribe()
+                clearTimeout(h)
             }
         }
-
-
     }, [notedetails, editorCtx])
 
     useEffect(() => {
@@ -191,9 +195,9 @@ export default function index() {
                 <view className={sty.video}>
                     {videoUrl ? <Video src={videoUrl} style={{ height: "100%", width: "100%" }} ></Video> : null}
                 </view>
-
                 <ScrollView
                     scrollY
+                    scrollAnchoring
                     scrollX={false}
                     scrollTop={top}
                     className={sty.text}>
